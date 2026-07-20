@@ -1,0 +1,95 @@
+# mise.toml — unified toolchain + task runner for the sgim monorepo.
+#
+# THE single entry point for quality gates is:  mise run check
+# It runs every fast, deterministic sensor (lint + typecheck + test) across
+# BOTH packages (/cms Strapi, /web SvelteKit). Local hooks and (later) CI call
+# these same tasks so there is one source of truth for the gates.
+#
+# Why mise instead of npm workspaces: /cms (Strapi, CommonJS) and /web
+# (SvelteKit, ESM) are independently deployable apps with their own,
+# ecosystem-idiomatic toolchains. We deliberately do NOT hoist their installs
+# into a shared root (Strapi is sensitive to it). mise orchestrates the
+# per-package scripts without touching how each app installs its deps.
+
+# Toolchain: mise manages gitleaks (secret scanning) so every dev/CI has it.
+# Node is intentionally NOT pinned here — `mise run` uses the ambient Node already
+# present (uncomment `node` below to have mise manage it too).
+[tools]
+gitleaks = "latest"
+# node = "24"
+
+[tasks.lint]
+description = "Lint /cms and /web"
+run = [
+  "npm --prefix cms run lint",
+  "npm --prefix web run lint",
+]
+
+[tasks.typecheck]
+description = "Type-check /cms and /web"
+run = [
+  "npm --prefix cms run typecheck",
+  "npm --prefix web run typecheck",
+]
+
+[tasks.test]
+description = "Run tests in /cms and /web"
+run = [
+  "npm --prefix cms test",
+  "npm --prefix web test",
+]
+
+[tasks.coverage]
+description = "Run tests with coverage + thresholds in /cms and /web"
+run = [
+  "npm --prefix cms run test:coverage",
+  "npm --prefix web run test:coverage",
+]
+
+[tasks.format]
+description = "Auto-format /cms and /web"
+run = [
+  "npm --prefix cms run format",
+  "npm --prefix web run format",
+]
+
+[tasks.format-check]
+description = "Check formatting in /cms and /web (no writes)"
+run = [
+  "npm --prefix cms run format:check",
+  "npm --prefix web run format:check",
+]
+
+[tasks.boundaries]
+description = "Architecture-fitness: ports & adapters boundary rules (dependency-cruiser). HARD FAIL."
+run = "npm run boundaries"
+
+[tasks.secrets]
+description = "Scan git-tracked content for committed secrets (gitleaks). Also runs per-commit via husky."
+run = "mise exec -- gitleaks git --no-banner -c .gitleaks.toml --exit-code 1 ."
+
+[tasks.check]
+description = "Run ALL gates (lint + typecheck + test + boundaries) across both packages. THE command agents run."
+depends = ["lint", "typecheck", "test", "boundaries"]
+
+[tasks.code-review]
+description = "Run LLM code review on staged changes (sgim-n25.9). Advisory only - does not block."
+run = "node scripts/code-review.ts"
+
+# --- Per-package convenience tasks -------------------------------------------
+
+[tasks."check:cms"]
+description = "All gates for /cms only"
+run = [
+  "npm --prefix cms run lint",
+  "npm --prefix cms run typecheck",
+  "npm --prefix cms test",
+]
+
+[tasks."check:web"]
+description = "All gates for /web only"
+run = [
+  "npm --prefix web run lint",
+  "npm --prefix web run typecheck",
+  "npm --prefix web test",
+]
