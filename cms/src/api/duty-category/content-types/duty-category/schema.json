@@ -1,0 +1,15 @@
+{
+  "kind": "collectionType",
+  "info": {
+    "singularName": "duty-category",
+    "pluralName": "duty-categories",
+    "displayName": "Duty Category",
+    "description": "A kind of practical duty (e.g. Kaffe, Rengøring)"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "order": { "type": "integer", "default": 0 }
+  }
+}

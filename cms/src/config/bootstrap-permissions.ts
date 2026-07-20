@@ -17,28 +17,50 @@ const PUBLIC_READ_ACTIONS: Record<string, string[]> = {
   'api::static-page.static-page': ['find', 'findOne'],
 };
 
+// Members-only: the 'authenticated' role reads the duty roster and self-manages
+// via the custom claim/release actions (sgim-pgx.11).
+const MEMBER_ACTIONS: Record<string, string[]> = {
+  'api::duty-category.duty-category': ['find', 'findOne'],
+  'api::duty-assignment.duty-assignment': ['find', 'findOne', 'claim', 'release'],
+};
+
 export async function bootstrapPublicPermissions(strapi: Core.Strapi): Promise<void> {
-  const publicRole = await strapi.db
-    .query('plugin::users-permissions.role')
-    .findOne({ where: { type: 'public' } });
+  const publicRole = await roleByType(strapi, 'public');
   if (!publicRole) {
     strapi.log.warn('Public role not found; skipping public permission bootstrap');
     return;
   }
+  const authRole = await roleByType(strapi, 'authenticated');
 
   let granted = 0;
-  for (const [uid, actions] of Object.entries(PUBLIC_READ_ACTIONS)) {
-    for (const action of actions) {
-      granted += await grant(strapi, `${uid}.${action}`, publicRole.id);
-    }
-  }
+  granted += await grantAll(strapi, PUBLIC_READ_ACTIONS, publicRole.id);
+  if (authRole) granted += await grantAll(strapi, MEMBER_ACTIONS, authRole.id);
+
   strapi.log.info(
     JSON.stringify({
       operation: 'bootstrap-public-permissions',
       granted,
-      message: 'public read permissions ensured',
+      message: 'read + member permissions ensured',
     })
   );
+}
+
+function roleByType(strapi: Core.Strapi, type: string) {
+  return strapi.db.query('plugin::users-permissions.role').findOne({ where: { type } });
+}
+
+async function grantAll(
+  strapi: Core.Strapi,
+  actionsByUid: Record<string, string[]>,
+  roleId: string
+): Promise<number> {
+  let granted = 0;
+  for (const [uid, actions] of Object.entries(actionsByUid)) {
+    for (const action of actions) {
+      granted += await grant(strapi, `${uid}.${action}`, roleId);
+    }
+  }
+  return granted;
 }
 
 /** Ensures one permission exists for the public role; returns 1 if newly created. */

@@ -14,6 +14,7 @@ import type {
 	EventItem,
 	Aktuelt
 } from '$lib/domain/content';
+import type { DutyMeeting } from '$lib/domain/duty';
 
 export interface FakeData {
 	siteSettings?: SiteSettings;
@@ -22,6 +23,7 @@ export interface FakeData {
 	clubs?: Club[];
 	events?: EventItem[];
 	aktuelt?: Aktuelt[];
+	duties?: DutyMeeting[];
 }
 
 export function createInMemoryContentSource(data: FakeData = {}): ContentSource {
@@ -36,6 +38,9 @@ export function createInMemoryContentSource(data: FakeData = {}): ContentSource 
 		getEvent: (id) => found(data.events?.find((e) => e.id === id)),
 		listClubs: () => Promise.resolve(ok(data.clubs ?? [])),
 		getClub: (slug) => found(data.clubs?.find((c) => c.slug === slug)),
-		getActiveAktuelt: () => Promise.resolve(ok(data.aktuelt ?? []))
+		getActiveAktuelt: () => Promise.resolve(ok(data.aktuelt ?? [])),
+		getDutyRoster: () => Promise.resolve(ok(data.duties ?? [])),
+		claimDuty: () => Promise.resolve(ok(undefined)),
+		releaseDuty: () => Promise.resolve(ok(undefined))
 	};
 }

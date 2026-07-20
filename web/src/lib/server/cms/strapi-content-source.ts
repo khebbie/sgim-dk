@@ -3,11 +3,13 @@
  * core, the pure mappers, and the injected Clock. Contains NO framework-visible
  * Strapi types beyond this module — callers get domain types only.
  */
-import { isOk, ok, err } from '$lib/domain/result';
+import { isOk, ok, err, type Result } from '$lib/domain/result';
 import type { Clock } from '$lib/domain/clock';
 import type { ContentSource, ContentResult, ContentError } from '$lib/domain/content-source';
 import type { Aktuelt } from '$lib/domain/content';
 import { upcomingFeed } from '$lib/domain/events';
+import { groupRoster } from '$lib/domain/duty';
+import { mapDutyRows } from './duty-mapper';
 import type { CmsHttp } from './http';
 import { endpoints } from './endpoints';
 import { dataNode } from './envelope';
@@ -55,8 +57,30 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 		},
 		getActiveAktuelt() {
 			return getActiveAktuelt(deps);
+		},
+		async getDutyRoster(token) {
+			const raw = await deps.http.getJson('/api/duty-assignments', token);
+			if (!isOk(raw)) return raw;
+			try {
+				return ok(groupRoster(mapDutyRows(raw.value)));
+			} catch (error) {
+				const detail =
+					error instanceof MappingError ? error.message : 'duty roster mapping failure';
+				return err<ContentError>({ kind: 'mapping', detail });
+			}
+		},
+		async claimDuty(assignmentId, token) {
+			return toVoid(await deps.http.post(`/api/duty-assignments/${assignmentId}/claim`, token));
+		},
+		async releaseDuty(assignmentId, token) {
+			return toVoid(await deps.http.post(`/api/duty-assignments/${assignmentId}/release`, token));
 		}
 	};
+}
+
+/** Discards a successful POST body; passes any transport error through. */
+function toVoid(result: Result<unknown, ContentError>): Result<void, ContentError> {
+	return isOk(result) ? ok(undefined) : result;
 }
 
 /** Single-type Aktuelt: absent (404) or inactive -> []; active -> the one entry. */

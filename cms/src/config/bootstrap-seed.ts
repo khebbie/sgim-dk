@@ -15,9 +15,50 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   await seedCollection(strapi, 'api::event.event', events);
   await seedCollection(strapi, 'api::static-page.static-page', staticPages);
   await seedMember(strapi);
+  await seedDuties(strapi);
   strapi.log.info(
     JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
   );
+}
+
+const DUTY_CATEGORIES = [
+  'Mødeledere',
+  'Kaffetjanser',
+  'Lydmænd',
+  'Bønneteam',
+  'Børnepassere',
+  'Junioraktivister',
+];
+
+/** Seeds duty categories and one open slot per (event, category). */
+async function seedDuties(strapi: Core.Strapi): Promise<void> {
+  const catUid = 'api::duty-category.duty-category';
+  const asgUid = 'api::duty-assignment.duty-assignment';
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const cats = strapi.documents(catUid as any);
+  if ((await cats.count({})) === 0) {
+    for (let i = 0; i < DUTY_CATEGORIES.length; i++) {
+      await cats.create({ data: { name: DUTY_CATEGORIES[i], order: i } as never });
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const assignments = strapi.documents(asgUid as any);
+  if ((await assignments.count({})) > 0) return;
+
+   
+  const events = await strapi
+    .documents('api::event.event' as any)
+    .findMany({ fields: ['documentId'] });
+  const categories = await cats.findMany({ fields: ['documentId'] });
+  for (const event of events) {
+    for (const category of categories) {
+      await assignments.create({
+        data: { event: event.documentId, category: category.documentId, member: null } as never,
+      });
+    }
+  }
 }
 
 /** Seeds a test member (Users & Permissions) so the members-area login works. */

@@ -3,14 +3,32 @@ import { dataNode, dataList, str, optStr, date, optDate } from './envelope';
 import { MappingError } from './errors';
 
 describe('envelope helpers', () => {
-	it('dataNode extracts a single entry', () => {
+	it('dataNode extracts a single entry and merges attributes', () => {
+		expect(dataNode({ data: { id: 1, attributes: { a: 1, b: 'test' } } })).toEqual({
+			id: 1,
+			a: 1,
+			b: 'test'
+		});
+	});
+	it('dataNode handles entry without attributes', () => {
 		expect(dataNode({ data: { a: 1 } })).toEqual({ a: 1 });
 	});
 	it('dataNode throws on missing data', () => {
 		expect(() => dataNode({})).toThrow(MappingError);
 	});
-	it('dataList extracts a collection', () => {
-		expect(dataList({ data: [{ a: 1 }] })).toHaveLength(1);
+	it('dataList extracts a collection and merges attributes for each entry', () => {
+		const result = dataList({
+			data: [
+				{ id: 1, attributes: { a: 1 } },
+				{ id: 2, attributes: { a: 2 } }
+			]
+		});
+		expect(result).toHaveLength(2);
+		expect(result[0]).toEqual({ id: 1, a: 1 });
+		expect(result[1]).toEqual({ id: 2, a: 2 });
+	});
+	it('dataList handles entries without attributes', () => {
+		expect(dataList({ data: [{ a: 1 }, { a: 2 }] })).toHaveLength(2);
 	});
 	it('dataList throws when data is not an array', () => {
 		expect(() => dataList({ data: {} })).toThrow(MappingError);

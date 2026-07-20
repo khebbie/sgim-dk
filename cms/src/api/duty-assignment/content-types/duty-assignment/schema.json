@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "info": {
+    "singularName": "duty-assignment",
+    "pluralName": "duty-assignments",
+    "displayName": "Duty Assignment",
+    "description": "Who does a given duty at a given event (member null = open slot)"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "event": { "type": "relation", "relation": "manyToOne", "target": "api::event.event" },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::duty-category.duty-category"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "note": { "type": "text" }
+  }
+}

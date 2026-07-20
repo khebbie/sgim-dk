@@ -6,6 +6,7 @@
  */
 import type { Result } from './result';
 import type { SiteSettings, NavItem, StaticPage, Club, EventItem, Aktuelt } from './content';
+import type { DutyMeeting } from './duty';
 
 /**
  * Distinct failure modes so callers can react appropriately (constitution:
@@ -32,4 +33,9 @@ export interface ContentSource {
 	listClubs(): ContentResult<Club[]>;
 	getClub(slug: string): ContentResult<Club>;
 	getActiveAktuelt(): ContentResult<Aktuelt[]>;
+
+	// Members-only duty roster (require the member's JWT).
+	getDutyRoster(token: string): ContentResult<DutyMeeting[]>;
+	claimDuty(assignmentId: string, token: string): ContentResult<void>;
+	releaseDuty(assignmentId: string, token: string): ContentResult<void>;
 }

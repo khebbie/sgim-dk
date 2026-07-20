@@ -12,7 +12,10 @@ function sourceFrom(
 	handler: (path: string) => Result<unknown, ContentError>,
 	clock: Clock = fixedClock
 ) {
-	const http: CmsHttp = { getJson: (path) => Promise.resolve(handler(path)) };
+	const http: CmsHttp = {
+		getJson: (path) => Promise.resolve(handler(path)),
+		post: (path) => Promise.resolve(handler(path))
+	};
 	return createStrapiContentSource({ http, clock });
 }
 

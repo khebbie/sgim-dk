@@ -93,3 +93,17 @@ run = [
   "npm --prefix web run typecheck",
   "npm --prefix web test",
 ]
+
+# --- Start/Dev tasks ------------------------------------------------------------
+
+[tasks."start:cms"]
+description = "Start CMS (Strapi) in development mode"
+run = "npm --prefix cms run dev"
+
+[tasks."start:web"]
+description = "Start website (SvelteKit) in development mode"
+run = "npm --prefix web run dev"
+
+[tasks.start]
+description = "Start both CMS and website in development mode (runs in parallel)"
+run = "concurrently \"npm --prefix cms run dev\" \"npm --prefix web run dev\""
