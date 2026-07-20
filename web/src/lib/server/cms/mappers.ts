@@ -79,7 +79,7 @@ export function mapStaticPage(node: Node): StaticPage {
 	return {
 		title: str(node, 'title'),
 		slug: str(node, 'slug'),
-		bodyHtml: optStr(node, 'content') ?? '',
+		bodyHtml: markdownToHtml(optStr(node, 'content') ?? ''),
 		heroImageUrl: mediaUrl(node.featuredImage),
 		seoDescription: optStr(node, 'metaDescription')
 	};

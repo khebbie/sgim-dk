@@ -12,7 +12,6 @@ export function markdownToHtml(markdown: string): string {
 	if (typeof markdown !== 'string' || markdown.length === 0) {
 		return '';
 	}
-	// marked v14+ returns a promise for async operations, but parse is sync
-	// The result is already a string
-	return marked.parse(markdown) as string;
+	// marked v14+: use marked() with async: false for synchronous parsing
+	return marked(markdown, { async: false });
 }
