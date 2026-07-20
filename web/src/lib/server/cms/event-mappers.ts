@@ -4,6 +4,7 @@
  */
 import type { EventItem } from '$lib/domain/content';
 import { type Node, str, optStr } from './envelope';
+import { markdownToHtml } from '../markdown-to-html';
 
 /** Combines a Strapi `date` (YYYY-MM-DD) and optional `time` (HH:mm:ss) into a Date. */
 function combine(dateStr: string, timeStr?: string): Date {
@@ -14,7 +15,7 @@ export function mapEvent(node: Node): EventItem {
 	const id = str(node, 'documentId');
 	const slug = str(node, 'slug');
 	const title = str(node, 'title');
-	const descriptionHtml = optStr(node, 'description') ?? '';
+	const descriptionHtml = markdownToHtml(optStr(node, 'description') ?? '');
 	const location = optStr(node, 'location');
 	const startDate = str(node, 'startDate');
 

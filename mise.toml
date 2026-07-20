@@ -107,3 +107,18 @@ run = "npm --prefix web run dev"
 [tasks.start]
 description = "Start both CMS and website in development mode (runs in parallel)"
 run = "concurrently \"npm --prefix cms run dev\" \"npm --prefix web run dev\""
+
+[tasks.install]
+description = "Install dependencies for both packages"
+run = [
+  "npm --prefix cms install",
+  "npm --prefix web install",
+]
+
+[tasks."install:web"]
+description = "Install dependencies for website only"
+run = "npm --prefix web install"
+
+[tasks."install:cms"]
+description = "Install dependencies for CMS only"
+run = "npm --prefix cms install"

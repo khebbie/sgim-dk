@@ -17,6 +17,9 @@ This project uses **bd** (beads) for issue tracking. Run `bd prime` for full wor
 
 **ALWAYS use `mise` for package management** — do NOT use `npm` or `pnpm` directly.
 
+- `mise run install` — Install dependencies for both packages
+- `mise run install:web` — Install dependencies for website only
+- `mise run install:cms` — Install dependencies for CMS only
 - `mise run check:web` — Run lint, typecheck, and tests for the website
 - `mise run check:cms` — Run lint, typecheck, and tests for the CMS
 - `mise run check` — Run all checks

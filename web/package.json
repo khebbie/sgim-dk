@@ -23,6 +23,7 @@
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@types/marked": "^5.0.0",
 		"@types/node": "^24",
 		"@types/sanitize-html": "^2.16.1",
 		"@vitest/coverage-v8": "^4.1.10",
@@ -42,6 +43,7 @@
 	},
 	"dependencies": {
 		"cockatiel": "^4.0.0",
+		"marked": "^14.1.2",
 		"sanitize-html": "^2.17.6"
 	}
 }

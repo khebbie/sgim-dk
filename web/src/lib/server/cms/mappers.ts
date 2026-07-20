@@ -4,6 +4,7 @@
  */
 import type { SiteSettings, NavItem, StaticPage, Club, Aktuelt } from '$lib/domain/content';
 import { type Node, str, optStr } from './envelope';
+import { markdownToHtml } from '../markdown-to-html';
 
 /** Extracts a Strapi media URL (relative to the CMS) if the field is populated. */
 export function mediaUrl(value: unknown): string | undefined {
@@ -20,7 +21,7 @@ export function mapSiteSettings(node: Node): SiteSettings {
 		address: optStr(node, 'address'),
 		instagramUrl: optStr(node, 'instagramUrl'),
 		facebookUrl: optStr(node, 'facebookUrl'),
-		footerHtml: optStr(node, 'footerText'),
+		footerHtml: markdownToHtml(optStr(node, 'footerText') ?? ''),
 		copyrightText: optStr(node, 'copyrightText'),
 		logoUrl: mediaUrl(node.logo)
 	};
@@ -36,7 +37,7 @@ export function mapNavItem(node: Node): NavItem {
 export function mapAktuelt(node: Node): Aktuelt {
 	return {
 		title: str(node, 'title'),
-		bodyHtml: optStr(node, 'content') ?? '',
+		bodyHtml: markdownToHtml(optStr(node, 'content') ?? ''),
 		imageUrl: mediaUrl(node.image),
 		ctaLabel: optStr(node, 'ctaText'),
 		ctaUrl: optStr(node, 'ctaUrl')
@@ -47,7 +48,7 @@ export function mapClub(node: Node): Club {
 	return {
 		name: str(node, 'name'),
 		slug: str(node, 'slug'),
-		descriptionHtml: optStr(node, 'description') ?? '',
+		descriptionHtml: markdownToHtml(optStr(node, 'description') ?? ''),
 		ageGroup: optStr(node, 'targetAudience'),
 		meetingSchedule: meetingSchedule(node),
 		contactPersonName: optStr(node, 'contactPerson'),
