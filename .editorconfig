@@ -1,0 +1,22 @@
+# Shared editor baseline for the whole repo.
+# Per-package formatters (prettier) own the finer details; this keeps raw
+# editing consistent before/around them.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# /web (SvelteKit) is idiomatically tab-indented.
+[web/**]
+indent_style = tab
+
+# /cms (Strapi) generated code is 2-space indented.
+[cms/**]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false

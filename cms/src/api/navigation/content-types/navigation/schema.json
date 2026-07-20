@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Navigation",
+    "description": "Navigation menu configuration"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Navigation menu title"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "description": "Unique identifier for the menu"
+    },
+    "isPrimary": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is this the primary navigation menu"
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": ["header", "footer", "sidebar", "mobile"],
+      "default": "header",
+      "description": "Where this navigation appears"
+    }
+  }
+}

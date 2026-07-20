@@ -1,0 +1,27 @@
+# Local development database only. Production deployment is out of scope
+# for this project (see constitution.md / AGENTS.md).
+#
+# Usage:
+#   docker compose up -d
+#
+# Credentials here match the defaults in .env.example / .env.
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:-sgim}
+      POSTGRES_USER: ${DATABASE_USERNAME:-strapi}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-strapi}
+    ports:
+      - '${DATABASE_PORT:-5432}:5432'
+    volumes:
+      - cms_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DATABASE_USERNAME:-strapi} -d ${DATABASE_NAME:-sgim}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  cms_postgres_data:

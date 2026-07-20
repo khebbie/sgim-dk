@@ -1,0 +1,16 @@
+{
+  "name": "sgim-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root dev-tooling host for the sgim.dk monorepo. Hosts husky + lint-staged only; does NOT hoist /cms or /web installs (no \"workspaces\").",
+  "scripts": {
+    "prepare": "husky",
+    "boundaries": "depcruise --config .dependency-cruiser.cjs cms/src web/src"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^18.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.1.0",
+    "typescript": "^6.0.3"
+  }
+}

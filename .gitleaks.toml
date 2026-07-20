@@ -1,0 +1,27 @@
+title = "sgim.dk gitleaks config"
+
+# Extend gitleaks' built-in default rule set (the same rules used when no
+# config is given at all) rather than redefining detectors from scratch.
+# https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml
+[extend]
+useDefault = true
+
+# Global allowlist: paths that legitimately contain secret-shaped strings we
+# don't want flagged, or that are build output / vendored content we never
+# want scanned in the first place.
+#
+# Notably: /cms/.env holds Strapi's auto-generated DEV-only secrets. It is
+# gitignored (never committed, never staged) and must never trip the scanner
+# even when someone runs a directory/working-tree scan locally.
+[allowlist]
+description = "sgim.dk: dev-only env files, lockfiles, vendored/build output"
+paths = [
+  '''(^|/)\.env$''',
+  '''(^|/)\.env\.[^/]+$''',
+  '''(^|/)node_modules/''',
+  '''(^|/)package-lock\.json$''',
+  '''(^|/)\.svelte-kit/''',
+  '''(^|/)build/''',
+  '''(^|/)dist/''',
+  '''(^|/)\.strapi/''',
+]

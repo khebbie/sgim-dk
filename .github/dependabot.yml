@@ -1,0 +1,67 @@
+version: 2
+
+# Dependency scanning (sgim-n25.8): weekly Dependabot version updates for the
+# three independently-installed npm trees in this monorepo (see AGENTS.md —
+# root, /cms, and /web each install separately; there is no npm workspace).
+# This file is declarative config only — it opens PRs once GitHub Actions is
+# enabled for this repo, and is harmless while CI is still deferred
+# (sgim-n25.7). Actual `npm audit` / vulnerable-dependency CI reporting is
+# wired up as part of that CI task, not here.
+updates:
+  # Root: husky + lint-staged + dependency-cruiser tooling only.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "root"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # CMS: Strapi v5 + PostgreSQL adapter deps.
+  - package-ecosystem: "npm"
+    directory: "/cms"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "cms"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # Website: SvelteKit app.
+  - package-ecosystem: "npm"
+    directory: "/web"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+      - "web"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # GitHub Actions themselves, once workflows exist (sgim-n25.7). Harmless
+  # no-op today since there are no workflow files under .github/workflows yet.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "ci"

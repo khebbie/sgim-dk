@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site Settings",
+    "description": "Global site configuration - singleton"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "required": true,
+      "default": "Stjær Galten Indre Mission",
+      "description": "The name of the website"
+    },
+    "siteDescription": {
+      "type": "text",
+      "description": "Meta description for the site"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "description": "Site logo"
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "description": "Favicon for the site"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "type": "email",
+      "description": "Contact email address"
+    },
+    "address": {
+      "type": "text",
+      "description": "Physical address"
+    },
+    "facebookUrl": {
+      "type": "string",
+      "description": "Facebook URL"
+    },
+    "instagramUrl": {
+      "type": "string",
+      "description": "Instagram URL"
+    },
+    "footerText": {
+      "type": "richtext",
+      "description": "Footer text/html"
+    },
+    "copyrightText": {
+      "type": "string",
+      "default": "© {year} Stjær Galten Indre Mission",
+      "description": "Copyright text (supports {year} placeholder)"
+    }
+  }
+}

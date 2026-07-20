@@ -1,4 +1,8 @@
 
+# Root dev-tooling deps (husky + lint-staged, sgim-n25.6). /cms and /web have
+# their own node_modules ignored by their own .gitignore.
+/node_modules/
+
 # Beads / Dolt files (added by bd init)
 .dolt/
 *.db

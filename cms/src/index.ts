@@ -2,6 +2,7 @@ import type { Core } from '@strapi/strapi';
 import { bootstrapAdmin } from './config/bootstrap-admin';
 import { configureMemberAuth } from './config/member-auth';
 import { bootstrapPublicPermissions } from './config/bootstrap-permissions';
+import { bootstrapSeed } from './config/bootstrap-seed';
 
 export default {
   /**
@@ -30,5 +31,8 @@ export default {
 
     // Bootstrap public read permissions for the website (sgim-pgx.15). Idempotent.
     await bootstrapPublicPermissions(strapi);
+
+    // Seed sample content when BOOTSTRAP_SEED=true (dev only). Idempotent.
+    await bootstrapSeed(strapi);
   },
 };

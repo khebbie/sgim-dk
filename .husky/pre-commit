@@ -1,0 +1,17 @@
+
+# Secret scanning (sgim-n25.8): block the commit if gitleaks finds a secret
+# in STAGED content. Scoped to `--staged` (not the whole working tree) so
+# this stays fast and so gitignored dev files (e.g. /cms/.env) — which can
+# never be staged — are never in scope to begin with. Uses `mise exec --`
+# rather than a bare `gitleaks` call because the tool is mise-managed and
+# may not be on PATH in every shell (e.g. GUI git clients).
+mise exec -- gitleaks git --staged --no-banner -c .gitleaks.toml --exit-code 1 .
+
+# Fast pre-commit gate: prettier --write + eslint --fix on STAGED files only,
+# scoped per package (see /lint-staged.config.mjs). Whole-project typecheck and
+# the full test suite run in `mise run check` / CI, not here — this hook must
+# stay fast.
+#
+# Bypass (discouraged): `git commit --no-verify` skips this hook entirely.
+# Reach for it only when you know CI will still catch the issue.
+npx lint-staged
