@@ -1,0 +1,126 @@
+{
+  "contentTypeName": "club",
+  "singularName": "club",
+  "pluralName": "clubs",
+  "displayName": "Club",
+  "description": "Clubs/interest groups within the organization",
+  "kind": "collectionType",
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Club name"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "description": "URL-friendly slug"
+    },
+    "description": {
+      "type": "richtext",
+      "description": "Club description"
+    },
+    "shortDescription": {
+      "type": "text",
+      "description": "Short summary"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "description": "Club logo"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "description": "Cover/background image"
+    },
+    "targetAudience": {
+      "type": "string",
+      "description": "Target audience (e.g., children, youth, adults)"
+    },
+    "meetingDay": {
+      "type": "enumeration",
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "various"
+      ],
+      "description": "Regular meeting day"
+    },
+    "meetingTime": {
+      "type": "string",
+      "description": "Regular meeting time (e.g., 18:00-20:00)"
+    },
+    "meetingFrequency": {
+      "type": "enumeration",
+      "enum": ["weekly", "biweekly", "monthly", "irregular"],
+      "default": "weekly",
+      "description": "How often the club meets"
+    },
+    "location": {
+      "type": "string",
+      "description": "Regular meeting location"
+    },
+    "contactPerson": {
+      "type": "string",
+      "description": "Name of contact person"
+    },
+    "contactEmail": {
+      "type": "email",
+      "description": "Contact email"
+    },
+    "contactPhone": {
+      "type": "string",
+      "description": "Contact phone"
+    },
+    "websiteUrl": {
+      "type": "string",
+      "description": "Club website URL"
+    },
+    "facebookUrl": {
+      "type": "string",
+      "description": "Facebook page URL"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "description": "Is this club currently active"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "mappedBy": "category",
+      "target": "api::event.event",
+      "description": "Events organized by this club"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    },
+    "createdAt": {
+      "type": "datetime",
+      "default": null
+    },
+    "updatedAt": {
+      "type": "datetime",
+      "default": null
+    },
+    "createdBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "invertedBy": "createdClubs"
+    },
+    "updatedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "invertedBy": "updatedClubs"
+    }
+  }
+}

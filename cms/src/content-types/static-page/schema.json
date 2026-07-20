@@ -1,0 +1,93 @@
+{
+  "contentTypeName": "static-page",
+  "singularName": "static-page",
+  "pluralName": "static-pages",
+  "displayName": "Static Page",
+  "description": "Static content pages",
+  "kind": "collectionType",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Page title"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "description": "URL-friendly slug"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "description": "Page content"
+    },
+    "excerpt": {
+      "type": "text",
+      "description": "Short description/teaser"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "description": "Featured image for the page"
+    },
+    "metaTitle": {
+      "type": "string",
+      "description": "SEO meta title"
+    },
+    "metaDescription": {
+      "type": "text",
+      "description": "SEO meta description"
+    },
+    "showInNavigation": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show this page in navigation menus"
+    },
+    "navigationOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Order in navigation (lower = earlier)"
+    },
+    "isHomepage": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is this the homepage"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::static-page.static-page",
+      "invertedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "mappedBy": "parent",
+      "target": "api::static-page.static-page"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    },
+    "createdAt": {
+      "type": "datetime",
+      "default": null
+    },
+    "updatedAt": {
+      "type": "datetime",
+      "default": null
+    },
+    "createdBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "invertedBy": "createdStaticPages"
+    },
+    "updatedBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "invertedBy": "updatedStaticPages"
+    }
+  }
+}
