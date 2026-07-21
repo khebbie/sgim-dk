@@ -2,12 +2,18 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { isOk } from '$lib/domain/result';
 import { contentSource } from '$lib/server/content';
+import { summarizeYearlyDuties } from '$lib/domain/duty';
 
 export const load: PageServerLoad = async ({ fetch, cookies }) => {
 	const token = cookies.get('session');
-	if (!token) return { roster: [] };
+	if (!token) return { roster: [], yearlyDuties: [] };
 	const result = await contentSource(fetch).getDutyRoster(token);
-	return { roster: isOk(result) ? result.value : [] };
+	const roster = isOk(result) ? result.value : [];
+	const currentYear = new Date().getFullYear();
+	return {
+		roster,
+		yearlyDuties: summarizeYearlyDuties(roster, currentYear)
+	};
 };
 
 const isConflict = (error: { kind: string; status?: number }) =>

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { groupRoster, type DutyAssignmentRow } from './duty';
+import { groupRoster, summarizeYearlyDuties, type DutyAssignmentRow } from './duty';
 
 const row = (over: Partial<DutyAssignmentRow>): DutyAssignmentRow => ({
 	id: '1',
@@ -35,5 +35,43 @@ describe('groupRoster', () => {
 		]);
 		expect(roster[0].slots[0].memberName).toBe('medlem');
 		expect(roster[0].slots[1].memberName).toBeUndefined();
+	});
+
+	it('summarises completed duties per member for a given year', () => {
+		const roster = groupRoster([
+			row({
+				id: '1',
+				eventSlug: 'e1',
+				eventTitle: 'E1',
+				start: new Date('2026-01-10'),
+				memberName: 'Anna'
+			}),
+			row({
+				id: '2',
+				eventSlug: 'e2',
+				eventTitle: 'E2',
+				start: new Date('2026-02-10'),
+				memberName: 'Anna'
+			}),
+			row({
+				id: '3',
+				eventSlug: 'e3',
+				eventTitle: 'E3',
+				start: new Date('2025-12-10'),
+				memberName: 'Anna'
+			}),
+			row({
+				id: '4',
+				eventSlug: 'e4',
+				eventTitle: 'E4',
+				start: new Date('2026-03-10'),
+				memberName: 'Bo'
+			})
+		]);
+
+		expect(summarizeYearlyDuties(roster, 2026)).toEqual([
+			{ memberName: 'Anna', completedDuties: 2 },
+			{ memberName: 'Bo', completedDuties: 1 }
+		]);
 	});
 });

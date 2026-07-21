@@ -29,6 +29,11 @@ export interface DutyMeeting {
 	slots: DutySlot[];
 }
 
+export interface MemberDutySummary {
+	memberName: string;
+	completedDuties: number;
+}
+
 /** Groups flat assignments into per-meeting rosters (meetings by date, slots by category order). */
 export function groupRoster(rows: DutyAssignmentRow[]): DutyMeeting[] {
 	const byEvent = new Map<string, { meeting: DutyMeeting; rows: DutyAssignmentRow[] }>();
@@ -55,4 +60,20 @@ export function groupRoster(rows: DutyAssignmentRow[]): DutyMeeting[] {
 				.sort((a, b) => a.categoryOrder - b.categoryOrder)
 				.map((r) => ({ id: r.id, categoryName: r.categoryName, memberName: r.memberName }))
 		}));
+}
+
+export function summarizeYearlyDuties(meetings: DutyMeeting[], year: number): MemberDutySummary[] {
+	const counts = new Map<string, number>();
+
+	for (const meeting of meetings) {
+		if (meeting.start.getFullYear() !== year) continue;
+		for (const slot of meeting.slots) {
+			if (!slot.memberName) continue;
+			counts.set(slot.memberName, (counts.get(slot.memberName) ?? 0) + 1);
+		}
+	}
+
+	return [...counts.entries()]
+		.sort((a, b) => a[0].localeCompare(b[0], 'da'))
+		.map(([memberName, completedDuties]) => ({ memberName, completedDuties }));
 }
