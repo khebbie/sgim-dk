@@ -12,6 +12,14 @@ export const init: ServerInit = () => {
 // Populate the current member from the session cookie (if any) so loads/actions
 // can read event.locals.member and protect the members-only area.
 export const handle: Handle = async ({ event, resolve }) => {
+	// Permanent redirect for legacy /home.aspx URL (sgim-x60.16)
+	if (event.url.pathname === '/home.aspx') {
+		return new Response(null, {
+			status: 301,
+			headers: { location: '/' }
+		});
+	}
+
 	const jwt = event.cookies.get('session');
 	if (jwt) {
 		const member = await fetchMember(event.fetch, jwt);
