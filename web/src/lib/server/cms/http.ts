@@ -13,8 +13,8 @@ export type FetchFn = (url: string, init?: RequestInit) => Promise<Response>;
 
 export interface CmsHttp {
 	getJson(path: string, token?: string): Promise<Result<unknown, ContentError>>;
-	/** POST with no body (used for the duty claim/release actions). */
-	post(path: string, token?: string): Promise<Result<unknown, ContentError>>;
+	/** POST, optionally with a JSON body (used for the duty claim/release actions). */
+	post(path: string, token?: string, body?: unknown): Promise<Result<unknown, ContentError>>;
 }
 
 export interface CmsHttpDeps {
@@ -26,17 +26,20 @@ export interface CmsHttpDeps {
 export function createCmsHttp(deps: CmsHttpDeps): CmsHttp {
 	return {
 		getJson: (path, token) => getJson(deps, path, token),
-		post: (path, token) => post(deps, path, token)
+		post: (path, token, body) => post(deps, path, token, body)
 	};
 }
 
 async function post(
 	deps: CmsHttpDeps,
 	path: string,
-	token?: string
+	token?: string,
+	body?: unknown
 ): Promise<Result<unknown, ContentError>> {
 	try {
-		const data = await deps.policy.execute(({ signal }) => sendPost(deps, path, signal, token));
+		const data = await deps.policy.execute(({ signal }) =>
+			sendPost(deps, path, signal, token, body)
+		);
 		return ok(data);
 	} catch (error) {
 		return err(classifyError(error));
@@ -47,12 +50,16 @@ async function sendPost(
 	deps: CmsHttpDeps,
 	path: string,
 	signal: AbortSignal,
-	token?: string
+	token?: string,
+	body?: unknown
 ): Promise<unknown> {
+	const headers = authHeaders(token);
+	if (body !== undefined) headers['Content-Type'] = 'application/json';
 	const response = await deps.fetch(deps.baseUrl + path, {
 		method: 'POST',
 		signal,
-		headers: authHeaders(token)
+		headers,
+		body: body !== undefined ? JSON.stringify(body) : undefined
 	});
 	if (!response.ok) throw httpErrorForStatus(response.status);
 	return response.status === 204 ? null : response.json();

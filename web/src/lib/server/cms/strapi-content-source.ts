@@ -9,8 +9,7 @@ import type { ContentSource, ContentResult, ContentError } from '$lib/domain/con
 import type { Aktuelt } from '$lib/domain/content';
 import { upcomingFeed } from '$lib/domain/events';
 import { yearsDescending } from '$lib/domain/calendar';
-import { groupRoster } from '$lib/domain/duty';
-import { mapDutyRows } from './duty-mapper';
+import { mapDutyRows, mapDutyCategory } from './duty-mapper';
 import type { CmsHttp } from './http';
 import { endpoints } from './endpoints';
 import { dataNode, dataList } from './envelope';
@@ -89,22 +88,29 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 			}
 			return ok(all);
 		},
+		async getDutyCategories() {
+			return mapMany(await get(endpoints.dutyCategories), mapDutyCategory);
+		},
 		async getDutyRoster(token) {
-			const raw = await deps.http.getJson('/api/duty-assignments', token);
+			const raw = await deps.http.getJson(endpoints.dutyAssignments, token);
 			if (!isOk(raw)) return raw;
 			try {
-				return ok(groupRoster(mapDutyRows(raw.value)));
+				return ok(mapDutyRows(raw.value));
 			} catch (error) {
 				const detail =
 					error instanceof MappingError ? error.message : 'duty roster mapping failure';
 				return err<ContentError>({ kind: 'mapping', detail });
 			}
 		},
-		async claimDuty(assignmentId, token) {
-			return toVoid(await deps.http.post(`/api/duty-assignments/${assignmentId}/claim`, token));
+		async claimDuty(eventId, categoryId, assignee, token) {
+			return toVoid(
+				await deps.http.post(endpoints.dutyClaim, token, {
+					data: { event: eventId, category: categoryId, assignee }
+				})
+			);
 		},
 		async releaseDuty(assignmentId, token) {
-			return toVoid(await deps.http.post(`/api/duty-assignments/${assignmentId}/release`, token));
+			return toVoid(await deps.http.post(endpoints.dutyRelease(assignmentId), token));
 		}
 	};
 }

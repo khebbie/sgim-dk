@@ -7,7 +7,7 @@
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { Core } from '@strapi/strapi';
-import { seedDuties, seedSingle, seedStaticPages } from './bootstrap-seed';
+import { ensureDutyCategories, seedSingle, seedStaticPages } from './bootstrap-seed';
 
 type MockDocuments = {
   findFirst: ReturnType<typeof vi.fn>;
@@ -85,39 +85,25 @@ describe('bootstrap-seed', () => {
     });
   });
 
-  it('creates duty assignments for newly added events when some already exist', async () => {
-    const events = [{ documentId: 'event-1' }, { documentId: 'event-2' }];
-    const categories = [{ documentId: 'cat-1' }];
-    const existingAssignments = [
-      { event: { documentId: 'event-1' }, category: { documentId: 'cat-1' } },
-    ];
+  // Duties are derived per event in the UI; only the categories are ensured
+  // (idempotently). No per-event assignment rows are seeded.
+  describe('ensureDutyCategories', () => {
+    it('creates the categories when none exist', async () => {
+      const catDocs = { count: vi.fn().mockResolvedValue(0), create: vi.fn() };
+      mockStrapi.documents = vi.fn(() => catDocs) as unknown as Core.Strapi['documents'];
 
-    const eventDocs = { findMany: vi.fn().mockResolvedValue(events), create: vi.fn() };
-    const categoryDocs = {
-      count: vi.fn().mockResolvedValue(1),
-      findMany: vi.fn().mockResolvedValue(categories),
-    };
-    const assignmentDocs = {
-      count: vi.fn().mockResolvedValue(1),
-      findMany: vi.fn().mockResolvedValue(existingAssignments),
-      create: vi.fn().mockResolvedValue(undefined),
-    };
+      await ensureDutyCategories(mockStrapi);
 
-    mockStrapi.documents = vi.fn((uid: string) => {
-      switch (uid) {
-        case 'api::duty-category.duty-category':
-          return categoryDocs;
-        case 'api::duty-assignment.duty-assignment':
-          return assignmentDocs;
-        default:
-          return eventDocs;
-      }
-    }) as Core.Strapi['documents'];
+      expect(catDocs.create).toHaveBeenCalled();
+    });
 
-    await seedDuties(mockStrapi);
+    it('does nothing when categories already exist', async () => {
+      const catDocs = { count: vi.fn().mockResolvedValue(6), create: vi.fn() };
+      mockStrapi.documents = vi.fn(() => catDocs) as unknown as Core.Strapi['documents'];
 
-    expect(assignmentDocs.create).toHaveBeenCalledWith({
-      data: { event: 'event-2', category: 'cat-1', member: null },
+      await ensureDutyCategories(mockStrapi);
+
+      expect(catDocs.create).not.toHaveBeenCalled();
     });
   });
 });

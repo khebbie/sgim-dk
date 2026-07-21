@@ -1,111 +1,78 @@
 import { describe, it, expect } from 'vitest';
 import {
-	buildRosterFromMeetings,
-	groupRoster,
+	buildDutyGrid,
 	summarizeYearlyDuties,
-	type DutyAssignmentRow
+	type DutyAssignmentRow,
+	type DutyCategory,
+	type DutyEvent
 } from './duty';
 
-const row = (over: Partial<DutyAssignmentRow>): DutyAssignmentRow => ({
-	id: '1',
+const categories: DutyCategory[] = [
+	{ id: 'cat-coffee', name: 'Kaffe', order: 1 },
+	{ id: 'cat-lead', name: 'Mødeleder', order: 0 }
+];
+
+const event = (over: Partial<DutyEvent>): DutyEvent => ({
+	eventId: 'ev1',
 	eventSlug: 'e1',
 	eventTitle: 'E1',
 	start: new Date('2026-08-14'),
-	categoryName: 'Kaffe',
-	categoryOrder: 1,
+	kind: 'single',
 	...over
 });
 
-describe('groupRoster', () => {
-	it('groups by meeting, sorts meetings by date and slots by category order', () => {
-		const roster = groupRoster([
-			row({
-				id: 'a',
-				eventSlug: 'e2',
-				eventTitle: 'Later',
-				start: new Date('2026-09-01'),
-				categoryOrder: 0
-			}),
-			row({ id: 'b', eventSlug: 'e1', categoryName: 'B', categoryOrder: 2 }),
-			row({ id: 'c', eventSlug: 'e1', categoryName: 'A', categoryOrder: 1 })
-		]);
-		expect(roster.map((m) => m.eventSlug)).toEqual(['e1', 'e2']);
-		expect(roster[0].slots.map((s) => s.categoryName)).toEqual(['A', 'B']);
+const assignment = (over: Partial<DutyAssignmentRow>): DutyAssignmentRow => ({
+	id: 'a1',
+	eventSlug: 'e1',
+	categoryId: 'cat-coffee',
+	assignee: 'Anna',
+	start: new Date('2026-08-14'),
+	...over
+});
+
+describe('buildDutyGrid', () => {
+	it('gives every single-day event a slot per category, sorted by category order', () => {
+		const grid = buildDutyGrid([event({})], categories, []);
+		expect(grid).toHaveLength(1);
+		expect(grid[0].slots.map((s) => s.categoryName)).toEqual(['Mødeleder', 'Kaffe']);
+		expect(grid[0].slots.every((s) => s.assignee === undefined)).toBe(true);
 	});
 
-	it('distinguishes assigned from open slots', () => {
-		const roster = groupRoster([
-			row({ id: '1', categoryOrder: 1, memberName: 'medlem' }),
-			row({ id: '2', categoryName: 'Rengøring', categoryOrder: 2 })
-		]);
-		expect(roster[0].slots[0].memberName).toBe('medlem');
-		expect(roster[0].slots[1].memberName).toBeUndefined();
+	it('overlays an assignment onto its slot', () => {
+		const grid = buildDutyGrid([event({})], categories, [assignment({ id: 'x' })]);
+		const coffee = grid[0].slots.find((s) => s.categoryId === 'cat-coffee');
+		expect(coffee?.assignee).toBe('Anna');
+		expect(coffee?.assignmentId).toBe('x');
 	});
 
-	it('summarises completed duties per member for a given year', () => {
-		const roster = groupRoster([
-			row({
-				id: '1',
-				eventSlug: 'e1',
-				eventTitle: 'E1',
-				start: new Date('2026-01-10'),
-				memberName: 'Anna'
-			}),
-			row({
-				id: '2',
-				eventSlug: 'e2',
-				eventTitle: 'E2',
-				start: new Date('2026-02-10'),
-				memberName: 'Anna'
-			}),
-			row({
-				id: '3',
-				eventSlug: 'e3',
-				eventTitle: 'E3',
-				start: new Date('2025-12-10'),
-				memberName: 'Anna'
-			}),
-			row({
-				id: '4',
-				eventSlug: 'e4',
-				eventTitle: 'E4',
-				start: new Date('2026-03-10'),
-				memberName: 'Bo'
-			})
-		]);
-
-		expect(summarizeYearlyDuties(roster, 2026)).toEqual([
-			{ memberName: 'Anna', completedDuties: 2 },
-			{ memberName: 'Bo', completedDuties: 1 }
-		]);
+	it('excludes multi-day events', () => {
+		expect(buildDutyGrid([event({ kind: 'multiday' })], categories, [])).toEqual([]);
 	});
 
-	it('only includes single-day events that have duty rows', () => {
-		const roster = buildRosterFromMeetings(
+	it('sorts events by start date', () => {
+		const grid = buildDutyGrid(
 			[
-				{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), kind: 'single' },
-				{ eventSlug: 'e2', eventTitle: 'E2', start: new Date('2026-02-10'), kind: 'single' },
-				{ eventSlug: 'e3', eventTitle: 'E3', start: new Date('2026-03-10'), kind: 'multiday' }
+				event({ eventSlug: 'late', start: new Date('2026-09-01') }),
+				event({ eventSlug: 'early', start: new Date('2026-08-01') })
 			],
-			[{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), slots: [] }]
+			categories,
+			[]
 		);
-
-		expect(roster.map((meeting) => meeting.eventSlug)).toEqual([]);
+		expect(grid.map((m) => m.eventSlug)).toEqual(['early', 'late']);
 	});
+});
 
-	it('includes roster meetings even when the event feed omits them', () => {
-		const roster = buildRosterFromMeetings(
-			[{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), kind: 'single' }],
-			[
-				{
-					eventSlug: 'e2',
-					eventTitle: 'E2',
-					start: new Date('2026-02-10'),
-					slots: [{ id: 's1', categoryName: 'Kaffe', memberName: 'Anna' }]
-				}
-			]
-		);
-
-		expect(roster.map((meeting) => meeting.eventSlug)).toEqual(['e2']);
+describe('summarizeYearlyDuties', () => {
+	it('counts assignments per assignee for the year (incl. past), alphabetical', () => {
+		const rows = [
+			assignment({ id: '1', assignee: 'Anna', start: new Date('2026-01-10') }),
+			assignment({ id: '2', assignee: 'Anna', start: new Date('2026-02-10') }),
+			assignment({ id: '3', assignee: 'Anna', start: new Date('2025-12-10') }), // other year
+			assignment({ id: '4', assignee: 'Bo', start: new Date('2026-03-10') })
+		];
+		expect(summarizeYearlyDuties(rows, 2026)).toEqual([
+			{ assignee: 'Anna', count: 2 },
+			{ assignee: 'Bo', count: 1 }
+		]);
 	});
 });

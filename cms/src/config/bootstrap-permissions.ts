@@ -15,12 +15,14 @@ const PUBLIC_READ_ACTIONS: Record<string, string[]> = {
   'api::club.club': ['find', 'findOne'],
   'api::navigation.navigation': ['find', 'findOne'],
   'api::static-page.static-page': ['find', 'findOne'],
+  // Duty categories are reference data the website reads anonymously to derive
+  // the duty grid (the actual assignments stay members-only, below).
+  'api::duty-category.duty-category': ['find', 'findOne'],
 };
 
-// Members-only: the 'authenticated' role reads the duty roster and self-manages
-// via the custom claim/release actions (sgim-pgx.11).
+// Members-only: the 'authenticated' role reads the duty assignments and manages
+// them via the custom claim/release actions (sgim-3ya.5).
 const MEMBER_ACTIONS: Record<string, string[]> = {
-  'api::duty-category.duty-category': ['find', 'findOne'],
   'api::duty-assignment.duty-assignment': ['find', 'findOne', 'claim', 'release'],
 };
 

@@ -22,6 +22,10 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
     overwrite: process.env.BOOTSTRAP_SEED === 'true',
   });
 
+  // Duty categories are reference data the website needs to derive duty slots
+  // per event — ensure them always (production too), idempotently.
+  await ensureDutyCategories(strapi);
+
   // Dev sample content — only when explicitly enabled.
   if (process.env.BOOTSTRAP_SEED === 'true') {
     await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
@@ -30,7 +34,6 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
     await seedCollection(strapi, 'api::event.event', events);
     await seedStaticPages(strapi, staticPages);
     await seedMember(strapi);
-    await seedDuties(strapi);
     strapi.log.info(
       JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
     );
@@ -87,7 +90,6 @@ async function importEventsFromFile(strapi: Core.Strapi): Promise<void> {
     await events.create({ data: toEvent(row) as never });
     created += 1;
   }
-  await seedDuties(strapi);
   strapi.log.info(JSON.stringify({ operation: 'import-events', created, total: rows.length }));
 }
 
@@ -162,51 +164,18 @@ const DUTY_CATEGORIES = [
   'Junioraktivister',
 ];
 
-/** Seeds duty categories and one open slot per (event, category). */
-export async function seedDuties(strapi: Core.Strapi): Promise<void> {
-  const catUid = 'api::duty-category.duty-category';
-  const asgUid = 'api::duty-assignment.duty-assignment';
-
+/**
+ * Ensures the duty categories exist (the fixed set of roles). Duties are
+ * derived per event in the website UI from these categories — no per-event
+ * assignment rows are seeded; a duty-assignment is created only when a member
+ * claims a slot. Idempotent, and safe to run in production too.
+ */
+export async function ensureDutyCategories(strapi: Core.Strapi): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const cats = strapi.documents(catUid as any);
-  if ((await cats.count({})) === 0) {
-    for (let i = 0; i < DUTY_CATEGORIES.length; i++) {
-      await cats.create({ data: { name: DUTY_CATEGORIES[i], order: i } as never });
-    }
-  }
-
-  const events = await strapi
-    .documents('api::event.event' as any)
-    .findMany({ fields: ['documentId'] });
-  const categories = await cats.findMany({ fields: ['documentId'] });
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const assignments = strapi.documents(asgUid as any);
-  const existing = await assignments.findMany({
-    fields: ['documentId'],
-    populate: {
-      event: { fields: ['documentId'] },
-      category: { fields: ['documentId'] },
-    },
-  });
-  const seen = new Set(
-    existing.map((assignment) => {
-      const eventId = (assignment as { event?: { documentId?: string } }).event?.documentId;
-      const categoryId = (assignment as { category?: { documentId?: string } }).category
-        ?.documentId;
-      return eventId && categoryId ? `${eventId}:${categoryId}` : undefined;
-    })
-  );
-
-  for (const event of events) {
-    for (const category of categories) {
-      const key = `${event.documentId}:${category.documentId}`;
-      if (seen.has(key)) continue;
-      await assignments.create({
-        data: { event: event.documentId, category: category.documentId, member: null } as never,
-      });
-      seen.add(key);
-    }
+  const cats = strapi.documents('api::duty-category.duty-category' as any);
+  if ((await cats.count({})) > 0) return;
+  for (let i = 0; i < DUTY_CATEGORIES.length; i++) {
+    await cats.create({ data: { name: DUTY_CATEGORIES[i], order: i } as never });
   }
 }
 

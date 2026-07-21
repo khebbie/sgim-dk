@@ -1,122 +1,103 @@
 /**
- * Duty-roster domain types + pure grouping (sgim-x60.11). A flat list of
- * assignments (one per event × category) is grouped into per-meeting rosters,
- * sorted by date then category order. No I/O, so it is unit-testable.
+ * Duty-roster domain (sgim-3ya.5): duties are DERIVED per event. Every event
+ * implicitly has one slot per duty category; a stored assignment exists only
+ * once someone is assigned (a free-text name). Pure, so it is unit-testable.
  */
 
-/** One assignment as returned by the adapter (flattened). */
+/** A duty category (reference data). */
+export interface DutyCategory {
+	id: string;
+	name: string;
+	order: number;
+}
+
+/** A stored assignment (only assigned slots exist), flattened by the adapter. */
 export interface DutyAssignmentRow {
-	id: string;
+	id: string; // assignment documentId (used to clear it)
 	eventSlug: string;
-	eventTitle: string;
-	start: Date;
-	categoryName: string;
-	categoryOrder: number;
-	/** Assignee username; undefined = open slot. */
-	memberName?: string;
+	categoryId: string;
+	assignee: string;
+	start: Date; // the event's start, for the yearly summary
 }
 
-export interface DutySlot {
-	id: string;
-	categoryName: string;
-	memberName?: string;
-}
-
-export interface DutyMeeting {
-	eventSlug: string;
-	eventTitle: string;
-	start: Date;
-	slots: DutySlot[];
-}
-
+/** An event the roster is built for. */
 export interface DutyEvent {
+	eventId: string;
 	eventSlug: string;
 	eventTitle: string;
 	start: Date;
 	kind?: 'single' | 'multiday';
 }
 
-export interface MemberDutySummary {
-	memberName: string;
-	completedDuties: number;
+export interface DutySlot {
+	categoryId: string;
+	categoryName: string;
+	/** Present when assigned — the row id (to clear) and the assignee's name. */
+	assignmentId?: string;
+	assignee?: string;
 }
 
-/** Groups flat assignments into per-meeting rosters (meetings by date, slots by category order). */
-export function groupRoster(rows: DutyAssignmentRow[]): DutyMeeting[] {
-	const byEvent = new Map<string, { meeting: DutyMeeting; rows: DutyAssignmentRow[] }>();
-	for (const row of rows) {
-		const entry = byEvent.get(row.eventSlug) ?? {
-			meeting: {
-				eventSlug: row.eventSlug,
-				eventTitle: row.eventTitle,
-				start: row.start,
-				slots: []
-			},
-			rows: []
-		};
-		entry.rows.push(row);
-		byEvent.set(row.eventSlug, entry);
-	}
+export interface DutyMeeting {
+	eventId: string;
+	eventSlug: string;
+	eventTitle: string;
+	start: Date;
+	slots: DutySlot[];
+}
 
-	return [...byEvent.values()]
-		.sort((a, b) => a.meeting.start.getTime() - b.meeting.start.getTime())
-		.map(({ meeting, rows: eventRows }) => ({
-			...meeting,
-			slots: eventRows
-				.slice()
-				.sort((a, b) => a.categoryOrder - b.categoryOrder)
-				.map((r) => ({ id: r.id, categoryName: r.categoryName, memberName: r.memberName }))
+export interface DutySummary {
+	assignee: string;
+	count: number;
+}
+
+/**
+ * Builds the roster grid: each single-day event × category, with any stored
+ * assignments overlaid. Multi-day events are excluded (they have no duties).
+ */
+export function buildDutyGrid(
+	events: DutyEvent[],
+	categories: DutyCategory[],
+	assignments: DutyAssignmentRow[]
+): DutyMeeting[] {
+	const byKey = new Map<string, DutyAssignmentRow>();
+	for (const a of assignments) {
+		if (a.assignee) byKey.set(`${a.eventSlug}::${a.categoryId}`, a);
+	}
+	const sortedCategories = categories.slice().sort((a, b) => a.order - b.order);
+
+	return events
+		.filter((event) => event.kind !== 'multiday')
+		.slice()
+		.sort((a, b) => a.start.getTime() - b.start.getTime())
+		.map((event) => ({
+			eventId: event.eventId,
+			eventSlug: event.eventSlug,
+			eventTitle: event.eventTitle,
+			start: event.start,
+			slots: sortedCategories.map((cat) => {
+				const a = byKey.get(`${event.eventSlug}::${cat.id}`);
+				return {
+					categoryId: cat.id,
+					categoryName: cat.name,
+					assignmentId: a?.id,
+					assignee: a?.assignee
+				};
+			})
 		}));
 }
 
-export function buildRosterFromMeetings(
-	events: DutyEvent[],
-	meetings: DutyMeeting[]
-): DutyMeeting[] {
-	const byMeetingSlug = new Map(meetings.map((meeting) => [meeting.eventSlug, meeting]));
-	const byEventSlug = new Map(events.map((event) => [event.eventSlug, event]));
-	const slugs = new Set<string>();
-
-	for (const meeting of meetings) {
-		if (meeting.slots.length === 0) continue;
-		const event = byEventSlug.get(meeting.eventSlug);
-		if (event?.kind === 'multiday') continue;
-		slugs.add(meeting.eventSlug);
-	}
-
-	for (const event of events) {
-		if (event.kind === 'multiday') continue;
-		const meeting = byMeetingSlug.get(event.eventSlug);
-		if (!meeting || meeting.slots.length === 0) continue;
-		slugs.add(event.eventSlug);
-	}
-
-	return [...slugs]
-		.map((eventSlug) => {
-			const meeting = byMeetingSlug.get(eventSlug);
-			const event = byEventSlug.get(eventSlug);
-			return {
-				eventSlug,
-				eventTitle: meeting?.eventTitle ?? event?.eventTitle ?? eventSlug,
-				start: event?.start ?? meeting?.start ?? new Date(0),
-				slots: meeting?.slots ?? []
-			};
-		})
-		.sort((a, b) => a.start.getTime() - b.start.getTime());
-}
-
-export function summarizeYearlyDuties(meetings: DutyMeeting[], year: number): MemberDutySummary[] {
+/** Counts assignments per assignee for the given year (includes past events). */
+export function summarizeYearlyDuties(
+	assignments: DutyAssignmentRow[],
+	year: number
+): DutySummary[] {
 	const counts = new Map<string, number>();
-
-	for (const meeting of meetings) {
-		if (meeting.start.getFullYear() !== year) continue;
-		for (const slot of meeting.slots) {
-			if (!slot.memberName) continue;
-			counts.set(slot.memberName, (counts.get(slot.memberName) ?? 0) + 1);
-		}
+	for (const a of assignments) {
+		if (!a.assignee) continue;
+		if (a.start.getFullYear() !== year) continue;
+		counts.set(a.assignee, (counts.get(a.assignee) ?? 0) + 1);
 	}
-
 	return [...counts.entries()]
 		.sort((a, b) => a[0].localeCompare(b[0], 'da'))
-		.map(([memberName, completedDuties]) => ({ memberName, completedDuties }));
+		.map(([assignee, count]) => ({ assignee, count }));
 }

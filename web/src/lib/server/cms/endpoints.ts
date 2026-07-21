@@ -28,5 +28,11 @@ export const endpoints = {
 	// loops pages rather than relying on a single large request.
 	eventsPage: (page: number, pageSize: number) =>
 		`/api/events?populate=*&sort=startDate:asc` +
-		`&pagination[page]=${page}&pagination[pageSize]=${pageSize}`
+		`&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+	// Duties (sgim-3ya.5): categories are reference data; assignments are the
+	// stored (assigned) slots. claim upserts by (event, category); release deletes.
+	dutyCategories: '/api/duty-categories?sort=order:asc&pagination[pageSize]=100',
+	dutyAssignments: '/api/duty-assignments',
+	dutyClaim: '/api/duty-assignments/claim',
+	dutyRelease: (id: string) => `/api/duty-assignments/${id}/release`
 };

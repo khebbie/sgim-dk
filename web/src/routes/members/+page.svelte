@@ -3,7 +3,7 @@
 	import { formatDate } from '$lib/format';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
-	const me = $derived(data.member.username);
+	const currentYear = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -23,10 +23,8 @@
 	<section class="summary">
 		<h2>Årets tjanser</h2>
 		<ul>
-			{#each data.yearlyDuties as summary (summary.memberName)}
-				<li>
-					{summary.memberName}: {summary.completedDuties} tjanser i {new Date().getFullYear()}
-				</li>
+			{#each data.yearlyDuties as summary (summary.assignee)}
+				<li>{summary.assignee}: {summary.count} tjanser i {currentYear}</li>
 			{/each}
 		</ul>
 	</section>
@@ -41,23 +39,28 @@
 		<h2>{meeting.eventTitle}</h2>
 		<p class="date">{formatDate(meeting.start)}</p>
 		<ul class="slots">
-			{#each meeting.slots as slot (slot.id)}
+			{#each meeting.slots as slot (slot.categoryId)}
 				<li>
 					<span class="cat">{slot.categoryName}</span>
-					{#if !slot.memberName}
-						<span class="open">Ledig</span>
-						<form method="POST" action="?/claim">
-							<input type="hidden" name="id" value={slot.id} />
-							<button type="submit">Tag tjansen</button>
-						</form>
-					{:else if slot.memberName === me}
-						<span class="mine">{slot.memberName} (dig)</span>
+					{#if slot.assignee}
+						<span class="assignee">{slot.assignee}</span>
 						<form method="POST" action="?/release">
-							<input type="hidden" name="id" value={slot.id} />
-							<button type="submit" class="release">Frigiv</button>
+							<input type="hidden" name="id" value={slot.assignmentId} />
+							<button type="submit" class="release">Fjern</button>
 						</form>
 					{:else}
-						<span class="taken">{slot.memberName}</span>
+						<form method="POST" action="?/claim" class="assign-form">
+							<input type="hidden" name="event" value={meeting.eventId} />
+							<input type="hidden" name="category" value={slot.categoryId} />
+							<input
+								type="text"
+								name="assignee"
+								placeholder="Navn"
+								autocomplete="off"
+								aria-label={`Tildel ${slot.categoryName}`}
+							/>
+							<button type="submit">Tildel</button>
+						</form>
 					{/if}
 				</li>
 			{/each}
@@ -90,19 +93,24 @@
 		margin: var(--space-4) 0;
 		padding: var(--space-3);
 		border: 1px solid var(--color-border);
+		border-left: 3px solid var(--color-accent);
 		border-radius: var(--radius-base);
-		background: var(--color-surface-alt, #f8f8f8);
+		background: var(--color-surface);
 	}
 	.summary ul {
 		margin: 0;
 		padding-left: var(--space-4);
 	}
 	.meeting {
-		margin-top: var(--space-4);
+		margin-top: var(--space-5);
+	}
+	.meeting h2 {
+		font-size: var(--font-size-lg);
+		margin-bottom: var(--space-1);
 	}
 	.meeting .date {
 		color: var(--color-muted);
-		margin-top: calc(-1 * var(--space-2));
+		margin-top: 0;
 	}
 	.slots {
 		list-style: none;
@@ -114,6 +122,7 @@
 	.slots li {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		gap: var(--space-3);
 		padding-bottom: var(--space-2);
 		border-bottom: 1px solid var(--color-border);
@@ -122,12 +131,20 @@
 		font-weight: 600;
 		min-width: 10rem;
 	}
-	.open {
-		color: var(--color-muted);
-	}
-	.mine {
-		font-weight: 600;
+	.assignee {
 		color: var(--color-primary);
+		font-weight: 600;
+	}
+	.assign-form {
+		display: flex;
+		gap: var(--space-2);
+		align-items: center;
+	}
+	.assign-form input {
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-base);
+		font: inherit;
 	}
 	.slots button {
 		padding: var(--space-1) var(--space-3);

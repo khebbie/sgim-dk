@@ -4,7 +4,7 @@
     "singularName": "duty-assignment",
     "pluralName": "duty-assignments",
     "displayName": "Duty Assignment",
-    "description": "Who does a given duty at a given event (member null = open slot)"
+    "description": "Who is assigned to a duty at an event. A row exists only once assigned; the assignee is a free-text name."
   },
   "options": { "draftAndPublish": false },
   "pluginOptions": {},
@@ -15,11 +15,7 @@
       "relation": "manyToOne",
       "target": "api::duty-category.duty-category"
     },
-    "member": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user"
-    },
+    "assignee": { "type": "string" },
     "note": { "type": "text" }
   }
 }

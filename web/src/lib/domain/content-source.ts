@@ -6,7 +6,7 @@
  */
 import type { Result } from './result';
 import type { SiteSettings, NavItem, StaticPage, Club, EventItem, Aktuelt } from './content';
-import type { DutyMeeting } from './duty';
+import type { DutyAssignmentRow, DutyCategory } from './duty';
 
 /**
  * Distinct failure modes so callers can react appropriately (constitution:
@@ -42,8 +42,19 @@ export interface ContentSource {
 	/** Every event (all years, single- and multi-day) for the ICS calendar feed. */
 	listAllEvents(): ContentResult<EventItem[]>;
 
+	/** The duty categories (reference data) used to derive the roster grid. */
+	getDutyCategories(): ContentResult<DutyCategory[]>;
+
 	// Members-only duty roster (require the member's JWT).
-	getDutyRoster(token: string): ContentResult<DutyMeeting[]>;
-	claimDuty(assignmentId: string, token: string): ContentResult<void>;
+	/** Stored duty assignments (only assigned slots exist). */
+	getDutyRoster(token: string): ContentResult<DutyAssignmentRow[]>;
+	/** Assign a free-text name to an (event, category) slot (upsert). */
+	claimDuty(
+		eventId: string,
+		categoryId: string,
+		assignee: string,
+		token: string
+	): ContentResult<void>;
+	/** Clear an assignment by its id. */
 	releaseDuty(assignmentId: string, token: string): ContentResult<void>;
 }

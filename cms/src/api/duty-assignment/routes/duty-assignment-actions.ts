@@ -6,8 +6,9 @@
 export default {
   routes: [
     {
+      // claim creates a row from { event, category } in the body (no id yet).
       method: 'POST',
-      path: '/duty-assignments/:id/claim',
+      path: '/duty-assignments/claim',
       handler: 'duty-assignment.claim',
     },
     {
