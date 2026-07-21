@@ -87,6 +87,7 @@ async function importEventsFromFile(strapi: Core.Strapi): Promise<void> {
     await events.create({ data: toEvent(row) as never });
     created += 1;
   }
+  await seedDuties(strapi);
   strapi.log.info(JSON.stringify({ operation: 'import-events', created, total: rows.length }));
 }
 
@@ -162,7 +163,7 @@ const DUTY_CATEGORIES = [
 ];
 
 /** Seeds duty categories and one open slot per (event, category). */
-async function seedDuties(strapi: Core.Strapi): Promise<void> {
+export async function seedDuties(strapi: Core.Strapi): Promise<void> {
   const catUid = 'api::duty-category.duty-category';
   const asgUid = 'api::duty-assignment.duty-assignment';
 
@@ -174,19 +175,37 @@ async function seedDuties(strapi: Core.Strapi): Promise<void> {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const assignments = strapi.documents(asgUid as any);
-  if ((await assignments.count({})) > 0) return;
-
   const events = await strapi
     .documents('api::event.event' as any)
     .findMany({ fields: ['documentId'] });
   const categories = await cats.findMany({ fields: ['documentId'] });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const assignments = strapi.documents(asgUid as any);
+  const existing = await assignments.findMany({
+    fields: ['documentId'],
+    populate: {
+      event: { fields: ['documentId'] },
+      category: { fields: ['documentId'] },
+    },
+  });
+  const seen = new Set(
+    existing.map((assignment) => {
+      const eventId = (assignment as { event?: { documentId?: string } }).event?.documentId;
+      const categoryId = (assignment as { category?: { documentId?: string } }).category
+        ?.documentId;
+      return eventId && categoryId ? `${eventId}:${categoryId}` : undefined;
+    })
+  );
+
   for (const event of events) {
     for (const category of categories) {
+      const key = `${event.documentId}:${category.documentId}`;
+      if (seen.has(key)) continue;
       await assignments.create({
         data: { event: event.documentId, category: category.documentId, member: null } as never,
       });
+      seen.add(key);
     }
   }
 }

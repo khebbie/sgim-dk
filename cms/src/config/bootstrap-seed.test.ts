@@ -7,7 +7,7 @@
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import type { Core } from '@strapi/strapi';
-import { seedSingle, seedStaticPages } from './bootstrap-seed';
+import { seedDuties, seedSingle, seedStaticPages } from './bootstrap-seed';
 
 type MockDocuments = {
   findFirst: ReturnType<typeof vi.fn>;
@@ -82,6 +82,42 @@ describe('bootstrap-seed', () => {
         data: { slug: 'om-os', content: 'ny' },
       });
       expect(mockDocuments.create).not.toHaveBeenCalled();
+    });
+  });
+
+  it('creates duty assignments for newly added events when some already exist', async () => {
+    const events = [{ documentId: 'event-1' }, { documentId: 'event-2' }];
+    const categories = [{ documentId: 'cat-1' }];
+    const existingAssignments = [
+      { event: { documentId: 'event-1' }, category: { documentId: 'cat-1' } },
+    ];
+
+    const eventDocs = { findMany: vi.fn().mockResolvedValue(events), create: vi.fn() };
+    const categoryDocs = {
+      count: vi.fn().mockResolvedValue(1),
+      findMany: vi.fn().mockResolvedValue(categories),
+    };
+    const assignmentDocs = {
+      count: vi.fn().mockResolvedValue(1),
+      findMany: vi.fn().mockResolvedValue(existingAssignments),
+      create: vi.fn().mockResolvedValue(undefined),
+    };
+
+    mockStrapi.documents = vi.fn((uid: string) => {
+      switch (uid) {
+        case 'api::duty-category.duty-category':
+          return categoryDocs;
+        case 'api::duty-assignment.duty-assignment':
+          return assignmentDocs;
+        default:
+          return eventDocs;
+      }
+    }) as Core.Strapi['documents'];
+
+    await seedDuties(mockStrapi);
+
+    expect(assignmentDocs.create).toHaveBeenCalledWith({
+      data: { event: 'event-2', category: 'cat-1', member: null },
     });
   });
 });
