@@ -15,6 +15,7 @@ import type {
 	Aktuelt
 } from '$lib/domain/content';
 import type { DutyMeeting } from '$lib/domain/duty';
+import { eventStartYear } from '$lib/domain/calendar';
 
 export interface FakeData {
 	siteSettings?: SiteSettings;
@@ -35,6 +36,12 @@ export function createInMemoryContentSource(data: FakeData = {}): ContentSource 
 		getNavigation: () => Promise.resolve(ok(data.navigation ?? [])),
 		getStaticPageBySlug: (slug) => found(data.staticPages?.find((p) => p.slug === slug)),
 		listUpcomingEvents: () => Promise.resolve(ok(data.events ?? [])),
+		listEventsByYear: (year) =>
+			Promise.resolve(ok((data.events ?? []).filter((e) => eventStartYear(e) === year))),
+		getEventYears: () =>
+			Promise.resolve(
+				ok([...new Set((data.events ?? []).map(eventStartYear))].sort((a, b) => b - a))
+			),
 		getEvent: (id) => found(data.events?.find((e) => e.id === id)),
 		listClubs: () => Promise.resolve(ok(data.clubs ?? [])),
 		getClub: (slug) => found(data.clubs?.find((c) => c.slug === slug)),

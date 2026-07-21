@@ -7,27 +7,70 @@
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <svelte:head>
-	<title>Kalender – Stjær/Galten Indre Mission</title>
+	<title>Kalender {data.year ?? ''} – Stjær/Galten Indre Mission</title>
 </svelte:head>
 
-<h1>Kalender</h1>
+<h1>Kalender {data.year ?? ''}</h1>
 
-{#if data.events.length === 0}
-	<p>Der er ingen kommende arrangementer lige nu.</p>
-{:else}
-	<ul class="events">
-		{#each data.events as event (event.id)}
-			<li>
-				<time>{formatEventWhen(event)}</time>
-				<a class="event-title" href={`/kalender/${event.slug}`}>{event.title}</a>
-				{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
-				{#if event.location}<span class="event-location">· {event.location}</span>{/if}
-			</li>
+{#if data.years.length > 1}
+	<nav class="years" aria-label="Vælg år">
+		{#each data.years as y (y)}
+			<a
+				href={`?year=${y}`}
+				class:active={y === data.year}
+				aria-current={y === data.year ? 'page' : undefined}
+			>
+				{y}
+			</a>
 		{/each}
-	</ul>
+	</nav>
+{/if}
+
+{#if data.months.length === 0}
+	<p>Der er ingen arrangementer{data.year ? ` i ${data.year}` : ''}.</p>
+{:else}
+	{#each data.months as month (month.month)}
+		<section class="month">
+			<h2>{month.name}</h2>
+			<ul class="events">
+				{#each month.events as event (event.id)}
+					<li>
+						<time>{formatEventWhen(event)}</time>
+						<a class="event-title" href={`/kalender/${event.slug}`}>{event.title}</a>
+						{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
+						{#if event.location}<span class="event-location">· {event.location}</span>{/if}
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/each}
 {/if}
 
 <style>
+	.years {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-bottom: var(--space-4);
+	}
+	.years a {
+		padding: var(--space-1) var(--space-3);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-base);
+		text-decoration: none;
+	}
+	.years a.active {
+		background: var(--color-primary);
+		color: var(--color-primary-contrast);
+		border-color: var(--color-primary);
+	}
+	.month {
+		margin-top: var(--space-4);
+	}
+	.month h2 {
+		border-bottom: 2px solid var(--color-border);
+		padding-bottom: var(--space-1);
+	}
 	.events {
 		list-style: none;
 		padding: 0;
@@ -45,7 +88,7 @@
 	}
 	.events time {
 		color: var(--color-muted);
-		min-width: 12rem;
+		min-width: 14rem;
 	}
 	.event-title {
 		font-weight: 600;

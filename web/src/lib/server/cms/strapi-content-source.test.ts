@@ -68,6 +68,25 @@ describe('StrapiContentSource', () => {
 		expect(isOk(result) && result.value.map((e) => e.id)).toEqual(['C', 'B']);
 	});
 
+	it('listEventsByYear maps the year-filtered events', async () => {
+		const source = sourceFrom(() => ok({ data: [single('e', '2025-03-01')] }));
+		const result = await source.listEventsByYear(2025);
+		expect(isOk(result) && result.value[0].id).toBe('e');
+	});
+
+	it('getEventYears returns a descending range from earliest to latest, incl. now', async () => {
+		const source = sourceFrom((path) => {
+			if (path.includes('fields') && path.includes('asc'))
+				return ok({ data: [{ startDate: '2019-05-01' }] });
+			if (path.includes('fields') && path.includes('desc'))
+				return ok({ data: [{ startDate: '2026-08-01' }] });
+			return ok({ data: [] });
+		});
+		const result = await source.getEventYears();
+		expect(isOk(result) && result.value[0]).toBe(2026);
+		expect(isOk(result) && result.value.at(-1)).toBe(2019);
+	});
+
 	it('maps eventType to the domain kind', async () => {
 		const source = sourceFrom(() => ok({ data: [multi('C', '2026-08-15', '2026-08-20')] }));
 		const result = await source.getEvent('C');

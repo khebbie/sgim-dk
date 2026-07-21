@@ -8,11 +8,12 @@ import type { Clock } from '$lib/domain/clock';
 import type { ContentSource, ContentResult, ContentError } from '$lib/domain/content-source';
 import type { Aktuelt } from '$lib/domain/content';
 import { upcomingFeed } from '$lib/domain/events';
+import { yearsDescending } from '$lib/domain/calendar';
 import { groupRoster } from '$lib/domain/duty';
 import { mapDutyRows } from './duty-mapper';
 import type { CmsHttp } from './http';
 import { endpoints } from './endpoints';
-import { dataNode } from './envelope';
+import { dataNode, dataList } from './envelope';
 import { MappingError } from './errors';
 import {
 	mapSiteSettings,
@@ -55,6 +56,12 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 			const events = mapMany(await get(endpoints.events), mapEvent);
 			return isOk(events) ? ok(upcomingFeed(events.value, deps.clock.now())) : events;
 		},
+		async listEventsByYear(year) {
+			return mapMany(await get(endpoints.eventsByYear(year)), mapEvent);
+		},
+		getEventYears() {
+			return eventYears(deps);
+		},
 		getActiveAktuelt() {
 			return getActiveAktuelt(deps);
 		},
@@ -81,6 +88,29 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 /** Discards a successful POST body; passes any transport error through. */
 function toVoid(result: Result<unknown, ContentError>): Result<void, ContentError> {
 	return isOk(result) ? ok(undefined) : result;
+}
+
+/** Year range for calendar navigation: [earliest event .. latest event], always incl. now. */
+async function eventYears(deps: StrapiDeps): ContentResult<number[]> {
+	const now = deps.clock.now().getFullYear();
+	const [first, last] = await Promise.all([
+		deps.http.getJson(endpoints.eventBoundary('asc')),
+		deps.http.getJson(endpoints.eventBoundary('desc'))
+	]);
+	const firstYear = boundaryYear(first) ?? now;
+	const lastYear = boundaryYear(last) ?? now;
+	return ok(yearsDescending(Math.min(firstYear, now), Math.max(lastYear, now)));
+}
+
+function boundaryYear(raw: Result<unknown, ContentError>): number | undefined {
+	if (!isOk(raw)) return undefined;
+	try {
+		const [entry] = dataList(raw.value);
+		const startDate = (entry as { startDate?: unknown } | undefined)?.startDate;
+		return typeof startDate === 'string' ? new Date(startDate).getFullYear() : undefined;
+	} catch {
+		return undefined;
+	}
 }
 
 /** Single-type Aktuelt: absent (404) or inactive -> []; active -> the one entry. */

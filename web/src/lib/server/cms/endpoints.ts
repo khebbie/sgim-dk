@@ -15,5 +15,12 @@ export const endpoints = {
 	aktuelt: '/api/aktuelt?populate=*',
 	staticPageBySlug: (slug: string) => `/api/static-pages?${slugFilter(slug)}&populate=*`,
 	clubBySlug: (slug: string) => `/api/clubs?${slugFilter(slug)}&populate=*`,
-	eventBySlug: (slug: string) => `/api/events?${slugFilter(slug)}&populate=*`
+	eventBySlug: (slug: string) => `/api/events?${slugFilter(slug)}&populate=*`,
+	// Calendar (sgim-x60.15): events within one year, and the earliest/latest
+	// event date (limit 1) to derive the year-navigation range cheaply.
+	eventsByYear: (year: number) =>
+		`/api/events?populate=*&sort=startDate:asc&pagination[pageSize]=500` +
+		`&filters[startDate][$gte]=${year}-01-01&filters[startDate][$lte]=${year}-12-31`,
+	eventBoundary: (dir: 'asc' | 'desc') =>
+		`/api/events?fields[0]=startDate&sort=startDate:${dir}&pagination[pageSize]=1`
 };

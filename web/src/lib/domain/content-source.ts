@@ -29,6 +29,10 @@ export interface ContentSource {
 	getNavigation(): ContentResult<NavItem[]>;
 	getStaticPageBySlug(slug: string): ContentResult<StaticPage>;
 	listUpcomingEvents(): ContentResult<EventItem[]>;
+	/** All events whose start falls in the given calendar year (for the calendar page). */
+	listEventsByYear(year: number): ContentResult<EventItem[]>;
+	/** Years that have events (newest first), always including the current year. */
+	getEventYears(): ContentResult<number[]>;
 	getEvent(id: string): ContentResult<EventItem>;
 	listClubs(): ContentResult<Club[]>;
 	getClub(slug: string): ContentResult<Club>;
