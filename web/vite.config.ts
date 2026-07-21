@@ -13,10 +13,6 @@ export default defineConfig({
 			adapter: adapter()
 		})
 	],
-	ssr: {
-		// The 'ics' library is CommonJS, tell Vite to bundle it for SSR
-		noExternal: ['ics']
-	},
 	test: {
 		expect: { requireAssertions: true },
 		// Coverage thresholds encode constitution.md section 2's split:
