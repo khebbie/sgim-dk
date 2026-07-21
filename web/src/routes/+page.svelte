@@ -1,15 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import type { EventItem } from '$lib/domain/content';
+	import { formatEventWhen } from '$lib/format';
 
 	let { data }: { data: PageData } = $props();
-
-	const dateFormat = new Intl.DateTimeFormat('da-DK', { dateStyle: 'long' });
-
-	function eventWhen(event: EventItem): string {
-		if (event.kind === 'single') return dateFormat.format(event.start);
-		return `${dateFormat.format(event.startDate)} – ${dateFormat.format(event.endDate)}`;
-	}
 </script>
 
 <!-- The Aktuelt CTA is a CMS-provided arbitrary URL, not a compile-time route id. -->
@@ -49,7 +42,7 @@
 			<ul class="events">
 				{#each data.upcomingEvents as event (event.id)}
 					<li>
-						<time>{eventWhen(event)}</time>
+						<time>{formatEventWhen(event)}</time>
 						<span class="event-title">{event.title}</span>
 						{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
 						{#if event.location}<span class="event-location">· {event.location}</span>{/if}
