@@ -93,6 +93,27 @@ PostgreSQL is the only supported `DATABASE_CLIENT` — this matches the producti
 (constitution.md: Replaceability / production parity) and keeps `config/database.ts`
 simple. There is no SQLite fallback.
 
+## API hardening & versioning (sgim-pgx.12)
+
+- **Pagination limits.** `config/api.ts` sets `defaultLimit: 25` and `maxLimit: 100`, so a
+  client can never request an unbounded page. `strictParams: true` rejects unknown query
+  params at the boundary.
+- **Write validation.** Content-type schemas validate writes; the custom duty endpoints
+  validate their inputs explicitly (missing event/category/assignee → `400`).
+- **Error model.** `strapi::errors` returns structured `4xx`/`5xx`; internal details/stack
+  traces are not exposed to clients in production.
+- **CORS is intentionally not locked down.** Nothing in a browser calls this API directly:
+  the website reads content **server-side** (SvelteKit SSR), login and duty actions go
+  web-server → CMS with a JWT, and the admin panel is same-origin. Auth is a **Bearer
+  token**, not cookies, so there is no ambient-credential (CSRF) surface for CORS to close;
+  non-browser clients ignore CORS regardless. Locking it would add no security and only
+  risk breakage.
+- **URL versioning (`/api/v1/…`) — planned, not yet applied.** Content endpoints are
+  currently at Strapi's default `/api/…`. Moving to `/api/v1/…` is a coordinated change
+  (Strapi routes + the website's `web/src/lib/server/cms/endpoints.ts` in lockstep) and is
+  deferred to a dedicated pass. Policy once introduced: additive changes only within a
+  version; never break a published `v1`.
+
 ## Seeding & content import
 
 `src/config/bootstrap-seed.ts` runs on Strapi bootstrap and has two **independent** parts:
