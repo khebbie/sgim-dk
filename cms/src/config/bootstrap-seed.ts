@@ -228,9 +228,12 @@ const siteSettings = {
 
 const aktuelt = {
   enabled: false,
-  title: 'Sommerpause',
-  content: '<p>Vi holder sommerpause i juli. Vi ses til august!</p>',
-  ctaType: 'none',
+  title: 'Velkommen i Stjær/Galten Indre Mission',
+  content:
+    '<p>Indre Mission er en landsdækkende folkekirkelig forening, som blev stiftet i 1861 af præster og lægfolk.</p>\n<p>Foreningens vision er, at budskabet om kristendommens hovedperson, Jesus Kristus, skal spredes over alt i det danske samfund og til alle aldersgrupper.</p>\n<p>Stjær / Galten Indre Mission er en underafdeling af Indre Mission på landsplan.</p>\n<p>Du kan læse mere under punktet <a href="/om-os">Om os</a></p>',
+  ctaType: 'internal',
+  ctaText: 'Om os',
+  ctaUrl: '/om-os',
 };
 
 const navigation = [

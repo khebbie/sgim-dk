@@ -129,6 +129,10 @@ run = "npm --prefix cms install"
 description = "Scrape events from sgim.dk/program.aspx"
 run = "python3 scrape_sgim_program.py > sgim-events.json 2>/dev/null"
 
+[tasks."scrape:aktuelt"]
+description = "Scrape frontpage Aktuelt (takeover) from sgim.dk"
+run = "python3 scrape_sgim_aktuelt.py > sgim-aktuelt.json 2>/dev/null"
+
 [tasks."scrape:clubs"]
 description = "Scrape clubs from sgim.dk/klubber.aspx"
 run = "python3 scrape_sgim_klubber.py > sgim-clubs.json 2>/dev/null"
