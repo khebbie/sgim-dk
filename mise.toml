@@ -129,13 +129,23 @@ run = "npm --prefix cms install"
 description = "Scrape events from sgim.dk/program.aspx"
 run = "python3 scrape_sgim_program.py > sgim-events.json 2>/dev/null"
 
+[tasks."scrape:clubs"]
+description = "Scrape clubs from sgim.dk/klubber.aspx"
+run = "python3 scrape_sgim_klubber.py > sgim-clubs.json 2>/dev/null"
+
 [tasks."import:events"]
 description = "Import scraped events into Strapi CMS (requires STRAPI_URL and STRAPI_TOKEN env vars)"
 run = "node cms/scripts/import-events.mjs sgim-events.json $STRAPI_URL $STRAPI_TOKEN"
 
+[tasks."import:clubs"]
+description = "Import scraped clubs into Strapi CMS (requires STRAPI_URL and STRAPI_TOKEN env vars)"
+run = "node cms/scripts/import-clubs.mjs sgim-clubs.json $STRAPI_URL $STRAPI_TOKEN"
+
 [tasks."scrape-and-import"]
-description = "Scrape events from old site and import into Strapi"
+description = "Scrape and import all content into Strapi"
 run = [
   "mise run scrape",
   "mise run import:events",
+  "mise run scrape:clubs",
+  "mise run import:clubs",
 ]

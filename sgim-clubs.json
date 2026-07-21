@@ -1,0 +1,78 @@
+[
+  {
+    "name": "BØRNEKLUBBEN MINIMYREN i Stjær",
+    "slug": "boerneklubben-minimyren-i-stjaer",
+    "description": "Det er en klub for børn fra 3 år og indtil skolestart. Du må komme med eller uden din mor og far! Vi leger, synger og hører historier fra Bibelen.\n\nDet foregår mandage i lige uger kl. 16.15 – 17.30, Østerbro 6, Stjær.\n\nMød gerne op uanmeldt eller kontakt Anita Holmgaard på tlf. 9393 9195 for yderligere info.",
+    "shortDescription": "Det er en klub for børn fra 3 år og indtil skolestart. Du må komme med eller uden din mor og far! Vi leger, synger og hører historier fra Bibelen.",
+    "targetAudience": "children",
+    "isActive": true,
+    "meetingDay": "monday",
+    "meetingTime": "16.15-17.30",
+    "location": "Østerbro 6, Stjær",
+    "contactPerson": "Anita Holmgaard",
+    "contactPhone": "9393 9195"
+  },
+  {
+    "name": "BØRNEKLUBBEN SKOVMYREN i Stjær",
+    "slug": "boerneklubben-skovmyren-i-stjaer",
+    "description": "Her har du klubben for de friske fra 0.-3. klasse, der gerne vil mødes og lave noget sjovt, synge og høre om Jesus.\n\nVi mødes ca. hver anden mandag kl. 16.00 - 17.30, i Skovby Sognehus, Ringvejen 17, 1. sal.\n\nMød gerne op uanmeldt eller kontakt Morten Holmgaard på tlf. 2857 3576 for info.",
+    "shortDescription": "Her har du klubben for de friske fra 0.-3. klasse, der gerne vil mødes og lave noget sjovt, synge og høre om Jesus.",
+    "targetAudience": "children",
+    "isActive": true,
+    "meetingDay": "monday",
+    "meetingTime": "16.00-17.30",
+    "location": "Skovby Sognehus, Ringvejen 17, 1. sal",
+    "contactPerson": "Morten Holmgaard",
+    "contactPhone": "2857 3576"
+  },
+  {
+    "name": "JUNIORKLUBBEN",
+    "slug": "juniorklubben",
+    "description": "Vi mødes mandage kl. 19.00 - 20.30 i Bethesda, Østerbro 6, Stjær.\n\nMød gerne op uanmeldt eller kontakt Miriam Mosbjerg Mørch på tlf. 4240 5152.",
+    "shortDescription": "Vi mødes mandage kl. 19.00 - 20.30 i Bethesda, Østerbro 6, Stjær.",
+    "targetAudience": "youth",
+    "isActive": true,
+    "meetingDay": "monday",
+    "meetingTime": "19.00-20.30",
+    "location": "Bethesda, Østerbro 6, Stjær",
+    "contactPerson": "Miriam Mosbjerg Mørch",
+    "contactPhone": "4240 5152"
+  },
+  {
+    "name": "TEENKLUBBEN",
+    "slug": "teenklubben",
+    "description": "Teenklubben er for unge i 7.-9. klasse +/-. Der er tid til at hænge ud, hygge, lave sjove ting, og snakke om livet og hvad det er det der med Gud og Jesus.\n\nHar du brug for at vide mere, så kontakt Miriam Mosbjerg Mørch på tlf. 4240 5152.",
+    "shortDescription": "Teenklubben er for unge i 7.-9. klasse +/-.",
+    "targetAudience": "youth",
+    "isActive": true,
+    "location": "Bethesda, Østerbro 6, Stjær",
+    "contactPerson": "Miriam Mosbjerg Mørch",
+    "contactPhone": "4240 5152"
+  },
+  {
+    "name": "IMU",
+    "slug": "imu",
+    "description": "I IMU mødes unge hver torsdag ved 17-tiden i missionshuset i Stjær - giv Jakob et kald - planer kan ændre sig.\n\nKontakt: Jakob Klausholm, tlf. 6145 8404.",
+    "shortDescription": "I IMU mødes unge hver torsdag ved 17-tiden i missionshuset i Stjær.",
+    "targetAudience": "youth",
+    "isActive": true,
+    "meetingDay": "thursday",
+    "meetingTime": "17:00",
+    "location": "missionshuset i Stjær",
+    "contactPerson": "Jakob Klausholm",
+    "contactPhone": "6145 8404"
+  },
+  {
+    "name": "Onsdagscafeen",
+    "slug": "onsdagscafeen",
+    "description": "Onsdagscafeen er for alle, som vil være med i et socialt netværk.\n\nHvornår: Onsdage i ulige uger kl. 10.00 - 12.00\n\nHvor: Bethesda, Østerbro 6 - Stjær\n\nKontakt Bodil Dahl på tlf. 2047 5340",
+    "shortDescription": "Onsdagscafeen er for alle, som vil være med i et socialt netværk.",
+    "targetAudience": "adults",
+    "isActive": true,
+    "meetingDay": "wednesday",
+    "meetingTime": "10.00-12.00",
+    "location": "Bethesda, Østerbro 6, Stjær",
+    "contactPerson": "Bodil Dahl",
+    "contactPhone": "2047 5340"
+  }
+]
