@@ -35,7 +35,7 @@ export interface LoggerDeps {
 
 export function createLogger(deps: LoggerDeps = {}): Logger {
 	const clock = deps.clock ?? systemClock;
-	 
+
 	const write = deps.write ?? ((line: string) => console.log(line));
 	const base = deps.base ?? {};
 

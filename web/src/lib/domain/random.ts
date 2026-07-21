@@ -9,6 +9,6 @@ export interface RandomGenerator {
 
 export const systemRandom: RandomGenerator = {
 	// The one sanctioned place to read real randomness.
-	 
+
 	uuid: () => crypto.randomUUID()
 };

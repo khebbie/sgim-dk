@@ -41,14 +41,30 @@ export default defineConfig({
 			// text-only: avoids writing a coverage/ dir that `mise run lint`
 			// (prettier/eslint over the whole tree) would then have to ignore.
 			reporter: ['text'],
-			include: ['src/lib/server/**'],
-			exclude: ['src/lib/server/config.ts'],
+			include: ['src/lib/server/**', 'src/lib/domain/**'],
+			// Trivial DTOs / type-only modules and the composition-root config are
+			// excluded per constitution.md section 2 ("minimal coverage for ... DTOs").
+			exclude: [
+				'src/lib/server/config.ts',
+				'src/lib/domain/content.ts',
+				'src/lib/domain/content-source.ts',
+				'src/lib/domain/clock.ts',
+				'src/lib/domain/random.ts'
+			],
 			thresholds: {
+				// Infrastructure / adapters tier.
 				'src/lib/server/**': {
 					statements: 65,
 					branches: 65,
 					functions: 65,
 					lines: 65
+				},
+				// Business/domain logic tier (constitution: ~80%+).
+				'src/lib/domain/**': {
+					statements: 80,
+					branches: 80,
+					functions: 80,
+					lines: 80
 				}
 			}
 		},
