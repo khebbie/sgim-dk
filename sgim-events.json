@@ -120,7 +120,7 @@
     "speaker": "Sonja Sanden, Sygeplejerske, Herskind"
   },
   {
-    "title": "Peter&#180;s house",
+    "title": "Peter´s house",
     "slug": "event-0015",
     "startDate": "2026-03-26",
     "eventType": "single-day",
@@ -236,7 +236,7 @@
     "slug": "event-0028",
     "startDate": "2026-06-23",
     "eventType": "single-day",
-    "description": "MIRIAM &amp; SIMON MOSBJERG MØRCH, Hedevej 23, Herskind, 8464 Galten..",
+    "description": "MIRIAM & SIMON MOSBJERG MØRCH, Hedevej 23, Herskind, 8464 Galten..",
     "startTime": "18:00"
   },
   {
@@ -280,7 +280,7 @@
     "startTime": "19:00"
   },
   {
-    "title": "Bethesda-dag: &quot;Når Gud griber ind&quot;.",
+    "title": "Bethesda-dag: \"Når Gud griber ind\".",
     "slug": "event-0034",
     "startDate": "2026-09-12",
     "eventType": "single-day",
@@ -288,7 +288,7 @@
     "startTime": "09:30"
   },
   {
-    "title": "&#197;ndelige pointer fra Salmernes Bog",
+    "title": "Åndelige pointer fra Salmernes Bog",
     "slug": "event-0035",
     "startDate": "2026-09-17",
     "eventType": "single-day",
@@ -320,7 +320,7 @@
     "endDate": "2026-10-04"
   },
   {
-    "title": "&quot;Evighedens betydning for det nuværende liv&quot;",
+    "title": "\"Evighedens betydning for det nuværende liv\"",
     "slug": "event-0039",
     "startDate": "2026-10-09",
     "eventType": "single-day",
@@ -777,7 +777,7 @@
     "startTime": "18:00"
   },
   {
-    "title": "Bethesda-weekend på Strandsborg: &quot;Helligånden – til hverdag og fest&quot;.",
+    "title": "Bethesda-weekend på Strandsborg: \"Helligånden – til hverdag og fest\".",
     "slug": "event-0096",
     "startDate": "2014-08-12",
     "eventType": "multi-day",
@@ -829,7 +829,7 @@
     "slug": "event-0102",
     "startDate": "2014-10-31",
     "eventType": "single-day",
-    "description": "Golriz Ghozati, &#197;bne Døre.",
+    "description": "Golriz Ghozati, Åbne Døre.",
     "startTime": "19:00"
   },
   {
@@ -870,7 +870,7 @@
     "slug": "event-0107",
     "startDate": "2014-12-05",
     "eventType": "single-day",
-    "description": "Pædagog Karen Broe, &#197;rhus.",
+    "description": "Pædagog Karen Broe, Århus.",
     "startTime": "19:00"
   },
   {
@@ -958,7 +958,7 @@
     "slug": "event-0118",
     "startDate": "2015-02-20",
     "eventType": "single-day",
-    "description": "Kurt Christensen, lærer på Menighedsfakultetet i &#197;rhus.",
+    "description": "Kurt Christensen, lærer på Menighedsfakultetet i Århus.",
     "startTime": "18:00"
   },
   {
@@ -970,7 +970,7 @@
     "endDate": "2015-02-27"
   },
   {
-    "title": "Tur til &#197;rhus Springcenter, Hvidkildevej 11, 8240 Risskov.",
+    "title": "Tur til Århus Springcenter, Hvidkildevej 11, 8240 Risskov.",
     "slug": "event-0120",
     "startDate": "2015-03-01",
     "eventType": "single-day",
@@ -1314,7 +1314,7 @@
     "startTime": "19:30"
   },
   {
-    "title": "Nyt år – nyt mod: &quot;Læg ud på dybet…&quot; (nytårsfest).",
+    "title": "Nyt år – nyt mod: \"Læg ud på dybet…\" (nytårsfest).",
     "slug": "event-0163",
     "startDate": "2016-01-22",
     "eventType": "single-day",
@@ -1670,7 +1670,7 @@
     "slug": "event-0207",
     "startDate": "2017-01-08",
     "eventType": "single-day",
-    "description": "Arr.: &#197;rhus Valgmenighed, Galten-klyngen",
+    "description": "Arr.: Århus Valgmenighed, Galten-klyngen",
     "startTime": "19:30"
   },
   {
@@ -1827,7 +1827,7 @@
     "endDate": "2017-04-16"
   },
   {
-    "title": "Bibelens røde tråd (del 1) - &quot;Løseren&quot;. Ruths bog og Gal. 44.",
+    "title": "Bibelens røde tråd (del 1) - \"Løseren\". Ruths bog og Gal. 44.",
     "slug": "event-0227",
     "startDate": "2017-04-21",
     "eventType": "single-day",
@@ -1843,7 +1843,7 @@
     "startTime": "18:00"
   },
   {
-    "title": "Bibelens røde tråd (del 2) &quot;Blodet og bjergene&quot; 3. Mos. 16. og Hebr. 9",
+    "title": "Bibelens røde tråd (del 2) \"Blodet og bjergene\" 3. Mos. 16. og Hebr. 9",
     "slug": "event-0229",
     "startDate": "2017-05-05",
     "eventType": "single-day",
@@ -2083,7 +2083,7 @@
     "endDate": "2017-11-17"
   },
   {
-    "title": "Paulus&#39; liv.",
+    "title": "Paulus' liv.",
     "slug": "event-0259",
     "startDate": "2017-11-24",
     "eventType": "single-day",
@@ -2175,7 +2175,7 @@
     "slug": "event-0270",
     "startDate": "2018-01-19",
     "eventType": "single-day",
-    "description": "Sonja Sanden, &quot;daglejer&quot;, Herskind Hede.",
+    "description": "Sonja Sanden, \"daglejer\", Herskind Hede.",
     "startTime": "19:00"
   },
   {
@@ -2231,7 +2231,7 @@
     "slug": "event-0277",
     "startDate": "2018-03-23",
     "eventType": "single-day",
-    "description": "Golriz Ghozati, fungerende generalsekretær i &#197;bne Døre.",
+    "description": "Golriz Ghozati, fungerende generalsekretær i Åbne Døre.",
     "startTime": "18:00"
   },
   {
@@ -2239,7 +2239,7 @@
     "slug": "event-0278",
     "startDate": "2018-04-06",
     "eventType": "single-day",
-    "description": "Musiker og stud. med. Karen Fischer, &#197;rhus.",
+    "description": "Musiker og stud. med. Karen Fischer, Århus.",
     "startTime": "19:00"
   },
   {
@@ -2320,7 +2320,7 @@
     "slug": "event-0288",
     "startDate": "2018-06-23",
     "eventType": "single-day",
-    "description": "Hos Agnes &amp; Jørgen Jeppesen, Hedevej 35, Herskind Hede.",
+    "description": "Hos Agnes & Jørgen Jeppesen, Hedevej 35, Herskind Hede.",
     "startTime": "19:00"
   },
   {
@@ -2584,7 +2584,7 @@
     "slug": "event-0321",
     "startDate": "2019-02-01",
     "eventType": "single-day",
-    "description": "Ingelise Bach &amp; Lisbeth Vig.",
+    "description": "Ingelise Bach & Lisbeth Vig.",
     "startTime": "17:15"
   },
   {
@@ -2604,11 +2604,11 @@
     "startTime": "19:00"
   },
   {
-    "title": "Kasper, Jesper &amp; Jonathan - en historie om tre kristne.",
+    "title": "Kasper, Jesper & Jonathan - en historie om tre kristne.",
     "slug": "event-0324",
     "startDate": "2019-03-01",
     "eventType": "single-day",
-    "description": "Ren&#233; Brorson, forstander på Grejsdalens Efterskole.",
+    "description": "René Brorson, forstander på Grejsdalens Efterskole.",
     "startTime": "19:00"
   },
   {
@@ -2648,7 +2648,7 @@
     "slug": "event-0329",
     "startDate": "2019-03-30",
     "eventType": "single-day",
-    "description": "Carsten Hjorth Pedersen, daglig leder af Kristent Pædagogisk Institut &amp; Niels Kousgaard, lærer på Brændstrup Kristne Friskole.",
+    "description": "Carsten Hjorth Pedersen, daglig leder af Kristent Pædagogisk Institut & Niels Kousgaard, lærer på Brændstrup Kristne Friskole.",
     "startTime": "09:00"
   },
   {
@@ -2664,7 +2664,7 @@
     "slug": "event-0331",
     "startDate": "2019-04-12",
     "eventType": "single-day",
-    "description": "Stud. med. Amalie &amp; stud. theol. Lasse Bach Dybdal.",
+    "description": "Stud. med. Amalie & stud. theol. Lasse Bach Dybdal.",
     "startTime": "19:00"
   },
   {
@@ -2740,7 +2740,7 @@
     "startTime": "19:00"
   },
   {
-    "title": "&quot;Jeg er&quot; (med fællesspisning).",
+    "title": "\"Jeg er\" (med fællesspisning).",
     "slug": "event-0341",
     "startDate": "2019-06-21",
     "eventType": "single-day",
@@ -2752,7 +2752,7 @@
     "slug": "event-0342",
     "startDate": "2019-06-23",
     "eventType": "single-day",
-    "description": "Agnes &amp; Jørgen Jeppesen, Hedevej 35, Herskind.",
+    "description": "Agnes & Jørgen Jeppesen, Hedevej 35, Herskind.",
     "startTime": "18:00"
   },
   {
@@ -2977,7 +2977,7 @@
     "slug": "event-0370",
     "startDate": "2020-01-10",
     "eventType": "single-day",
-    "description": "Med Lotte &amp; Bjarne Carlsen, Promissio.",
+    "description": "Med Lotte & Bjarne Carlsen, Promissio.",
     "startTime": "19:00"
   },
   {
@@ -3137,7 +3137,7 @@
     "slug": "event-0390",
     "startDate": "2020-05-07",
     "eventType": "single-day",
-    "description": "v. Karen Fisher, &#197;byhøj.",
+    "description": "v. Karen Fisher, Åbyhøj.",
     "startTime": "19:00"
   },
   {
@@ -3181,7 +3181,7 @@
     "endDate": "2020-06-05"
   },
   {
-    "title": "&#197;rsmødefestival på Mørkholt.",
+    "title": "Årsmødefestival på Mørkholt.",
     "slug": "event-0396",
     "startDate": "2020-05-05",
     "eventType": "multi-day",
@@ -3209,7 +3209,7 @@
     "slug": "event-0399",
     "startDate": "2020-06-23",
     "eventType": "single-day",
-    "description": "v. Agnes &amp; Jørgen Jeppesen, Hedevej 35, Galten.",
+    "description": "v. Agnes & Jørgen Jeppesen, Hedevej 35, Galten.",
     "startTime": "17:30"
   },
   {
@@ -3509,7 +3509,7 @@
     "startTime": "19:00"
   },
   {
-    "title": "Skabt og elsket - hver og &#233;n",
+    "title": "Skabt og elsket - hver og én",
     "slug": "event-0437",
     "startDate": "2021-03-26",
     "eventType": "single-day",
@@ -3569,7 +3569,7 @@
     "slug": "event-0444",
     "startDate": "2021-05-07",
     "eventType": "single-day",
-    "description": "v. J&#243;n Lange Bech, Stud. teol. og Informationsmedarbejder, MF",
+    "description": "v. Jón Lange Bech, Stud. teol. og Informationsmedarbejder, MF",
     "startTime": "19:00"
   },
   {
@@ -3941,7 +3941,7 @@
     "startTime": "18:00"
   },
   {
-    "title": "Skabt og elsket hver og &#233;n",
+    "title": "Skabt og elsket hver og én",
     "slug": "event-0491",
     "startDate": "2022-04-29",
     "eventType": "single-day",
@@ -4752,7 +4752,7 @@
     "startTime": "19:00"
   },
   {
-    "title": "Uge 13: P&#197;SKEFERIE",
+    "title": "Uge 13: PÅSKEFERIE",
     "slug": "event-0592",
     "startDate": "2024-02-25",
     "eventType": "multi-day",
@@ -5172,7 +5172,7 @@
     "slug": "event-0644",
     "startDate": "2025-03-17",
     "eventType": "single-day",
-    "description": "v/Hanne Lise Mandrup - &quot;Min ø i havet - min rejse til Iona&quot;",
+    "description": "v/Hanne Lise Mandrup - \"Min ø i havet - min rejse til Iona\"",
     "startTime": "18:00"
   },
   {
@@ -5248,7 +5248,7 @@
     "startTime": "19:00"
   },
   {
-    "title": "Fællesspisning kl. 18. - &#39;Kan man bede i farver?&#39;",
+    "title": "Fællesspisning kl. 18. - 'Kan man bede i farver?'",
     "slug": "event-0654",
     "startDate": "2025-05-16",
     "eventType": "single-day",
@@ -5429,7 +5429,7 @@
     "slug": "event-0676",
     "startDate": "2025-11-17",
     "eventType": "single-day",
-    "description": "v/Karen Stubkjær, Viborg: &#39;Det skrøbelige menneskeliv&#39;",
+    "description": "v/Karen Stubkjær, Viborg: 'Det skrøbelige menneskeliv'",
     "startTime": "18:00"
   },
   {

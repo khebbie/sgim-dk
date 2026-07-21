@@ -5,6 +5,7 @@
 import type { SiteSettings, NavItem, StaticPage, Club, Aktuelt } from '$lib/domain/content';
 import { type Node, str, optStr } from './envelope';
 import { markdownToHtml } from '../markdown-to-html';
+import { decodeHtmlEntities } from './decode-html-entities';
 
 /** Extracts a Strapi media URL (relative to the CMS) if the field is populated. */
 export function mediaUrl(value: unknown): string | undefined {
@@ -14,15 +15,15 @@ export function mediaUrl(value: unknown): string | undefined {
 
 export function mapSiteSettings(node: Node): SiteSettings {
 	return {
-		siteName: str(node, 'siteName'),
-		intro: optStr(node, 'siteDescription') ?? '',
-		email: optStr(node, 'email'),
-		phone: optStr(node, 'phone'),
-		address: optStr(node, 'address'),
-		instagramUrl: optStr(node, 'instagramUrl'),
-		facebookUrl: optStr(node, 'facebookUrl'),
-		footerHtml: markdownToHtml(optStr(node, 'footerText') ?? ''),
-		copyrightText: optStr(node, 'copyrightText'),
+		siteName: decodeHtmlEntities(str(node, 'siteName')),
+		intro: markdownToHtml(decodeHtmlEntities(optStr(node, 'siteDescription')) ?? ''),
+		email: decodeHtmlEntities(optStr(node, 'email')),
+		phone: decodeHtmlEntities(optStr(node, 'phone')),
+		address: decodeHtmlEntities(optStr(node, 'address')),
+		instagramUrl: decodeHtmlEntities(optStr(node, 'instagramUrl')),
+		facebookUrl: decodeHtmlEntities(optStr(node, 'facebookUrl')),
+		footerHtml: markdownToHtml(decodeHtmlEntities(optStr(node, 'footerText')) ?? ''),
+		copyrightText: decodeHtmlEntities(optStr(node, 'copyrightText')),
 		logoUrl: mediaUrl(node.logo)
 	};
 }
@@ -31,28 +32,28 @@ export function mapSiteSettings(node: Node): SiteSettings {
 export function mapNavItem(node: Node): NavItem {
 	const slug = optStr(node, 'slug');
 	const href = !slug || slug === 'hjem' || slug === 'home' ? '/' : `/${slug}`;
-	return { label: str(node, 'title'), href, children: [] };
+	return { label: decodeHtmlEntities(str(node, 'title')), href, children: [] };
 }
 
 export function mapAktuelt(node: Node): Aktuelt {
 	return {
-		title: str(node, 'title'),
-		bodyHtml: markdownToHtml(optStr(node, 'content') ?? ''),
+		title: decodeHtmlEntities(str(node, 'title')),
+		bodyHtml: markdownToHtml(decodeHtmlEntities(optStr(node, 'content')) ?? ''),
 		imageUrl: mediaUrl(node.image),
-		ctaLabel: optStr(node, 'ctaText'),
-		ctaUrl: optStr(node, 'ctaUrl')
+		ctaLabel: decodeHtmlEntities(optStr(node, 'ctaText')),
+		ctaUrl: decodeHtmlEntities(optStr(node, 'ctaUrl'))
 	};
 }
 
 export function mapClub(node: Node): Club {
 	return {
-		name: str(node, 'name'),
+		name: decodeHtmlEntities(str(node, 'name')),
 		slug: str(node, 'slug'),
-		descriptionHtml: markdownToHtml(optStr(node, 'description') ?? ''),
-		ageGroup: optStr(node, 'targetAudience'),
+		descriptionHtml: markdownToHtml(decodeHtmlEntities(optStr(node, 'description')) ?? ''),
+		ageGroup: decodeHtmlEntities(optStr(node, 'targetAudience')),
 		meetingSchedule: meetingSchedule(node),
-		contactPersonName: optStr(node, 'contactPerson'),
-		contactEmail: optStr(node, 'contactEmail'),
+		contactPersonName: decodeHtmlEntities(optStr(node, 'contactPerson')),
+		contactEmail: decodeHtmlEntities(optStr(node, 'contactEmail')),
 		imageUrl: mediaUrl(node.logo) ?? mediaUrl(node.coverImage)
 	};
 }
@@ -77,11 +78,11 @@ function meetingSchedule(node: Node): string | undefined {
 
 export function mapStaticPage(node: Node): StaticPage {
 	return {
-		title: str(node, 'title'),
+		title: decodeHtmlEntities(str(node, 'title')),
 		slug: str(node, 'slug'),
-		bodyHtml: markdownToHtml(optStr(node, 'content') ?? ''),
+		bodyHtml: markdownToHtml(decodeHtmlEntities(optStr(node, 'content')) ?? ''),
 		heroImageUrl: mediaUrl(node.featuredImage),
-		seoDescription: optStr(node, 'metaDescription')
+		seoDescription: decodeHtmlEntities(optStr(node, 'metaDescription'))
 	};
 }
 

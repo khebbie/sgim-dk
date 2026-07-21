@@ -16,11 +16,19 @@ Note: The old site uses ModSecurity which blocks some requests.
 import re
 import json
 import sys
+import html
 from datetime import datetime
 from urllib.parse import urljoin
 import requests
 
 BASE_URL = "https://sgim.dk/program.aspx"
+
+def decode_html_entities(text):
+    """Decode HTML entities from text using Python's built-in html.unescape."""
+    if not text:
+        return text
+    return html.unescape(text)
+
 
 # Headers to bypass ModSecurity
 HEADERS = {
@@ -70,9 +78,8 @@ def parse_date(date_str):
     - "16. januar 2026" (single date)
     - "22. januar 2026 kl 19:00" (single date with time)
     """
-    # Remove HTML entities
-    date_str = date_str.replace("&#216;", "Ø").replace("&#230;", "æ").replace("&#248;", "ø")
-    date_str = date_str.replace("&#198;", "Æ").replace("&#214;", "Ø").replace("&#229;", "å")
+    # Decode HTML entities
+    date_str = decode_html_entities(date_str)
     
     # Handle date ranges like "29. - 04. januar 2026"
     # This means: DD of previous month - DD MonthName YYYY
@@ -217,10 +224,8 @@ def parse_event(event_html, default_month=None):
     description = desc_match.group(1).strip() if desc_match else ""
     
     # Clean up HTML entities
-    title = title.replace("&#216;", "Ø").replace("&#230;", "æ").replace("&#248;", "ø")
-    title = title.replace("&#198;", "Æ").replace("&#214;", "Ø").replace("&#229;", "å")
-    description = description.replace("&#216;", "Ø").replace("&#230;", "æ").replace("&#248;", "ø")
-    description = description.replace("&#198;", "Æ").replace("&#214;", "Ø").replace("&#229;", "å")
+    title = decode_html_entities(title)
+    description = decode_html_entities(description)
     
     # Extract speaker if present (e.g., "v/ Name" or "ved Name")
     speaker = ""
@@ -240,7 +245,7 @@ def parse_event(event_html, default_month=None):
         
         # Clean up any trailing punctuation
         description = description.rstrip('-, ')  
-        speaker = speaker.rstrip('-, ')
+        speaker = decode_html_entities(speaker).rstrip('-, ')
     
     # Handle multi-day events
     start_date = dates["startDate"]

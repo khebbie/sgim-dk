@@ -5,6 +5,7 @@
 import type { EventItem } from '$lib/domain/content';
 import { type Node, str, optStr } from './envelope';
 import { markdownToHtml } from '../markdown-to-html';
+import { decodeHtmlEntities } from './decode-html-entities';
 
 /** Combines a Strapi `date` (YYYY-MM-DD) and optional `time` (HH:mm:ss) into a Date. */
 function combine(dateStr: string, timeStr?: string): Date {
@@ -14,10 +15,11 @@ function combine(dateStr: string, timeStr?: string): Date {
 export function mapEvent(node: Node): EventItem {
 	const id = str(node, 'documentId');
 	const slug = str(node, 'slug');
-	const title = str(node, 'title');
-	const descriptionHtml = markdownToHtml(optStr(node, 'description') ?? '');
-	const location = optStr(node, 'location');
+	const title = decodeHtmlEntities(str(node, 'title'));
+	const descriptionHtml = markdownToHtml(decodeHtmlEntities(optStr(node, 'description')) ?? '');
+	const location = decodeHtmlEntities(optStr(node, 'location'));
 	const startDate = str(node, 'startDate');
+	const organizer = decodeHtmlEntities(optStr(node, 'organizer'));
 
 	if (optStr(node, 'eventType') === 'multi-day') {
 		return {
@@ -30,7 +32,7 @@ export function mapEvent(node: Node): EventItem {
 			dailyTime: optStr(node, 'startTime'),
 			location,
 			descriptionHtml,
-			speaker: optStr(node, 'organizer'),
+			speaker: organizer,
 			clubSlug: undefined
 		};
 	}
@@ -46,7 +48,7 @@ export function mapEvent(node: Node): EventItem {
 		end: endTime ? combine(startDate, endTime) : undefined,
 		location,
 		descriptionHtml,
-		speaker: optStr(node, 'organizer'),
+		speaker: organizer,
 		clubSlug: undefined
 	};
 }
