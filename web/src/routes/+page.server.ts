@@ -15,20 +15,15 @@ const HOMEPAGE_EVENT_COUNT = 3;
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const cms = contentSource(fetch);
-	const [activeResult, anyResult, eventsResult, settingsResult] = await Promise.all([
+	const [activeResult, eventsResult, settingsResult] = await Promise.all([
 		cms.getActiveAktuelt(),
-		cms.getAnyAktuelt(),
 		cms.listUpcomingEvents(),
 		cms.getSiteSettings()
 	]);
 
-	// Prefer an active Aktuelt; if none, fall back to the seeded/default singleton
-	const aktuelList =
-		isOk(activeResult) && activeResult.value.length > 0
-			? activeResult.value
-			: isOk(anyResult) && anyResult.value.length > 0
-				? anyResult.value
-				: [];
+	// A takeover only when there is an ACTIVE Aktuelt (within its date window,
+	// sgim-x60.17); otherwise the default homepage (intro + next events).
+	const aktuelList = isOk(activeResult) ? activeResult.value : [];
 
 	return {
 		view: sanitizeView(selectHomeView(aktuelList)),

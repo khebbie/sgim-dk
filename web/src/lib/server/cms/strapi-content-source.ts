@@ -65,17 +65,6 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 		getActiveAktuelt() {
 			return getActiveAktuelt(deps);
 		},
-		async getAnyAktuelt() {
-			const raw = await deps.http.getJson(endpoints.aktuelt);
-			if (!isOk(raw)) return raw.error.kind === 'not_found' ? ok([]) : raw;
-			try {
-				const node = dataNode(raw.value);
-				return ok([mapAktuelt(node)]);
-			} catch (error) {
-				const detail = error instanceof MappingError ? error.message : 'aktuelt mapping failure';
-				return err({ kind: 'mapping', detail });
-			}
-		},
 		async listAllEvents() {
 			// The CMS clamps pageSize to maxLimit (100), so page through the full set.
 			const pageSize = 100;

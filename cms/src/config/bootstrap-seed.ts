@@ -265,6 +265,9 @@ const siteSettings = {
   copyrightText: '© Stjær/Galten Indre Mission',
 };
 
+// Default Aktuelt template. Inactive by design: with no startDate/endDate it
+// never takes over the homepage (sgim-x60.17) — the homepage shows the default
+// welcome + events. To run a promotion, set a start/end window in the admin.
 const aktuelt = {
   enabled: true,
   title: 'Velkommen i Stjær/Galten Indre Mission',

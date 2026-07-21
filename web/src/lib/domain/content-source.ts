@@ -37,8 +37,6 @@ export interface ContentSource {
 	listClubs(): ContentResult<Club[]>;
 	getClub(slug: string): ContentResult<Club>;
 	getActiveAktuelt(): ContentResult<Aktuelt[]>;
-	/** Return the Aktuelt single-type regardless of enabled/window — used as a fallback. */
-	getAnyAktuelt(): ContentResult<Aktuelt[]>;
 	/** Every event (all years, single- and multi-day) for the ICS calendar feed. */
 	listAllEvents(): ContentResult<EventItem[]>;
 

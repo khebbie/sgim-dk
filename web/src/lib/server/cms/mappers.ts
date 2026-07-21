@@ -86,11 +86,17 @@ export function mapStaticPage(node: Node): StaticPage {
 	};
 }
 
-/** True when a single-type Aktuelt entry is enabled and within its date window. */
+/**
+ * Active when `now` is within the Aktuelt's date window (sgim-x60.17).
+ * Dates are how we detect a takeover, so an Aktuelt with NO start/end never
+ * takes over the homepage. `enabled` is only an explicit off-switch: an editor
+ * can set enabled=false to hide it even inside its window.
+ */
 export function isAktueltActive(node: Node, now: Date): boolean {
-	if (node.enabled !== true) return false;
+	if (node.enabled === false) return false;
 	const start = optStr(node, 'startDate');
 	const end = optStr(node, 'endDate');
+	if (!start && !end) return false;
 	const afterStart = !start || new Date(start).getTime() <= now.getTime();
 	const beforeEnd = !end || new Date(end).getTime() >= now.getTime();
 	return afterStart && beforeEnd;

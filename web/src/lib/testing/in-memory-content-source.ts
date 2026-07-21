@@ -47,7 +47,6 @@ export function createInMemoryContentSource(data: FakeData = {}): ContentSource 
 		listClubs: () => Promise.resolve(ok(data.clubs ?? [])),
 		getClub: (slug) => found(data.clubs?.find((c) => c.slug === slug)),
 		getActiveAktuelt: () => Promise.resolve(ok(data.aktuelt ?? [])),
-		getAnyAktuelt: () => Promise.resolve(ok(data.aktuelt ?? [])),
 		listAllEvents: () => Promise.resolve(ok(data.events ?? [])),
 		getDutyCategories: () => Promise.resolve(ok(data.dutyCategories ?? [])),
 		getDutyRoster: () => Promise.resolve(ok(data.duties ?? [])),

@@ -58,13 +58,11 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
     });
 
     const saved = existing
-      ? await strapi
-          .documents(UID)
-          .update({
-            documentId: existing.documentId,
-            data: { assignee } as never,
-            populate: POPULATE,
-          })
+      ? await strapi.documents(UID).update({
+          documentId: existing.documentId,
+          data: { assignee } as never,
+          populate: POPULATE,
+        })
       : await strapi
           .documents(UID)
           .create({ data: { event, category, assignee } as never, populate: POPULATE });

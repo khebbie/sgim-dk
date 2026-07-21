@@ -73,22 +73,29 @@ describe('mapClub', () => {
 
 describe('isAktueltActive', () => {
 	const now = new Date('2026-08-01T00:00:00Z');
-	it('is false when disabled', () => {
-		expect(isAktueltActive({ enabled: false }, now)).toBe(false);
-	});
-	it('is true when enabled and within the window', () => {
+	it('is active within its window', () => {
 		expect(
-			isAktueltActive(
-				{ enabled: true, startDate: '2026-07-01T00:00:00Z', endDate: '2026-09-01T00:00:00Z' },
-				now
-			)
+			isAktueltActive({ startDate: '2026-07-01T00:00:00Z', endDate: '2026-09-01T00:00:00Z' }, now)
 		).toBe(true);
 	});
-	it('is false before the start or after the end', () => {
-		expect(isAktueltActive({ enabled: true, startDate: '2026-09-01T00:00:00Z' }, now)).toBe(false);
-		expect(isAktueltActive({ enabled: true, endDate: '2026-07-01T00:00:00Z' }, now)).toBe(false);
+	it('is inactive before the start or after the end', () => {
+		expect(isAktueltActive({ startDate: '2026-09-01T00:00:00Z' }, now)).toBe(false);
+		expect(isAktueltActive({ endDate: '2026-07-01T00:00:00Z' }, now)).toBe(false);
 	});
-	it('is true when enabled with no window (immediate)', () => {
-		expect(isAktueltActive({ enabled: true }, now)).toBe(true);
+	it('is active with a start-only window once started, end-only until ended', () => {
+		expect(isAktueltActive({ startDate: '2026-07-01T00:00:00Z' }, now)).toBe(true);
+		expect(isAktueltActive({ endDate: '2026-09-01T00:00:00Z' }, now)).toBe(true);
+	});
+	it('never takes over when it has no dates (even if enabled)', () => {
+		expect(isAktueltActive({ enabled: true }, now)).toBe(false);
+		expect(isAktueltActive({}, now)).toBe(false);
+	});
+	it('is hidden by the explicit off-switch even inside the window', () => {
+		expect(
+			isAktueltActive(
+				{ enabled: false, startDate: '2026-07-01T00:00:00Z', endDate: '2026-09-01T00:00:00Z' },
+				now
+			)
+		).toBe(false);
 	});
 });
