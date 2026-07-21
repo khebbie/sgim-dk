@@ -14,14 +14,14 @@ import type { RequestHandler } from './$types';
 export const GET: RequestHandler = async ({ fetch }) => {
 	try {
 		const cms = contentSource(fetch);
-		const result = await cms.listSingleDayEvents();
+		const result = await cms.listAllEvents();
 
 		if (!isOk(result)) {
 			// Log error but return empty calendar on failure for graceful degradation
 			console.error(
 				JSON.stringify({
 					level: 'error',
-					operation: 'listSingleDayEvents',
+					operation: 'listAllEvents',
 					error: result.error.kind,
 					message: 'Failed to fetch single-day events for ICS feed'
 				})

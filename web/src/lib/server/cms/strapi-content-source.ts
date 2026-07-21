@@ -15,7 +15,7 @@ import type { CmsHttp } from './http';
 import { endpoints } from './endpoints';
 import { dataNode, dataList } from './envelope';
 import { MappingError } from './errors';
-import type { SingleEvent } from '$lib/domain/content';
+import type { EventItem } from '$lib/domain/content';
 import {
 	mapSiteSettings,
 	mapNavItem,
@@ -77,9 +77,17 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 				return err({ kind: 'mapping', detail });
 			}
 		},
-		async listSingleDayEvents() {
-			const events = mapMany(await get(endpoints.singleDayEvents), mapEvent);
-			return isOk(events) ? ok(filterSingleDayEvents(events.value)) : events;
+		async listAllEvents() {
+			// The CMS clamps pageSize to maxLimit (100), so page through the full set.
+			const pageSize = 100;
+			const all: EventItem[] = [];
+			for (let page = 1; page <= 200; page++) {
+				const batch = mapMany(await get(endpoints.eventsPage(page, pageSize)), mapEvent);
+				if (!isOk(batch)) return batch;
+				all.push(...batch.value);
+				if (batch.value.length < pageSize) break;
+			}
+			return ok(all);
 		},
 		async getDutyRoster(token) {
 			const raw = await deps.http.getJson('/api/duty-assignments', token);
@@ -104,11 +112,6 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 /** Discards a successful POST body; passes any transport error through. */
 function toVoid(result: Result<unknown, ContentError>): Result<void, ContentError> {
 	return isOk(result) ? ok(undefined) : result;
-}
-
-/** Filters EventItem union to only SingleEvent type for ICS feed (sgim-pgx.16). */
-function filterSingleDayEvents(events: import('$lib/domain/content').EventItem[]): SingleEvent[] {
-	return events.filter((e): e is SingleEvent => e.kind === 'single');
 }
 
 /** Year range for calendar navigation: [earliest event .. latest event], always incl. now. */

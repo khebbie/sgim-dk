@@ -23,7 +23,10 @@ export const endpoints = {
 		`&filters[startDate][$gte]=${year}-01-01&filters[startDate][$lte]=${year}-12-31`,
 	eventBoundary: (dir: 'asc' | 'desc') =>
 		`/api/events?fields[0]=startDate&sort=startDate:${dir}&pagination[pageSize]=1`,
-	// ICS calendar feed (sgim-pgx.16): all single-day events
-	singleDayEvents:
-		'/api/events?populate=*&pagination[pageSize]=500&filters[eventType][$eq]=single-day'
+	// One page of all events (any type), used to page through the full set for
+	// the ICS feed. The CMS clamps pageSize to maxLimit (100), so the adapter
+	// loops pages rather than relying on a single large request.
+	eventsPage: (page: number, pageSize: number) =>
+		`/api/events?populate=*&sort=startDate:asc` +
+		`&pagination[page]=${page}&pagination[pageSize]=${pageSize}`
 };
