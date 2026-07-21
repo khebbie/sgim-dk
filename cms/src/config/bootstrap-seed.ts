@@ -28,7 +28,7 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
     await seedCollection(strapi, 'api::navigation.navigation', navigation);
     await seedCollection(strapi, 'api::club.club', clubs);
     await seedCollection(strapi, 'api::event.event', events);
-    await seedCollection(strapi, 'api::static-page.static-page', staticPages);
+    await seedStaticPages(strapi, staticPages);
     await seedMember(strapi);
     await seedDuties(strapi);
     strapi.log.info(
@@ -240,6 +240,31 @@ async function seedCollection(strapi: Core.Strapi, uid: string, rows: object[]):
   for (const data of rows) await docs.create({ data: data as never });
 }
 
+/**
+ * Upsert static pages by slug. Unlike seedCollection this overwrites existing
+ * pages, so the seed stays the source of truth for page content (e.g. "Om os"
+ * copied from the live site) even after the page has been created once.
+ */
+export async function seedStaticPages(
+  strapi: Core.Strapi,
+  rows: { slug: string }[]
+): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const docs = strapi.documents('api::static-page.static-page' as any);
+  for (const data of rows) {
+    const existing = await docs.findMany({
+      filters: { slug: data.slug },
+      fields: ['documentId'],
+      limit: 1,
+    });
+    if (existing.length > 0) {
+      await docs.update({ documentId: existing[0].documentId, data: data as never });
+    } else {
+      await docs.create({ data: data as never });
+    }
+  }
+}
+
 const siteSettings = {
   siteName: 'Stjær/Galten Indre Mission',
   siteDescription:
@@ -338,12 +363,52 @@ const events = [
   },
 ];
 
+// Real "Om os" content copied from the live site. Stored as clean Markdown:
+// '##' section headings (the rich-text sanitiser allows h2–h4, not h1) and
+// '**bold**' with no trailing space, so markdownToHtml renders it correctly.
+// Two trailing spaces mark hard line breaks inside the contact block.
 const staticPages = [
   {
     title: 'Om os',
     slug: 'om-os',
-    content:
-      '<p>Indre Mission er en folkekirkelig bevægelse grundlagt i 1861. Stjær/Galten Indre Mission er den lokale afdeling.</p>',
+    content: [
+      '## Kontakt',
+      '',
+      '**Formand:** Kenneth Sønderby  ',
+      '**Email:** bestyrelsen@sgim.dk',
+      '',
+      '**Kasserer:** Grete Juel Christensen  ',
+      'Reg. nr. 7418, kontonr. 000 116 9371  ',
+      'MobilePay: 67162',
+      '',
+      '## Intro til Stjær/Galten Indre Mission',
+      '',
+      'Stjær/Galten Indre Mission – i daglig tale ofte kaldet SGIM – samles primært i og omkring missionshuset Bethesda, Østerbro 6, Stjær. Der er tilknyttet omkring 150 voksne og børn - heraf kommer de fleste fra den tidligere Galten kommune – og en stor del af disse udgøres af børnefamilier.',
+      '',
+      'Møderne er delt op i forskellige kategorier, og starter kl. 19.00 med mindre andet er angivet i programmet.',
+      '',
+      'Til fredagsmøder kommer der typisk mellem 40 og 60 – inklusiv børn. Møderne ledes af en mødeleder, som leder os gennem aftenen med velkomst/indledning, sang, tale og hvad der ellers måtte byde sig. Vi synger en del sammen – både fra den traditionelle sangskat og også af den nyere og mere rytmiske slags. Under talen, som typisk varer 30-45 minutter, er der aktiviteter for børnene lige ved siden af i ”det gule hus”, og der er også sovemuligheder for babyer ”oppe ovenpå”.',
+      '',
+      'Ved tirsdagsmøder arrangeres der ikke aktiviteter for børn, og her kommer der typisk nogen færre og kun få børn. Ofte vil der efter talen være mulighed for at stille spørgsmål eller komme med kommentarer til talen, eller der vil være drøftelse i mindre grupper i tilknytning til aftenens emne. Aftenen rundes typisk af omkring kl. 21.15, hvorefter der er mulighed for hyggeligt samvær omkring kaffebordet, så længe den enkelte har lyst og tid.',
+      '',
+      'Fra tid til anden kalder vi fredagsmøderne for fyraftensmøder. Disse aftener mødes vi kl. 18.00, hvor vi begynder med at spise sammen. Maden laves på skift af en af bibelgrupperne, og man skal således blot medbringe tallerken, kop og bestik til sig selv. Selve mødet starter kl. 19.00, og slutter omkring kl. 20.30. Disse aftener kan vi ofte være over 80 deltagere – voksne og børn.',
+      '',
+      'Desuden har vi et antal bibelgrupper, som mødes 1-2 gange om måneden på skift rundt i private hjem. Her har man mulighed for i en mindre gruppe på typisk 8-12 personer at snakke sammen om en på forhånd aftalt tekst, ligesom der her er mulighed for at have mere fortrolige samtaler og bøn med hinanden.',
+      '',
+      'Alle møder er offentlige, så har du lyst til at dukke op selv og se hvad Stjær/Galten Indre Mission er for en størrelse – så velkommen!',
+      '',
+      '## Indre Mission på landsplan',
+      '',
+      'Indre Mission er en landsdækkende folkekirkelig forening, som blev stiftet i 1861 af præster og lægfolk.',
+      '',
+      'Foreningens vision er, at budskabet om Kristendommens hovedperson, Jesus Kristus, skal spredes over alt i det danske samfund og til alle aldersgrupper.',
+      '',
+      'Hver uge mødes ung og gammel, barn og voksen til forskellige arrangementer i de lokale foreninger - f.eks. legestue, søndagsskole, juniorklub, teenklub, ungdomsmøde, familiemøde, fællesmøde, studiegruppe, ældremøde etc. Arrangementerne afholdes typisk i Indre Missions egne huse, kaldet missionshuse.',
+      '',
+      'Helt centralt for alle arrangementer er fællesskabet om Bibelens ord og fællesskabet med hinanden.',
+      '',
+      'Ønsker du yderligere information om Indre Mission kan du klikke ind på www.indremission.dk eller kontakte bestyrelsen / formanden.',
+    ].join('\n'),
     showInNavigation: true,
     navigationOrder: 1,
   },
