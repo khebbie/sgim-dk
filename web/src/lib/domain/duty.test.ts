@@ -80,16 +80,16 @@ describe('groupRoster', () => {
 		]);
 	});
 
-	it('includes upcoming events even when they have no duty rows yet', () => {
+	it('only includes single-day events that have duty rows', () => {
 		const roster = buildRosterFromMeetings(
 			[
-				{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10') },
-				{ eventSlug: 'e2', eventTitle: 'E2', start: new Date('2026-02-10') }
+				{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), kind: 'single' },
+				{ eventSlug: 'e2', eventTitle: 'E2', start: new Date('2026-02-10'), kind: 'single' },
+				{ eventSlug: 'e3', eventTitle: 'E3', start: new Date('2026-03-10'), kind: 'multiday' }
 			],
 			[{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), slots: [] }]
 		);
 
-		expect(roster.map((meeting) => meeting.eventSlug)).toEqual(['e1', 'e2']);
-		expect(roster[1].slots).toEqual([]);
+		expect(roster.map((meeting) => meeting.eventSlug)).toEqual([]);
 	});
 });

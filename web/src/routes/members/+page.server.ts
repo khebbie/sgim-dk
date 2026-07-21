@@ -17,7 +17,8 @@ export const load: PageServerLoad = async ({ fetch, cookies }) => {
 		upcomingEvents.map((event) => ({
 			eventSlug: event.slug,
 			eventTitle: event.title,
-			start: event.kind === 'single' ? event.start : event.startDate
+			start: event.kind === 'single' ? event.start : event.startDate,
+			kind: event.kind
 		})),
 		rosterRows
 	);

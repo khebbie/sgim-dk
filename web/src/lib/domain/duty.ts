@@ -33,6 +33,7 @@ export interface DutyEvent {
 	eventSlug: string;
 	eventTitle: string;
 	start: Date;
+	kind?: 'single' | 'multiday';
 }
 
 export interface MemberDutySummary {
@@ -75,6 +76,8 @@ export function buildRosterFromMeetings(
 	const bySlug = new Map(meetings.map((meeting) => [meeting.eventSlug, meeting]));
 
 	return events
+		.filter((event) => event.kind !== 'multiday')
+		.filter((event) => (bySlug.get(event.eventSlug)?.slots.length ?? 0) > 0)
 		.slice()
 		.sort((a, b) => a.start.getTime() - b.start.getTime())
 		.map((event) => {
