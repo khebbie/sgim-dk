@@ -19,14 +19,10 @@ export const load: LayoutServerLoad = async ({ fetch, locals }) => {
 	const { navigation, usedFallback } = chooseNavigation(navResult);
 	if (usedFallback) {
 		const error = navResult.ok ? 'empty' : navResult.error.kind;
-		console.warn(
-			JSON.stringify({
-				level: 'warn',
-				operation: 'getNavigation',
-				error,
-				message: 'CMS navigation unavailable; using fallback menu'
-			})
-		);
+		locals.log.warn('CMS navigation unavailable; using fallback menu', {
+			operation: 'getNavigation',
+			error
+		});
 	}
 
 	return {

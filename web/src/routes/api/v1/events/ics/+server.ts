@@ -11,21 +11,17 @@ import { contentSource } from '$lib/server/content';
 import { generateIcsCalendar } from '$lib/server/ics';
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ fetch }) => {
+export const GET: RequestHandler = async ({ fetch, locals }) => {
 	try {
 		const cms = contentSource(fetch);
 		const result = await cms.listAllEvents();
 
 		if (!isOk(result)) {
 			// Log error but return empty calendar on failure for graceful degradation
-			console.error(
-				JSON.stringify({
-					level: 'error',
-					operation: 'listAllEvents',
-					error: result.error.kind,
-					message: 'Failed to fetch single-day events for ICS feed'
-				})
-			);
+			locals.log.error('Failed to fetch events for ICS feed', {
+				operation: 'listAllEvents',
+				error: result.error.kind
+			});
 			// Return empty calendar
 			return new Response(generateIcsCalendar([]), {
 				headers: {
@@ -47,15 +43,11 @@ export const GET: RequestHandler = async ({ fetch }) => {
 			}
 		});
 	} catch (error) {
-		console.error(
-			JSON.stringify({
-				level: 'error',
-				operation: 'ics-endpoint',
-				error: error instanceof Error ? error.message : String(error),
-				stack: error instanceof Error ? error.stack : undefined,
-				message: 'Unhandled error in ICS endpoint'
-			})
-		);
+		locals.log.error('Unhandled error in ICS endpoint', {
+			operation: 'ics-endpoint',
+			error: error instanceof Error ? error.message : String(error),
+			stack: error instanceof Error ? error.stack : undefined
+		});
 		// Return empty calendar on any error
 		return new Response(generateIcsCalendar([]), {
 			status: 500,
