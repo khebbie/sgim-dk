@@ -122,3 +122,20 @@ run = "npm --prefix web install"
 [tasks."install:cms"]
 description = "Install dependencies for CMS only"
 run = "npm --prefix cms install"
+
+# --- Data Migration tasks ---------------------------------------------------
+
+[tasks.scrape]
+description = "Scrape events from sgim.dk/program.aspx"
+run = "python3 scrape_sgim_program.py > sgim-events.json 2>/dev/null"
+
+[tasks."import:events"]
+description = "Import scraped events into Strapi CMS (requires STRAPI_URL and STRAPI_TOKEN env vars)"
+run = "node cms/scripts/import-events.mjs sgim-events.json $STRAPI_URL $STRAPI_TOKEN"
+
+[tasks."scrape-and-import"]
+description = "Scrape events from old site and import into Strapi"
+run = [
+  "mise run scrape",
+  "mise run import:events",
+]

@@ -1,0 +1,5492 @@
+[
+  {
+    "title": "Uge 1 - Bibelgrupper i hjemmene",
+    "slug": "event-0001",
+    "startDate": "2025-12-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-01-04"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge",
+    "slug": "event-0002",
+    "startDate": "2026-01-14",
+    "eventType": "single-day",
+    "description": "Bedeuge - Stjær Kirke",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge",
+    "slug": "event-0003",
+    "startDate": "2026-01-16",
+    "eventType": "single-day",
+    "description": "Bedeuge - Bethesda",
+    "startTime": "19:00",
+    "speaker": "Daniel Præstholm, Regionsleder, Grindsted"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge",
+    "slug": "event-0004",
+    "startDate": "2026-01-18",
+    "eventType": "single-day",
+    "description": "Bedeuge - GAVA",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Gideon",
+    "slug": "event-0005",
+    "startDate": "2026-01-22",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Andreas Bøge, Præst, Aalborg"
+  },
+  {
+    "title": "En menighed efter Guds hjerte",
+    "slug": "event-0006",
+    "startDate": "2026-01-30",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Søren Skovenborg, Ans"
+  },
+  {
+    "title": "Uge 6 - Bibelgrupper i hjemmene",
+    "slug": "event-0007",
+    "startDate": "2026-01-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-02-08"
+  },
+  {
+    "title": "Uge 7 - Vinterferie",
+    "slug": "event-0008",
+    "startDate": "2026-01-09",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-02-15"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0009",
+    "startDate": "2026-02-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Rasmus K. Breindahl, Præst, Hinnerup"
+  },
+  {
+    "title": "Discipelskab – kaldet til efterfølgelse, retfærdighed og ansvarlig livsførelse",
+    "slug": "event-0010",
+    "startDate": "2026-02-27",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Christina Preisler, Præst, Vejle"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0011",
+    "startDate": "2026-03-06",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Luther genopdagede evangeliet",
+    "slug": "event-0012",
+    "startDate": "2026-03-13",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Peder Kølle, Lærer, Børkop"
+  },
+  {
+    "title": "Kvindeaften",
+    "slug": "event-0013",
+    "startDate": "2026-03-16",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "18:00",
+    "speaker": "Mette Dalum"
+  },
+  {
+    "title": "Herre, vi er dine tjenere og hvad vi ellers kan lære af Nehemias",
+    "slug": "event-0014",
+    "startDate": "2026-03-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Sonja Sanden, Sygeplejerske, Herskind"
+  },
+  {
+    "title": "Peter&#180;s house",
+    "slug": "event-0015",
+    "startDate": "2026-03-26",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Andreas T. Lunderskov, Volontør"
+  },
+  {
+    "title": "Uge 14 - Påske",
+    "slug": "event-0016",
+    "startDate": "2026-03-30",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-04-05"
+  },
+  {
+    "title": "(Nærmere information følger)",
+    "slug": "event-0017",
+    "startDate": "2026-04-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Hvordan møder vi mennesker uden for kristne kredse?",
+    "slug": "event-0018",
+    "startDate": "2026-04-16",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Hanne Esmarch, Psykoterapeut, Videbæk"
+  },
+  {
+    "title": "Hverdagsevangelisation – med Jesus i hjertet ud i hverdagen",
+    "slug": "event-0019",
+    "startDate": "2026-04-24",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Nils Andersen, Landssekretær, Aarhus"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0020",
+    "startDate": "2026-05-01",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Erik Holmgaard, Præst, Haderslev"
+  },
+  {
+    "title": "Uge 19 - Bibelgrupper i private hjem",
+    "slug": "event-0021",
+    "startDate": "2026-04-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-05-10"
+  },
+  {
+    "title": "Bedemøde",
+    "slug": "event-0022",
+    "startDate": "2026-05-12",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "lokale kræfter"
+  },
+  {
+    "title": "Hverdagsmission",
+    "slug": "event-0023",
+    "startDate": "2026-05-22",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Peter Rask, Præst, Silkeborg"
+  },
+  {
+    "title": "To follow",
+    "slug": "event-0024",
+    "startDate": "2026-05-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Hans Medom Madsen, Stud. Med, Aarhus"
+  },
+  {
+    "title": "Uge 23 - Bibelgrupper i private hjem",
+    "slug": "event-0025",
+    "startDate": "2026-05-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-06-07"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0026",
+    "startDate": "2026-06-12",
+    "eventType": "single-day",
+    "description": "Heri Elttør",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Lovsangsfest",
+    "slug": "event-0027",
+    "startDate": "2026-06-19",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Karen Fischer m.f., Læge, Horsens"
+  },
+  {
+    "title": "Sankt Hans aften - Grillen er klar, medbring mad, havestol og en ven, til en hyggelig aften med snobrød og båltale",
+    "slug": "event-0028",
+    "startDate": "2026-06-23",
+    "eventType": "single-day",
+    "description": "MIRIAM &amp; SIMON MOSBJERG MØRCH, Hedevej 23, Herskind, 8464 Galten..",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Sommerferie",
+    "slug": "event-0029",
+    "startDate": "2026-07-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-08-09"
+  },
+  {
+    "title": "Asylbandet",
+    "slug": "event-0030",
+    "startDate": "2026-08-14",
+    "eventType": "single-day",
+    "description": "v/Kjærshovedgaard",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forventninger og hvad de gør ved os",
+    "slug": "event-0031",
+    "startDate": "2026-08-21",
+    "eventType": "single-day",
+    "description": "v/Kristian Lindholm, Regionsleder, Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "”Det omvendte Kongerige”",
+    "slug": "event-0032",
+    "startDate": "2026-08-27",
+    "eventType": "single-day",
+    "description": "v/Daniel Juhl, Stud. Theol, Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Levende Kirke",
+    "slug": "event-0033",
+    "startDate": "2026-09-04",
+    "eventType": "single-day",
+    "description": "v/Ove Sørensen, Pastor, Galten",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bethesda-dag: &quot;Når Gud griber ind&quot;.",
+    "slug": "event-0034",
+    "startDate": "2026-09-12",
+    "eventType": "single-day",
+    "description": "v/Jørgen Knudsen, Sømandsmissionær",
+    "startTime": "09:30"
+  },
+  {
+    "title": "&#197;ndelige pointer fra Salmernes Bog",
+    "slug": "event-0035",
+    "startDate": "2026-09-17",
+    "eventType": "single-day",
+    "description": "v/Anders Møberg, Pastor, Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bedemøde",
+    "slug": "event-0036",
+    "startDate": "2026-09-22",
+    "eventType": "single-day",
+    "description": "v/bønneteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Høstfest",
+    "slug": "event-0037",
+    "startDate": "2026-09-25",
+    "eventType": "single-day",
+    "description": "v/Daniel Toft Jacobsen, Mission Afrika",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 40 - Bibelgrupper i private hjem",
+    "slug": "event-0038",
+    "startDate": "2026-09-28",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-10-04"
+  },
+  {
+    "title": "&quot;Evighedens betydning for det nuværende liv&quot;",
+    "slug": "event-0039",
+    "startDate": "2026-10-09",
+    "eventType": "single-day",
+    "description": "v/Henrik Højlund, Pastor, Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 42 - Efterårsferie",
+    "slug": "event-0040",
+    "startDate": "2026-09-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-10-18"
+  },
+  {
+    "title": "MØDERÆKKE -  v/Palle Kure, Missionær, Bornholm",
+    "slug": "event-0041",
+    "startDate": "2026-09-21",
+    "eventType": "multi-day",
+    "description": "Vi starter hver aften med fællesspisning kl 18:00",
+    "endDate": "2026-10-23"
+  },
+  {
+    "title": "Forholdet imellem Iran og Israel i bibelsk kontekst",
+    "slug": "event-0042",
+    "startDate": "2026-10-29",
+    "eventType": "single-day",
+    "description": "v/Naser Rezaeih, Pastor",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 45 - Bibelgrupper i private hjem",
+    "slug": "event-0043",
+    "startDate": "2026-10-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-11-08"
+  },
+  {
+    "title": "Kvindeaften: Kvinder i Bibelen",
+    "slug": "event-0044",
+    "startDate": "2026-11-09",
+    "eventType": "single-day",
+    "description": "v/Christina Preisler, Pastor, Låsby",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Forbilleder",
+    "slug": "event-0045",
+    "startDate": "2026-11-13",
+    "eventType": "single-day",
+    "description": "v/Holger Haldrup, Pastor em., Kolding",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bedemøde",
+    "slug": "event-0046",
+    "startDate": "2026-11-17",
+    "eventType": "single-day",
+    "description": "v/bønneteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "En landsforræder bliver fundet – om Zakæus og Jesus",
+    "slug": "event-0047",
+    "startDate": "2026-11-20",
+    "eventType": "single-day",
+    "description": "v/Egild Kildeholm Jensen, Missionær em., Rønde",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest",
+    "slug": "event-0048",
+    "startDate": "2026-11-27",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 49 - Bibelgrupper i private hjem",
+    "slug": "event-0049",
+    "startDate": "2026-11-30",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2026-12-06"
+  },
+  {
+    "title": "Dagligstuemøde – afsnit 2",
+    "slug": "event-0050",
+    "startDate": "2026-12-11",
+    "eventType": "single-day",
+    "description": "v/Lisbet Kristensen, Galten",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Syng julen ind",
+    "slug": "event-0051",
+    "startDate": "2026-12-13",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "15:00"
+  },
+  {
+    "title": "Julefest",
+    "slug": "event-0052",
+    "startDate": "2026-12-29",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "16:30"
+  },
+  {
+    "title": "Julefest for hele familien.",
+    "slug": "event-0053",
+    "startDate": "2013-12-29",
+    "eventType": "single-day",
+    "description": "Med juletale",
+    "startTime": "19:00",
+    "speaker": "Sonja Sanden."
+  },
+  {
+    "title": "Alliance bedeuge i Galten Valgmenighed (forsamlingshuset i Skovby).",
+    "slug": "event-0054",
+    "startDate": "2014-01-06",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær kirke.",
+    "slug": "event-0055",
+    "startDate": "2014-01-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Missionshus.",
+    "slug": "event-0056",
+    "startDate": "2014-01-09",
+    "eventType": "single-day",
+    "description": "Ved IMU.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Nytårsfest - mission er hverdagen.",
+    "slug": "event-0057",
+    "startDate": "2014-01-17",
+    "eventType": "single-day",
+    "description": "Sømandsmissionær Jørgen Knudsen.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0058",
+    "startDate": "2013-12-20",
+    "eventType": "multi-day",
+    "description": "(uge 4)",
+    "endDate": "2014-01-24"
+  },
+  {
+    "title": "Daniels Bog.",
+    "slug": "event-0059",
+    "startDate": "2014-01-31",
+    "eventType": "single-day",
+    "description": "Torben Mathiasen, Ordet og Israel.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Gjort retfærdig ved tro.",
+    "slug": "event-0060",
+    "startDate": "2014-02-04",
+    "eventType": "single-day",
+    "description": "Sognepræst Michael Lerche Nygaard, Kolding.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Lederaften for lederne i vore klubber.",
+    "slug": "event-0061",
+    "startDate": "2014-02-06",
+    "eventType": "single-day",
+    "description": "Landsleder Bent Molbech, Danmarks Folkekirkelige Søndagsskoler.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0062",
+    "startDate": "2014-02-07",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0063",
+    "startDate": "2014-02-14",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Om at bruge fastetiden ”rigtigt”.",
+    "slug": "event-0064",
+    "startDate": "2014-02-21",
+    "eventType": "single-day",
+    "description": "Missionær Villy Sørensen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0065",
+    "startDate": "2014-01-24",
+    "eventType": "multi-day",
+    "description": "(uge 9)",
+    "endDate": "2014-02-28"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0066",
+    "startDate": "2014-02-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling i Stjær/Galten Indre Mission.",
+    "slug": "event-0067",
+    "startDate": "2014-03-07",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fyraftensmøde ved egne kræfter.",
+    "slug": "event-0068",
+    "startDate": "2014-03-14",
+    "eventType": "single-day",
+    "description": "Mødet starter kl. 17 med fællesspisning.",
+    "startTime": "17:00"
+  },
+  {
+    "title": "Er Bibelen historisk korrekt eller en usikker blanding af sandhed og myter?",
+    "slug": "event-0069",
+    "startDate": "2014-03-21",
+    "eventType": "single-day",
+    "description": "Karlo Brondbjerg.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0070",
+    "startDate": "2014-02-24",
+    "eventType": "multi-day",
+    "description": "(uge 13)",
+    "endDate": "2014-03-28"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0071",
+    "startDate": "2014-03-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Lovsangskoncert med Arvid Asmussen.",
+    "slug": "event-0072",
+    "startDate": "2014-03-30",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:00"
+  },
+  {
+    "title": "Tilgivelse og forsoning.",
+    "slug": "event-0073",
+    "startDate": "2014-04-04",
+    "eventType": "single-day",
+    "description": "Teolog Leif Andersen. Mødet starter med fællesspisning.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Alternativt familiemøde.",
+    "slug": "event-0074",
+    "startDate": "2014-04-11",
+    "eventType": "single-day",
+    "description": "Møde for hele familien. Vi starter med kaffen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0075",
+    "startDate": "2014-03-21",
+    "eventType": "multi-day",
+    "description": "(uge 17)",
+    "endDate": "2014-04-25"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0076",
+    "startDate": "2014-04-25",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Påvirkning med respekt.",
+    "slug": "event-0077",
+    "startDate": "2014-05-02",
+    "eventType": "single-day",
+    "description": "En aften om at være medvandrer. Jacob Hørning, forstander på Rudehøj Efterskole samt elever fra Rudehøjs FRONT-klasse.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Guds rige er kommet nær.",
+    "slug": "event-0078",
+    "startDate": "2014-05-08",
+    "eventType": "single-day",
+    "description": "Teolog Poul Arne Nyborg. Vi starter med fællesspisning.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0079",
+    "startDate": "2014-05-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0080",
+    "startDate": "2014-04-12",
+    "eventType": "multi-day",
+    "description": "(uge 20)",
+    "endDate": "2014-05-16"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0081",
+    "startDate": "2014-05-16",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konfirmandfest.",
+    "slug": "event-0082",
+    "startDate": "2014-05-21",
+    "eventType": "single-day",
+    "description": "En aften for årets konfirmander, deres familier og alle os andre.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0083",
+    "startDate": "2014-05-23",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Om mission.",
+    "slug": "event-0084",
+    "startDate": "2014-05-27",
+    "eventType": "single-day",
+    "description": "Sognepræst Elon Jepsen, Harte.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0085",
+    "startDate": "2014-05-30",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Alternativt familiemøde.",
+    "slug": "event-0086",
+    "startDate": "2014-06-06",
+    "eventType": "single-day",
+    "description": "Møde for hele familien. Vi starter med fællesspisning.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0087",
+    "startDate": "2014-05-09",
+    "eventType": "multi-day",
+    "description": "(uge 24)",
+    "endDate": "2014-06-13"
+  },
+  {
+    "title": "Drop-in aften.",
+    "slug": "event-0088",
+    "startDate": "2014-06-13",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Grill og badning ved Knudhule – medbring selv mad og drikke.",
+    "slug": "event-0089",
+    "startDate": "2014-07-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "17:00"
+  },
+  {
+    "title": "Kanotur fra Skanderborg Vandrehjem, Kindlervej 9, Skanderborg.",
+    "slug": "event-0090",
+    "startDate": "2014-07-16",
+    "eventType": "single-day",
+    "description": "Tag aftenkaffen med, så finder vi et godt sted at nyde den. Vi regner med at slutte 21-21.30 tiden. Turen koster kr. 100,- pr. person.",
+    "startTime": "18:30"
+  },
+  {
+    "title": "Møde v. Kurt Hjemdal på Mørkholt Strand Camping. Emne: ”Et er nødvendigt” Luk. 10, 38-42.",
+    "slug": "event-0091",
+    "startDate": "2014-07-24",
+    "eventType": "single-day",
+    "description": "Charlotte og Kristian Dalgaard (tlf. nr. 5192 9912) serverer aftenkaffen i deres fortelt. (Plads nr. 123). Send en SMS, hvis du påtænker at komme.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0092",
+    "startDate": "2014-07-11",
+    "eventType": "multi-day",
+    "description": "(uge 33)",
+    "endDate": "2014-08-15"
+  },
+  {
+    "title": "Jakobsbrevet – troen mere end smukke ord?  I: Kraften til udholdenhed. Kap 1, 1-18.",
+    "slug": "event-0093",
+    "startDate": "2014-08-22",
+    "eventType": "single-day",
+    "description": "Ingolf Henoch Pedersen, bibelinspirator i Bibellæser-Ringen (Randers).",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Jakobsbrevet – troen mere end smukke ord?  II: Kraften til gode gerninger. Kap 1,19 - 2,26.",
+    "slug": "event-0094",
+    "startDate": "2014-08-29",
+    "eventType": "single-day",
+    "description": "Ingolf Henoch Pedersen, bibelinspirator i Bibellæser-Ringen (Randers).",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Jakobsbrevet – troen mere end smukke ord?  III: Kraften til et liv i ydmyghed og bøn. Kap. 3,1 - 5,20. Fællesspisning - husk service / bestik.",
+    "slug": "event-0095",
+    "startDate": "2014-09-05",
+    "eventType": "single-day",
+    "description": "Ingolf Henoch Pedersen, bibelinspirator i Bibellæser-Ringen (Randers).",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bethesda-weekend på Strandsborg: &quot;Helligånden – til hverdag og fest&quot;.",
+    "slug": "event-0096",
+    "startDate": "2014-08-12",
+    "eventType": "multi-day",
+    "description": "Landssekretær Nils Andersen, MF.",
+    "endDate": "2014-09-14"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0097",
+    "startDate": "2014-08-15",
+    "eventType": "multi-day",
+    "description": "(uge 38)",
+    "endDate": "2014-09-19"
+  },
+  {
+    "title": "Kan Gud virkelig tilgive alt? - og andre spørgsmål i tiden.",
+    "slug": "event-0098",
+    "startDate": "2014-09-26",
+    "eventType": "single-day",
+    "description": "Robert Bladt, generalsekretær i  Kristeligt Forbund for Studerende.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Alternativt familiemøde.",
+    "slug": "event-0099",
+    "startDate": "2014-10-03",
+    "eventType": "single-day",
+    "description": "Fællesspisning - husk service / bestik.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0100",
+    "startDate": "2014-09-06",
+    "eventType": "multi-day",
+    "description": "(uge 41)",
+    "endDate": "2014-10-10"
+  },
+  {
+    "title": "Når tvivlen banker på.",
+    "slug": "event-0101",
+    "startDate": "2014-10-24",
+    "eventType": "single-day",
+    "description": "Lærer Pia Vestergaard, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Den forfulgte kirkes udfordring til os.",
+    "slug": "event-0102",
+    "startDate": "2014-10-31",
+    "eventType": "single-day",
+    "description": "Golriz Ghozati, &#197;bne Døre.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Det gode liv. Fællesspisning - husk service / bestik.",
+    "slug": "event-0103",
+    "startDate": "2014-11-07",
+    "eventType": "single-day",
+    "description": "Skoleleder Anders Christensen, Djurslands Efterskole.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0104",
+    "startDate": "2014-10-10",
+    "eventType": "multi-day",
+    "description": "(uge 46)",
+    "endDate": "2014-11-14"
+  },
+  {
+    "title": "Nehemias’ Bog.",
+    "slug": "event-0105",
+    "startDate": "2014-11-21",
+    "eventType": "single-day",
+    "description": "Martin Eskesen, præst",
+    "startTime": "19:00",
+    "speaker": "Galten Valgmenighed."
+  },
+  {
+    "title": "Når Gud vender det døve øre til.",
+    "slug": "event-0106",
+    "startDate": "2014-11-28",
+    "eventType": "single-day",
+    "description": "Anette Vad, Videbæk, landsleder i Agape.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest.",
+    "slug": "event-0107",
+    "startDate": "2014-12-05",
+    "eventType": "single-day",
+    "description": "Pædagog Karen Broe, &#197;rhus.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0108",
+    "startDate": "2014-11-08",
+    "eventType": "multi-day",
+    "description": "(uge 50)",
+    "endDate": "2014-12-12"
+  },
+  {
+    "title": "Syng julen ind.",
+    "slug": "event-0109",
+    "startDate": "2014-12-21",
+    "eventType": "single-day",
+    "description": "Kamilla, Jørgen, Thomas, Mia og Allan  m.fl.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien.",
+    "slug": "event-0110",
+    "startDate": "2014-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Israelitternes vandring i ørkenen.",
+    "slug": "event-0111",
+    "startDate": "2015-01-09",
+    "eventType": "single-day",
+    "description": "Karlo Brondbjerg.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Alliance bedeuge ved Galten Valgmenighed.",
+    "slug": "event-0112",
+    "startDate": "2015-01-12",
+    "eventType": "single-day",
+    "description": "Hos Martin Eskesen, Skolevej 80, Galten.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Missionshus.",
+    "slug": "event-0113",
+    "startDate": "2015-01-14",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Missionshus.",
+    "slug": "event-0114",
+    "startDate": "2015-01-15",
+    "eventType": "single-day",
+    "description": "Ved IMU.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0115",
+    "startDate": "2014-12-19",
+    "eventType": "multi-day",
+    "description": "(uge 4)",
+    "endDate": "2015-01-23"
+  },
+  {
+    "title": "Vort håb er i Himlen, vort liv på jorden (nytårsfest).",
+    "slug": "event-0116",
+    "startDate": "2015-01-30",
+    "eventType": "single-day",
+    "description": "Indremissionær Brian Madsen, Vejle.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møde.",
+    "slug": "event-0117",
+    "startDate": "2015-02-06",
+    "eventType": "single-day",
+    "description": "Indremissionær Egild Kildeholm Jensen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Skal vi nu også til at forsvare den kristne tro? (Fyraftensmøde).",
+    "slug": "event-0118",
+    "startDate": "2015-02-20",
+    "eventType": "single-day",
+    "description": "Kurt Christensen, lærer på Menighedsfakultetet i &#197;rhus.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0119",
+    "startDate": "2015-01-23",
+    "eventType": "multi-day",
+    "description": "(uge 9)",
+    "endDate": "2015-02-27"
+  },
+  {
+    "title": "Tur til &#197;rhus Springcenter, Hvidkildevej 11, 8240 Risskov.",
+    "slug": "event-0120",
+    "startDate": "2015-03-01",
+    "eventType": "single-day",
+    "description": "Medbring kaffe/the og kage til eget forbrug, som må spises i køkkenet på 1. salen.",
+    "startTime": "13:00"
+  },
+  {
+    "title": "Jeg var fremmed, og I tog jer (ikke) af mig.",
+    "slug": "event-0121",
+    "startDate": "2015-03-06",
+    "eventType": "single-day",
+    "description": "Krista Rosenlund Bellows, tværkulturel konsulent i Indre Mission.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Hvis Jesus kommer igen i morgen, behøver jeg så plante et træ i dag?",
+    "slug": "event-0122",
+    "startDate": "2015-03-13",
+    "eventType": "single-day",
+    "description": "Thorkild Vad, regionsleder i Indre Mission.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling i Stjær/Galten Indre Mission.",
+    "slug": "event-0123",
+    "startDate": "2015-03-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0124",
+    "startDate": "2015-02-23",
+    "eventType": "multi-day",
+    "description": "(uge 13)",
+    "endDate": "2015-03-27"
+  },
+  {
+    "title": "Stress og dens negative virkning på parforholdet (temaaften).",
+    "slug": "event-0125",
+    "startDate": "2015-04-10",
+    "eventType": "single-day",
+    "description": "Psykolog Ole Rabjerg, Agape.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Syng den for første gang!",
+    "slug": "event-0126",
+    "startDate": "2015-04-17",
+    "eventType": "single-day",
+    "description": "Lovsangsaften.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møde.",
+    "slug": "event-0127",
+    "startDate": "2015-04-24",
+    "eventType": "single-day",
+    "description": "Frimenighedspræst Peter Rask, Silkeborg.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0128",
+    "startDate": "2015-04-27",
+    "eventType": "multi-day",
+    "description": "(uge 18)",
+    "endDate": "2015-05-01"
+  },
+  {
+    "title": "Hvorfor Israel? Hvorfor, Israel?",
+    "slug": "event-0129",
+    "startDate": "2015-05-08",
+    "eventType": "single-day",
+    "description": "Projektkoordinator Ellen Hessellund, Ordet og Israel.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konfirmandfest.",
+    "slug": "event-0130",
+    "startDate": "2015-05-20",
+    "eventType": "single-day",
+    "description": "En aften for årets konfirmander, deres familier og alle os andre.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0131",
+    "startDate": "2015-04-25",
+    "eventType": "multi-day",
+    "description": "(uge 22)",
+    "endDate": "2015-05-29"
+  },
+  {
+    "title": "Familieaften.",
+    "slug": "event-0132",
+    "startDate": "2015-06-05",
+    "eventType": "single-day",
+    "description": "Søndagsskolekonsulent Hanne Pedersen.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Skt. Hansfest.",
+    "slug": "event-0133",
+    "startDate": "2015-06-23",
+    "eventType": "single-day",
+    "description": "Hos Charlotte og Christian: Christiansmindevej 9a, 8660 Skanderborg.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Java, kakao og andre bønner – hvad holder dig vågen? (Fællesspisning)",
+    "slug": "event-0134",
+    "startDate": "2015-08-14",
+    "eventType": "single-day",
+    "description": "Jørgen Jeppesen, Herskind Hede.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0135",
+    "startDate": "2015-07-17",
+    "eventType": "multi-day",
+    "description": "(uge 34)",
+    "endDate": "2015-08-21"
+  },
+  {
+    "title": "Bøn.",
+    "slug": "event-0136",
+    "startDate": "2015-08-28",
+    "eventType": "single-day",
+    "description": "Pensioneret indremissionær Villy Sørensen, Hammel.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Retten Til Liv.",
+    "slug": "event-0137",
+    "startDate": "2015-09-04",
+    "eventType": "single-day",
+    "description": "Ellen Højlund Wibe, Stjær.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bethesda-weekend på Strandsborg.",
+    "slug": "event-0138",
+    "startDate": "2015-08-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2015-09-13"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0139",
+    "startDate": "2015-08-14",
+    "eventType": "multi-day",
+    "description": "(uge 38)",
+    "endDate": "2015-09-18"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0140",
+    "startDate": "2015-09-18",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Høstfest: Giv os i dag vort daglige brød.",
+    "slug": "event-0141",
+    "startDate": "2015-09-25",
+    "eventType": "single-day",
+    "description": "Indremissionær Finn Najbjerg, Kjellerup.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Progressiv spisning.",
+    "slug": "event-0142",
+    "startDate": "2015-10-02",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Når troen bliver væk, hvordan finder jeg den så igen?",
+    "slug": "event-0143",
+    "startDate": "2015-10-06",
+    "eventType": "single-day",
+    "description": "Valgmenighedspræst Jon Poulsen, Gjern.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0144",
+    "startDate": "2015-09-19",
+    "eventType": "multi-day",
+    "description": "(uge 43)",
+    "endDate": "2015-10-23"
+  },
+  {
+    "title": "At bære og blive båret til Jesus.",
+    "slug": "event-0145",
+    "startDate": "2015-10-30",
+    "eventType": "single-day",
+    "description": "Indremissionær Heri Elttør, Aulum.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møderække I Guds lys - at stå afklædt for Gud. Tekst: Rom 2, 1 - 4",
+    "slug": "event-0146",
+    "startDate": "2015-11-03",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjion",
+    "startTime": "18:00"
+  },
+  {
+    "title": "MødeRække: At være Guds barn - elsket af Gud. Tekst: Rom 5, 1-11",
+    "slug": "event-0147",
+    "startDate": "2015-11-04",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjion",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Gud i mig. Tekst: Tekst: Rom 8, 9-11",
+    "slug": "event-0148",
+    "startDate": "2015-11-05",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjion",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække Gud i mit liv. Tekst: Rom 8, 12 - 17",
+    "slug": "event-0149",
+    "startDate": "2015-11-06",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjion",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0150",
+    "startDate": "2015-10-09",
+    "eventType": "multi-day",
+    "description": "(uge 46)",
+    "endDate": "2015-11-13"
+  },
+  {
+    "title": "Emne følger.",
+    "slug": "event-0151",
+    "startDate": "2015-11-20",
+    "eventType": "single-day",
+    "description": "Forstander Kristian Andersen, Solgården Efterskole.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Lovsang. Fællesspisning - husk service / bestik.",
+    "slug": "event-0152",
+    "startDate": "2015-11-27",
+    "eventType": "single-day",
+    "description": "IM-ungdomskonsulent James Matthew Pfrogner.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Adventsfest: Kærlighedens kraft.",
+    "slug": "event-0153",
+    "startDate": "2015-12-04",
+    "eventType": "single-day",
+    "description": "Ernst Skipper, tidligere leder af Sdr. Lundgård.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0154",
+    "startDate": "2015-11-07",
+    "eventType": "multi-day",
+    "description": "(uge 50)",
+    "endDate": "2015-12-11"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0155",
+    "startDate": "2015-12-14",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Syng julen ind.",
+    "slug": "event-0156",
+    "startDate": "2015-12-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien.",
+    "slug": "event-0157",
+    "startDate": "2015-12-29",
+    "eventType": "single-day",
+    "description": "Juletale v. Mogens Langdahl.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0158",
+    "startDate": "2015-12-04",
+    "eventType": "multi-day",
+    "description": "(uge 1)",
+    "endDate": "2016-01-08"
+  },
+  {
+    "title": "Alliance bedeuge ved Galten Valgmenighed.",
+    "slug": "event-0159",
+    "startDate": "2016-01-11",
+    "eventType": "single-day",
+    "description": "Hørslevvej 35, Skovby.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Kirke.",
+    "slug": "event-0160",
+    "startDate": "2016-01-13",
+    "eventType": "single-day",
+    "description": "Stjær Kirke.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Missionshus.",
+    "slug": "event-0161",
+    "startDate": "2016-01-14",
+    "eventType": "single-day",
+    "description": "IMU står for aftenen.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Alliance bedeuge i Stjær Missionshus.",
+    "slug": "event-0162",
+    "startDate": "2016-01-15",
+    "eventType": "single-day",
+    "description": "IM står for aftenen.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Nyt år – nyt mod: &quot;Læg ud på dybet…&quot; (nytårsfest).",
+    "slug": "event-0163",
+    "startDate": "2016-01-22",
+    "eventType": "single-day",
+    "description": "Lisbet Dalum Kristensen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fyraftensmøde/familiemøde.",
+    "slug": "event-0164",
+    "startDate": "2016-01-29",
+    "eventType": "single-day",
+    "description": "Sanger og sangskriver, Hans Jørn Østerby.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0165",
+    "startDate": "2016-01-01",
+    "eventType": "multi-day",
+    "description": "(uge 5)",
+    "endDate": "2016-02-05"
+  },
+  {
+    "title": "Kristenliv i kald og stand.",
+    "slug": "event-0166",
+    "startDate": "2016-02-09",
+    "eventType": "single-day",
+    "description": "Valgmenighedspræst og formand for Indre Mission, Hans Ole Bækgaard.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Når lyset fra Gud skinner gennem andre (fyraftensmøde).",
+    "slug": "event-0167",
+    "startDate": "2016-02-26",
+    "eventType": "single-day",
+    "description": "Frede Møller.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0168",
+    "startDate": "2016-02-29",
+    "eventType": "multi-day",
+    "description": "(uge 9)",
+    "endDate": "2016-03-04"
+  },
+  {
+    "title": "Generalforsamling i Stjær/Galten Indre Mission.",
+    "slug": "event-0169",
+    "startDate": "2016-03-11",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0170",
+    "startDate": "2016-03-14",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Jesusbønnen.",
+    "slug": "event-0171",
+    "startDate": "2016-03-18",
+    "eventType": "single-day",
+    "description": "Teolog og familieterapeut, Elisabeth Albinus Glenthøj.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "MAF - Mission Aviation Fellowship (fyraftensmøde).",
+    "slug": "event-0172",
+    "startDate": "2016-04-01",
+    "eventType": "single-day",
+    "description": "Thorkild Andersen, MAF.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0173",
+    "startDate": "2016-03-04",
+    "eventType": "multi-day",
+    "description": "(uge 14)",
+    "endDate": "2016-04-08"
+  },
+  {
+    "title": "Forskellighed - grundlaget for udvikling og vækst.",
+    "slug": "event-0174",
+    "startDate": "2016-04-15",
+    "eventType": "single-day",
+    "description": "Steen Palmqvist.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Velsignelsen.",
+    "slug": "event-0175",
+    "startDate": "2016-04-19",
+    "eventType": "single-day",
+    "description": "Cand. theol. Morten Brosbøl Vibert.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Mushemba Foundation.",
+    "slug": "event-0176",
+    "startDate": "2016-04-29",
+    "eventType": "single-day",
+    "description": "Lea og Josephat Mushemba.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0177",
+    "startDate": "2016-04-02",
+    "eventType": "multi-day",
+    "description": "(uge 18)",
+    "endDate": "2016-05-06"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0178",
+    "startDate": "2016-05-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Noas Ark.",
+    "slug": "event-0179",
+    "startDate": "2016-05-10",
+    "eventType": "single-day",
+    "description": "Redaktør på Udfordringen, Henri Nissen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konfirmandfest.",
+    "slug": "event-0180",
+    "startDate": "2016-05-18",
+    "eventType": "single-day",
+    "description": "(v. Teenklubben)",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vi er forskellige, men det er vores styrke (fyraftensmøde).",
+    "slug": "event-0181",
+    "startDate": "2016-05-27",
+    "eventType": "single-day",
+    "description": "Jørgen Møller.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Indre Missions årsmødefestival på Mørkholt.",
+    "slug": "event-0182",
+    "startDate": "2016-05-03",
+    "eventType": "multi-day",
+    "description": "Bl.a. Stuart Townend giver koncert.",
+    "endDate": "2016-06-05"
+  },
+  {
+    "title": "Jesus siger: Jeg er...",
+    "slug": "event-0183",
+    "startDate": "2016-06-07",
+    "eventType": "single-day",
+    "description": "Missionærprovst Leif Nielsen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Syng den for første gang.",
+    "slug": "event-0184",
+    "startDate": "2016-06-17",
+    "eventType": "single-day",
+    "description": "Sommerafslutning.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Ekstraordinær generalforsamling",
+    "slug": "event-0185",
+    "startDate": "2016-06-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Når Gud og mennesker bytter plads, er der en stol ledig.",
+    "slug": "event-0186",
+    "startDate": "2016-08-19",
+    "eventType": "single-day",
+    "description": "Nicolaj Wibe.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Messy Church",
+    "slug": "event-0187",
+    "startDate": "2016-08-22",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0188",
+    "startDate": "2016-07-22",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2016-08-28"
+  },
+  {
+    "title": "Bibelens troværdighed",
+    "slug": "event-0189",
+    "startDate": "2016-09-02",
+    "eventType": "single-day",
+    "description": "Karlo Brøndbjerg",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Guds skabermagt og vores selvforståelse",
+    "slug": "event-0190",
+    "startDate": "2016-09-09",
+    "eventType": "single-day",
+    "description": "Christian Peder Olesen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bethesda-weekend på Strandsborg.",
+    "slug": "event-0191",
+    "startDate": "2016-08-17",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2016-09-18"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0192",
+    "startDate": "2016-08-19",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2016-09-25"
+  },
+  {
+    "title": "Som du sår, skal du høste",
+    "slug": "event-0193",
+    "startDate": "2016-09-30",
+    "eventType": "single-day",
+    "description": "Villy Sørensen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Progressiv spisning",
+    "slug": "event-0194",
+    "startDate": "2016-10-07",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0195",
+    "startDate": "2016-09-10",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2016-10-16"
+  },
+  {
+    "title": "Esajas 9, 1-6",
+    "slug": "event-0196",
+    "startDate": "2016-10-28",
+    "eventType": "single-day",
+    "description": "David Nebel-Hansen (Også for IMU og Teenklub)",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bjergprædiken (Fyraftensmøde)",
+    "slug": "event-0197",
+    "startDate": "2016-11-04",
+    "eventType": "single-day",
+    "description": "Christian Poulsen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0198",
+    "startDate": "2016-10-07",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2016-11-12"
+  },
+  {
+    "title": "Mission - Indien tur/retur",
+    "slug": "event-0199",
+    "startDate": "2016-11-18",
+    "eventType": "single-day",
+    "description": "Bjarne Gertz Olsen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Zakæus",
+    "slug": "event-0200",
+    "startDate": "2016-11-25",
+    "eventType": "single-day",
+    "description": "Jim Pfrogner",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forventning og tålmodighed",
+    "slug": "event-0201",
+    "startDate": "2016-12-02",
+    "eventType": "single-day",
+    "description": "Anette Klausholm Bækgaard",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Er du den, som kommer?",
+    "slug": "event-0202",
+    "startDate": "2016-12-09",
+    "eventType": "single-day",
+    "description": "Thorkild Vad",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0203",
+    "startDate": "2016-12-12",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Syng julen ind.",
+    "slug": "event-0204",
+    "startDate": "2016-12-18",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien.",
+    "slug": "event-0205",
+    "startDate": "2016-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Juleferie",
+    "slug": "event-0206",
+    "startDate": "2016-12-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-01-07"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge hos GAVA, Skovby",
+    "slug": "event-0207",
+    "startDate": "2017-01-08",
+    "eventType": "single-day",
+    "description": "Arr.: &#197;rhus Valgmenighed, Galten-klyngen",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge hos GAVA, Skovby",
+    "slug": "event-0208",
+    "startDate": "2017-01-09",
+    "eventType": "single-day",
+    "description": "Arr.: Galten Valgmenighed",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Harlev Kirke",
+    "slug": "event-0209",
+    "startDate": "2017-01-10",
+    "eventType": "single-day",
+    "description": "Arr.: Harlev Kirke",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Stjær Kirke",
+    "slug": "event-0210",
+    "startDate": "2017-01-11",
+    "eventType": "single-day",
+    "description": "Arr.: Stjær Kirke",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær",
+    "slug": "event-0211",
+    "startDate": "2017-01-12",
+    "eventType": "single-day",
+    "description": "Arr.: Indre Missions Ungdom (IMU)",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær",
+    "slug": "event-0212",
+    "startDate": "2017-01-13",
+    "eventType": "single-day",
+    "description": "Arr.: Indre Mission i Stjær/Galten",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0213",
+    "startDate": "2016-12-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-01-22"
+  },
+  {
+    "title": "Nytårsgaver",
+    "slug": "event-0214",
+    "startDate": "2017-01-27",
+    "eventType": "single-day",
+    "description": "Ved Helle",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fyraftensmøde",
+    "slug": "event-0215",
+    "startDate": "2017-02-03",
+    "eventType": "single-day",
+    "description": "Familieaften",
+    "startTime": "18:00",
+    "speaker": "Lissen"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0216",
+    "startDate": "2017-01-06",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-02-12"
+  },
+  {
+    "title": "Vinterferie",
+    "slug": "event-0217",
+    "startDate": "2017-01-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-02-19"
+  },
+  {
+    "title": "Lovsangsaften",
+    "slug": "event-0218",
+    "startDate": "2017-02-24",
+    "eventType": "single-day",
+    "description": "Husets band",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Jesus - Guds lam",
+    "slug": "event-0219",
+    "startDate": "2017-02-28",
+    "eventType": "single-day",
+    "description": "Peter Rask",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Messy Church",
+    "slug": "event-0220",
+    "startDate": "2017-03-06",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0221",
+    "startDate": "2017-02-06",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-03-12"
+  },
+  {
+    "title": "Intelligent design",
+    "slug": "event-0222",
+    "startDate": "2017-03-17",
+    "eventType": "single-day",
+    "description": "Karsten Pultz",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0223",
+    "startDate": "2017-03-24",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "BDM",
+    "slug": "event-0224",
+    "startDate": "2017-03-31",
+    "eventType": "single-day",
+    "description": "Knud Elmo Knudsen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0225",
+    "startDate": "2017-03-03",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-04-09"
+  },
+  {
+    "title": "Påskeferie",
+    "slug": "event-0226",
+    "startDate": "2017-03-10",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-04-16"
+  },
+  {
+    "title": "Bibelens røde tråd (del 1) - &quot;Løseren&quot;. Ruths bog og Gal. 44.",
+    "slug": "event-0227",
+    "startDate": "2017-04-21",
+    "eventType": "single-day",
+    "description": "Christen Peter Olesen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fyraftensmøde - Hvordan kan teenagere ledes til Jesus?",
+    "slug": "event-0228",
+    "startDate": "2017-04-28",
+    "eventType": "single-day",
+    "description": "Jakob Hørning",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelens røde tråd (del 2) &quot;Blodet og bjergene&quot; 3. Mos. 16. og Hebr. 9",
+    "slug": "event-0229",
+    "startDate": "2017-05-05",
+    "eventType": "single-day",
+    "description": "Christen Peter Olesen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Messy Church",
+    "slug": "event-0230",
+    "startDate": "2017-05-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0231",
+    "startDate": "2017-04-08",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-05-14"
+  },
+  {
+    "title": "Konfirmandfest ved Teenklubben",
+    "slug": "event-0232",
+    "startDate": "2017-05-17",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Tro i tiden",
+    "slug": "event-0233",
+    "startDate": "2017-05-23",
+    "eventType": "single-day",
+    "description": "Erik Morten Jensen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0234",
+    "startDate": "2017-05-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-06-04"
+  },
+  {
+    "title": "Fangekoret - OBS Lørdag!",
+    "slug": "event-0235",
+    "startDate": "2017-06-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Sankt Hans Fest og sommerafslutning",
+    "slug": "event-0236",
+    "startDate": "2017-06-23",
+    "eventType": "single-day",
+    "description": "Hos Agnes og Jørgen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0237",
+    "startDate": "2017-05-19",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-06-25"
+  },
+  {
+    "title": "Sommerferie uge 26-31",
+    "slug": "event-0238",
+    "startDate": "2017-06-26",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uformel opstartsaften.",
+    "slug": "event-0239",
+    "startDate": "2017-08-11",
+    "eventType": "single-day",
+    "description": "Nærmere info senere.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Det koster - og kan koste dyrt - at være kristen (fyraftensmøde).",
+    "slug": "event-0240",
+    "startDate": "2017-08-25",
+    "eventType": "single-day",
+    "description": "Esper Thiedemann.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "At vandre med Jesus (Lukas 24).",
+    "slug": "event-0241",
+    "startDate": "2017-09-01",
+    "eventType": "single-day",
+    "description": "Theis Brøgger.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Taknemmelighed (OBS: Tirsdag).",
+    "slug": "event-0242",
+    "startDate": "2017-09-05",
+    "eventType": "single-day",
+    "description": "Jakob Søvndal.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0243",
+    "startDate": "2017-08-11",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-09-15"
+  },
+  {
+    "title": "Bethesda-weekend på Strandsborg.",
+    "slug": "event-0244",
+    "startDate": "2017-08-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-09-17"
+  },
+  {
+    "title": "Høstfest: Glæde, fest, taknemmelighed og overflod.",
+    "slug": "event-0245",
+    "startDate": "2017-09-22",
+    "eventType": "single-day",
+    "description": "Nicolaj Wibe.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0246",
+    "startDate": "2017-09-25",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Lovsangsaften.",
+    "slug": "event-0247",
+    "startDate": "2017-09-29",
+    "eventType": "single-day",
+    "description": "Karen Fisher",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Progressiv spisning.",
+    "slug": "event-0248",
+    "startDate": "2017-10-06",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - dag 1.",
+    "slug": "event-0249",
+    "startDate": "2017-10-08",
+    "eventType": "single-day",
+    "description": "Jørgen Bloch, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møderække - dag 2.",
+    "slug": "event-0250",
+    "startDate": "2017-10-09",
+    "eventType": "single-day",
+    "description": "Jørgen Bloch, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møderække - dag 3.",
+    "slug": "event-0251",
+    "startDate": "2017-10-10",
+    "eventType": "single-day",
+    "description": "Jørgen Bloch, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møderække - dag 4.",
+    "slug": "event-0252",
+    "startDate": "2017-10-11",
+    "eventType": "single-day",
+    "description": "Palle Kure, Bornholm.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - dag 5.",
+    "slug": "event-0253",
+    "startDate": "2017-10-12",
+    "eventType": "single-day",
+    "description": "Palle Kure, Bornholm.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - dag 6.",
+    "slug": "event-0254",
+    "startDate": "2017-10-13",
+    "eventType": "single-day",
+    "description": "Palle Kure, Bornholm.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Aktiv dødshjælp.",
+    "slug": "event-0255",
+    "startDate": "2017-10-27",
+    "eventType": "single-day",
+    "description": "Henrik Højlund.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Luther.",
+    "slug": "event-0256",
+    "startDate": "2017-11-03",
+    "eventType": "single-day",
+    "description": "Sognepræst Morten Brosbøl Vibert.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Livet omkring vores missionshus (OBS: Tirsdag).",
+    "slug": "event-0257",
+    "startDate": "2017-11-07",
+    "eventType": "single-day",
+    "description": "Bestyrelsen står for aftenen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0258",
+    "startDate": "2017-10-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-11-17"
+  },
+  {
+    "title": "Paulus&#39; liv.",
+    "slug": "event-0259",
+    "startDate": "2017-11-24",
+    "eventType": "single-day",
+    "description": "Klaus Vibe.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest.",
+    "slug": "event-0260",
+    "startDate": "2017-12-01",
+    "eventType": "single-day",
+    "description": "Peter Nord Hansen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0261",
+    "startDate": "2017-11-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2017-12-08"
+  },
+  {
+    "title": "Messy Church.",
+    "slug": "event-0262",
+    "startDate": "2017-12-11",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:45"
+  },
+  {
+    "title": "Vi synger julen ind.",
+    "slug": "event-0263",
+    "startDate": "2017-12-17",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien.",
+    "slug": "event-0264",
+    "startDate": "2017-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge hos GAVA, Skovby.",
+    "slug": "event-0265",
+    "startDate": "2018-01-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Framlev Kirke.",
+    "slug": "event-0266",
+    "startDate": "2018-01-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Stjær Kirke.",
+    "slug": "event-0267",
+    "startDate": "2018-01-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0268",
+    "startDate": "2018-01-11",
+    "eventType": "single-day",
+    "description": "Arr.: Indre Missions Ungdom (IMU).",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0269",
+    "startDate": "2018-01-12",
+    "eventType": "single-day",
+    "description": "Arr.: Indre Mission i Stjær/Galten.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "En snak om julekort, forstørrelsesglas og Jesus.",
+    "slug": "event-0270",
+    "startDate": "2018-01-19",
+    "eventType": "single-day",
+    "description": "Sonja Sanden, &quot;daglejer&quot;, Herskind Hede.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0271",
+    "startDate": "2017-12-22",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-01-26"
+  },
+  {
+    "title": "At bevare gnisten i parforholdet.",
+    "slug": "event-0272",
+    "startDate": "2018-02-03",
+    "eventType": "single-day",
+    "description": "Psykolog Ole Rabjerg, Agape.",
+    "startTime": "10:00"
+  },
+  {
+    "title": "Filmaften.",
+    "slug": "event-0273",
+    "startDate": "2018-02-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0274",
+    "startDate": "2018-01-19",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-02-23"
+  },
+  {
+    "title": "Generalforsamling.",
+    "slug": "event-0275",
+    "startDate": "2018-03-02",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0276",
+    "startDate": "2018-02-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-03-16"
+  },
+  {
+    "title": "Brændpunkter i verden i dag.",
+    "slug": "event-0277",
+    "startDate": "2018-03-23",
+    "eventType": "single-day",
+    "description": "Golriz Ghozati, fungerende generalsekretær i &#197;bne Døre.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Lovsangsaften.",
+    "slug": "event-0278",
+    "startDate": "2018-04-06",
+    "eventType": "single-day",
+    "description": "Musiker og stud. med. Karen Fischer, &#197;rhus.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0279",
+    "startDate": "2018-03-09",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-04-13"
+  },
+  {
+    "title": "Hvor plukkes der åndelig frugt i dit liv?",
+    "slug": "event-0280",
+    "startDate": "2018-04-20",
+    "eventType": "single-day",
+    "description": "Nicolaj Wibe, generalsekretær i Sømandsmissionen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fra bønnens verden.",
+    "slug": "event-0281",
+    "startDate": "2018-04-26",
+    "eventType": "single-day",
+    "description": "Bønneteamet.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Ruths Bog.",
+    "slug": "event-0282",
+    "startDate": "2018-05-04",
+    "eventType": "single-day",
+    "description": "Jim Pfrogner, ungdomskonsulent og musikkonsulent i Region Midt.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0283",
+    "startDate": "2018-04-07",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-05-11"
+  },
+  {
+    "title": "Konfirmandfest ved Teenklubben.",
+    "slug": "event-0284",
+    "startDate": "2018-05-16",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Familieaften: Biblen åbnes - vi deler.",
+    "slug": "event-0285",
+    "startDate": "2018-05-25",
+    "eventType": "single-day",
+    "description": "Lissen M. Bendix Jensen, konsulent i Søndagsskolerne.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0286",
+    "startDate": "2018-05-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-06-08"
+  },
+  {
+    "title": "Hvordan virker Guds kraft i os.",
+    "slug": "event-0287",
+    "startDate": "2018-06-15",
+    "eventType": "single-day",
+    "description": "Jon Poulsen, frimenighedspræst",
+    "startTime": "19:00",
+    "speaker": "Søhøjlandets Kirke."
+  },
+  {
+    "title": "Sankt Hans fest.",
+    "slug": "event-0288",
+    "startDate": "2018-06-23",
+    "eventType": "single-day",
+    "description": "Hos Agnes &amp; Jørgen Jeppesen, Hedevej 35, Herskind Hede.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Mød Jesus i din næste",
+    "slug": "event-0289",
+    "startDate": "2018-08-17",
+    "eventType": "single-day",
+    "description": "Egild Kildeholm Jensen, Indremissionær Rønde",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Om Kristen Meditation, vi mødes kl 18.30 til travetur i skaberværket, mødet starter kl 19.30",
+    "slug": "event-0290",
+    "startDate": "2018-08-24",
+    "eventType": "single-day",
+    "description": "Thomas Frovin, projektleder for I mesterens lys",
+    "startTime": "18:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0291",
+    "startDate": "2018-08-27",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-09-02"
+  },
+  {
+    "title": "Visne grene ved siden af stammen eller friske grene på træstammen",
+    "slug": "event-0292",
+    "startDate": "2018-09-07",
+    "eventType": "single-day",
+    "description": "Lisbet Ulbjerg Kristensen, Høstfest med fællesspisning",
+    "startTime": "18:00"
+  },
+  {
+    "title": "#heltuperfekt (faktisk er du #heltperfekt)",
+    "slug": "event-0293",
+    "startDate": "2018-09-14",
+    "eventType": "single-day",
+    "description": "Bent Molbech Pedersen, forstander på Djurslands Efterskole",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Samfundslejr på Standsborg",
+    "slug": "event-0294",
+    "startDate": "2018-08-21",
+    "eventType": "multi-day",
+    "description": "(nærmere info følger)",
+    "endDate": "2018-09-23"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0295",
+    "startDate": "2018-08-24",
+    "eventType": "multi-day",
+    "description": "Samtale ud fra oplæg fra Bent Molbech Pedersen #heltperfekt",
+    "endDate": "2018-09-30"
+  },
+  {
+    "title": "Møderække - Bøn og løfter knyttet til bøn og forbøn, fællesspisning kl 18:00",
+    "slug": "event-0296",
+    "startDate": "2018-10-02",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjon, møde 19:00 til ca 20:00",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - Bøn og løfter knyttet til bøn og forbøn, fællesspisning kl 18:00",
+    "slug": "event-0297",
+    "startDate": "2018-10-03",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjon, møde 19:00 til ca 20:00",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - Bøn og løfter knyttet til bøn og forbøn, fællesspisning kl 18:00",
+    "slug": "event-0298",
+    "startDate": "2018-10-04",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjon, møde 19:00 til ca 20:00",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække - Bøn og løfter knyttet til bøn og forbøn, fællesspisning kl 18:00",
+    "slug": "event-0299",
+    "startDate": "2018-10-05",
+    "eventType": "single-day",
+    "description": "Jens Iver Jensen, Normisjon, møde 19:00 til ca 20:00",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Vi deler, hvad vi har fået med fra møderækken",
+    "slug": "event-0300",
+    "startDate": "2018-10-09",
+    "eventType": "single-day",
+    "description": "Tovholder er Sonja Sanden",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Efterårsferie",
+    "slug": "event-0301",
+    "startDate": "2018-09-15",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-10-19"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0302",
+    "startDate": "2018-09-22",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-10-28"
+  },
+  {
+    "title": "Er himmellængsel blevet et fremmedord?",
+    "slug": "event-0303",
+    "startDate": "2018-11-02",
+    "eventType": "single-day",
+    "description": "Villy Sørensen, pensioneret indremissionær",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Jeg var fremmed, men du tog imod mig. En aften om praktiske og åndelige forskelle mellem kristne i forskellige kulturer (medbring service til spisning). Mødet begynder kl. 19:00",
+    "slug": "event-0304",
+    "startDate": "2018-11-09",
+    "eventType": "single-day",
+    "description": "Peter Mikkelsen, leder af Internationalt Kristent Center",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Aktuelt emne, OBS ny mødeform med fællesspisning og familievenligt element - medbring service til spisning",
+    "slug": "event-0305",
+    "startDate": "2018-11-16",
+    "eventType": "single-day",
+    "description": "Jørgen Møller, formand for Stjær / Galten Indre Mission",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0306",
+    "startDate": "2018-10-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-11-18"
+  },
+  {
+    "title": "De 10 bud og nåden",
+    "slug": "event-0307",
+    "startDate": "2018-11-23",
+    "eventType": "single-day",
+    "description": "Tage Rasmussen, pastor emeritus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest (medbring gerne lille gave til amerikansk lotteri)",
+    "slug": "event-0308",
+    "startDate": "2018-11-30",
+    "eventType": "single-day",
+    "description": "Heri Eltør, indremmisionær i Aulum",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Andagts og bedeaften",
+    "slug": "event-0309",
+    "startDate": "2018-12-04",
+    "eventType": "single-day",
+    "description": "v. Bønneteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Jesu forkyndelse - fortællingen, kongeriget og fællesskabet som nyt perspektiv",
+    "slug": "event-0310",
+    "startDate": "2018-12-07",
+    "eventType": "single-day",
+    "description": "Michael Thunbo, stud. theol",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0311",
+    "startDate": "2018-11-10",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2018-12-16"
+  },
+  {
+    "title": "Syng julen ind - cafeaften med band og lokale kunstnere",
+    "slug": "event-0312",
+    "startDate": "2018-12-16",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest med optrin fra børneklubben, juletale og sang omkring juletræet",
+    "slug": "event-0313",
+    "startDate": "2018-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Opstarts- og hyggeaften.",
+    "slug": "event-0314",
+    "startDate": "2019-01-04",
+    "eventType": "single-day",
+    "description": "Tag evt. et spil eller anden hyggeaktivitet med.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Stjær Kirke.",
+    "slug": "event-0315",
+    "startDate": "2019-01-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0316",
+    "startDate": "2019-01-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0317",
+    "startDate": "2019-01-11",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Forbønsgudstjeneste i Galten Valgmenighed.",
+    "slug": "event-0318",
+    "startDate": "2019-01-13",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0319",
+    "startDate": "2018-12-14",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-01-18"
+  },
+  {
+    "title": "Nytårsfest.",
+    "slug": "event-0320",
+    "startDate": "2019-01-25",
+    "eventType": "single-day",
+    "description": "Indremissionær Jørgen Bloch, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konflikthåndtering og god kommunikation (med fællesspisning).",
+    "slug": "event-0321",
+    "startDate": "2019-02-01",
+    "eventType": "single-day",
+    "description": "Ingelise Bach &amp; Lisbeth Vig.",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0322",
+    "startDate": "2019-01-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-02-08"
+  },
+  {
+    "title": "Fastetiden - faste med glæde.",
+    "slug": "event-0323",
+    "startDate": "2019-02-22",
+    "eventType": "single-day",
+    "description": "Cand. theol. Carsten Dalsgaard Hansen, leder på Hellig Kors Kloster.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kasper, Jesper &amp; Jonathan - en historie om tre kristne.",
+    "slug": "event-0324",
+    "startDate": "2019-03-01",
+    "eventType": "single-day",
+    "description": "Ren&#233; Brorson, forstander på Grejsdalens Efterskole.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0325",
+    "startDate": "2019-02-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-03-08"
+  },
+  {
+    "title": "Generalforsamling.",
+    "slug": "event-0326",
+    "startDate": "2019-03-15",
+    "eventType": "single-day",
+    "description": "Forbøn for aftenen, bestyrelsen og arbejdet kl. 18.30 i IMU-lokalet.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "1. Johannes Brev kap. 3 - Kristne synder ikke.",
+    "slug": "event-0327",
+    "startDate": "2019-03-22",
+    "eventType": "single-day",
+    "description": "Stud. theol. Kasper Bergholt.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0328",
+    "startDate": "2019-02-25",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-03-29"
+  },
+  {
+    "title": "Temadag for forældre: Oplæg og debat om familieliv, opdragelse m.v.",
+    "slug": "event-0329",
+    "startDate": "2019-03-30",
+    "eventType": "single-day",
+    "description": "Carsten Hjorth Pedersen, daglig leder af Kristent Pædagogisk Institut &amp; Niels Kousgaard, lærer på Brændstrup Kristne Friskole.",
+    "startTime": "09:00"
+  },
+  {
+    "title": "SAT-7: Kristne TV-udsendelser til Mellemøsten og Nordafrika.",
+    "slug": "event-0330",
+    "startDate": "2019-04-05",
+    "eventType": "single-day",
+    "description": "Johannes Ettrup Larsen, frivillig i Mission Afrika (fællesspisning).",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Lovsangsaften m. mulighed for personlig forbøn.",
+    "slug": "event-0331",
+    "startDate": "2019-04-12",
+    "eventType": "single-day",
+    "description": "Stud. med. Amalie &amp; stud. theol. Lasse Bach Dybdal.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0332",
+    "startDate": "2019-03-22",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-04-26"
+  },
+  {
+    "title": "Guds krafts virkning i og omkring os.",
+    "slug": "event-0333",
+    "startDate": "2019-05-03",
+    "eventType": "single-day",
+    "description": "Stud. theol. Daniel Kofoed Pedersen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Sorg i livet - det smertefulde i at miste (fællesspisning).",
+    "slug": "event-0334",
+    "startDate": "2019-05-10",
+    "eventType": "single-day",
+    "description": "Psykoterapeut Frank Risbjerg Kristensen, konsulent i ELM.",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Aflyst: Bønneaften op til St. Bededag.",
+    "slug": "event-0335",
+    "startDate": "2019-05-16",
+    "eventType": "single-day",
+    "description": "Fællesaften med Galten Valgmenighed.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0336",
+    "startDate": "2019-04-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-05-17"
+  },
+  {
+    "title": "Konfirmandfest.",
+    "slug": "event-0337",
+    "startDate": "2019-05-22",
+    "eventType": "single-day",
+    "description": "Teenklubben.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Hvile (Matt. kap. 11 v. 28-30).",
+    "slug": "event-0338",
+    "startDate": "2019-05-28",
+    "eventType": "single-day",
+    "description": "Teolog og psykoterapeut Per Ladekjær, lærer på Børkop Højskole.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0339",
+    "startDate": "2019-05-03",
+    "eventType": "multi-day",
+    "description": "Samtaleoplæg fra Per Ladekjær om hvile.",
+    "endDate": "2019-06-07"
+  },
+  {
+    "title": "Helligånden.",
+    "slug": "event-0340",
+    "startDate": "2019-06-14",
+    "eventType": "single-day",
+    "description": "Stud. theol. Adam Rabjerg Pavlak.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "&quot;Jeg er&quot; (med fællesspisning).",
+    "slug": "event-0341",
+    "startDate": "2019-06-21",
+    "eventType": "single-day",
+    "description": "Præst Leif Nielsen, Horsens.",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Sankt Hans.",
+    "slug": "event-0342",
+    "startDate": "2019-06-23",
+    "eventType": "single-day",
+    "description": "Agnes &amp; Jørgen Jeppesen, Hedevej 35, Herskind.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Opstartsmøde.",
+    "slug": "event-0343",
+    "startDate": "2019-08-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Hvor længe Herre? (Habakkuks Bog), familievenlig opstart kl 17.15, selve mødet starter kl 19.00 - medbring service til spisning",
+    "slug": "event-0344",
+    "startDate": "2019-08-16",
+    "eventType": "single-day",
+    "description": "Robert Thun Svendsen",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Bibelgrupper",
+    "slug": "event-0345",
+    "startDate": "2019-07-19",
+    "eventType": "multi-day",
+    "description": "Anbefaling: Lav Nådegavetesten",
+    "endDate": "2019-08-23"
+  },
+  {
+    "title": "Nådegaver - del 1 - Undervisning denne aften bliver på video",
+    "slug": "event-0346",
+    "startDate": "2019-08-30",
+    "eventType": "single-day",
+    "description": "V. Sprint, teolog, undervisningskonsulent i Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Nådegaver - del 2",
+    "slug": "event-0347",
+    "startDate": "2019-09-06",
+    "eventType": "single-day",
+    "description": "V. Sprint, teolog, undervisningskonsulent i Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Samfundslejr",
+    "slug": "event-0348",
+    "startDate": "2019-08-13",
+    "eventType": "multi-day",
+    "description": "Joachim Langagergaard",
+    "endDate": "2019-09-15"
+  },
+  {
+    "title": "Bibelgrupper",
+    "slug": "event-0349",
+    "startDate": "2019-08-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-09-20"
+  },
+  {
+    "title": "Forventningsglæde - Jesu genkomst, Fyraftensmøde - medbringe service til spisning",
+    "slug": "event-0350",
+    "startDate": "2019-09-27",
+    "eventType": "single-day",
+    "description": "Jørgen Hedager Nielsen, fritidsforkynder i Indre Mission",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Fortællinger fra Nigeria - bl.a. om den overnaturlige virkelighed og engle",
+    "slug": "event-0351",
+    "startDate": "2019-10-04",
+    "eventType": "single-day",
+    "description": "Ingeline og Regin Benner, Mission Afrika",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Høstfest: forvaltning af Guds gaver",
+    "slug": "event-0352",
+    "startDate": "2019-10-11",
+    "eventType": "single-day",
+    "description": "Peter Rask, frimenighedspræst, Kirken",
+    "startTime": "19:00",
+    "speaker": "Søerne i Silkeborg"
+  },
+  {
+    "title": "Guds trofasthed (Salme 107)",
+    "slug": "event-0353",
+    "startDate": "2019-10-22",
+    "eventType": "single-day",
+    "description": "Allan Graugaard Nielsen, tidligere præst",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 43 - Biblegrupper",
+    "slug": "event-0354",
+    "startDate": "2019-09-21",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-10-27"
+  },
+  {
+    "title": "Møderække - fællesspisning kl 18.00, møde 19.00 - ca. 20.00 - medbring service til spisning",
+    "slug": "event-0355",
+    "startDate": "2019-10-29",
+    "eventType": "multi-day",
+    "description": "Ole Andersen, Ordet og Israel",
+    "endDate": "2019-11-01"
+  },
+  {
+    "title": "Lovsangskoncert med Arvid",
+    "slug": "event-0356",
+    "startDate": "2019-11-02",
+    "eventType": "single-day",
+    "description": "Bemærk: foregår i Galten valgmenighed lokaler, se gava.dk",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Vi deler hvad vi har fået ud af møderækken",
+    "slug": "event-0357",
+    "startDate": "2019-11-05",
+    "eventType": "single-day",
+    "description": "Sonja Sanden er tovholder",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bønnens vigtighed i Daniels liv, familievenlig opstart kl 17.15, selve mødet starter kl 19.00 - medbring service til spisning",
+    "slug": "event-0358",
+    "startDate": "2019-11-15",
+    "eventType": "single-day",
+    "description": "Jørgen Vindum Sand, fritidsforkynder i Indre Mission",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Bibelgrupper",
+    "slug": "event-0359",
+    "startDate": "2019-10-18",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-11-24"
+  },
+  {
+    "title": "En leders karakter - om at være tydeligt kristen",
+    "slug": "event-0360",
+    "startDate": "2019-11-29",
+    "eventType": "single-day",
+    "description": "Michael Bak Nygaard, stud. theol., lærer på Børkop Højskole",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest: de fire lys - medbring gerne en lille gave til amerikansk lotteri",
+    "slug": "event-0361",
+    "startDate": "2019-12-06",
+    "eventType": "single-day",
+    "description": "Berit Skødt, børnekonsulent i Danmarks Folkekirkelige Søndagsskoler",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Peter, Jesus og tilgivelse, familievenlig opstart kl 17.15, selve mødet starter kl 19.00 - medbring service til spisning",
+    "slug": "event-0362",
+    "startDate": "2019-12-13",
+    "eventType": "single-day",
+    "description": "Jim Pfrogner, ungdomskonsulent i Indre Mission",
+    "startTime": "17:15"
+  },
+  {
+    "title": "Bibelgrupper",
+    "slug": "event-0363",
+    "startDate": "2019-11-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2019-12-20"
+  },
+  {
+    "title": "Syng julen ind",
+    "slug": "event-0364",
+    "startDate": "2019-12-22",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:00"
+  },
+  {
+    "title": "Julefest med optrin fra børneklubben, juletale og sang om juletræet",
+    "slug": "event-0365",
+    "startDate": "2019-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Opstartsaften med andagt, deletid, spil og hygge.",
+    "slug": "event-0366",
+    "startDate": "2020-01-03",
+    "eventType": "single-day",
+    "description": "Andagt v. pædagog/coach Dorthe Sandvad, Gjern.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Framlev Kirke.",
+    "slug": "event-0367",
+    "startDate": "2020-01-05",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Stjær Kirke.",
+    "slug": "event-0368",
+    "startDate": "2020-01-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0369",
+    "startDate": "2020-01-09",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Bethesda, Stjær.",
+    "slug": "event-0370",
+    "startDate": "2020-01-10",
+    "eventType": "single-day",
+    "description": "Med Lotte &amp; Bjarne Carlsen, Promissio.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk alliance bedeuge i Galten Valgmenighed.",
+    "slug": "event-0371",
+    "startDate": "2020-01-12",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Liturgi og dåb i folkekirken - en debataften.",
+    "slug": "event-0372",
+    "startDate": "2020-01-14",
+    "eventType": "single-day",
+    "description": "Oplæg og spørgsmål v. Hans-Ole Bækgaard, formand for Indre Mission.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0373",
+    "startDate": "2019-12-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-01-17"
+  },
+  {
+    "title": "Nytårsfest: Gode nyheder 168 timer om ugen.",
+    "slug": "event-0374",
+    "startDate": "2020-01-24",
+    "eventType": "single-day",
+    "description": "v. missionær Anders Medom Mølleskov Madsen, Aarhus.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Det personlige vidnesbyrd og svære spørgsmål - en alternativ aften.",
+    "slug": "event-0375",
+    "startDate": "2020-01-31",
+    "eventType": "single-day",
+    "description": "v. Morten Holmgaard, Hørning.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0376",
+    "startDate": "2020-01-03",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-02-07"
+  },
+  {
+    "title": "Bøn og omvendelse som forudsætning for tjeneste i dagligdagen, Jeremias 15 (fællesspisning).",
+    "slug": "event-0377",
+    "startDate": "2020-02-21",
+    "eventType": "single-day",
+    "description": "v. præst Anders Møberg, Christianskirken.",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Forbønsmøde.",
+    "slug": "event-0378",
+    "startDate": "2020-02-25",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Medvandring i hverdagen.",
+    "slug": "event-0379",
+    "startDate": "2020-02-28",
+    "eventType": "single-day",
+    "description": "v. missionær Heri Elttør, Aulum.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0380",
+    "startDate": "2020-02-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-03-06"
+  },
+  {
+    "title": "Vi samler op på efterårets tema om nådegaver.",
+    "slug": "event-0381",
+    "startDate": "2020-03-06",
+    "eventType": "single-day",
+    "description": "Deltagelse i efterårets møder om nådegaver er ikke en forudsætning.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Er det ikke nok at tro på Gud? - aflyst pga. corona.",
+    "slug": "event-0382",
+    "startDate": "2020-03-13",
+    "eventType": "single-day",
+    "description": "v. missionær Jørgen Bloch, Randers.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling - udskudt pga. corona.",
+    "slug": "event-0383",
+    "startDate": "2020-03-20",
+    "eventType": "single-day",
+    "description": "Vi har besluttet at udskyde generalforsamlingen på ubestemt tid. Vi håber på jeres forståelse for dette.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene - anbefales aflyst.",
+    "slug": "event-0384",
+    "startDate": "2020-02-23",
+    "eventType": "multi-day",
+    "description": "Anbefales aflyst pga. corona.",
+    "endDate": "2020-03-27"
+  },
+  {
+    "title": "Læg jer Guds ord på sinde. -aflyst",
+    "slug": "event-0385",
+    "startDate": "2020-04-03",
+    "eventType": "single-day",
+    "description": "v. pensioneret præst Frede Møller.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Du er Guds barn, Jesu discipel og Kristi brud, 1. Johs. 4 v. 7-21 (fællesspisning). - aflyst",
+    "slug": "event-0386",
+    "startDate": "2020-04-17",
+    "eventType": "single-day",
+    "description": "v. forkynder og samfundskonsulent Brian Madsen, Indre Mission.",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0387",
+    "startDate": "2020-03-20",
+    "eventType": "multi-day",
+    "description": "Anbefales aflyst pga. corona - evt. virtuelt",
+    "endDate": "2020-04-24"
+  },
+  {
+    "title": "Forbønsmøde. - aflyst",
+    "slug": "event-0388",
+    "startDate": "2020-04-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Diakoni: Tro - med hånd, hjerte og om nødvendigt ord. - aflyst",
+    "slug": "event-0389",
+    "startDate": "2020-05-01",
+    "eventType": "single-day",
+    "description": "v. diakonikonsulent Margit Ahlefeldt-Simonsen, Indre Mission.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Optakt til Store Bededag: Bøn, lovsang og andagtsstund. - aflyst",
+    "slug": "event-0390",
+    "startDate": "2020-05-07",
+    "eventType": "single-day",
+    "description": "v. Karen Fisher, &#197;byhøj.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0391",
+    "startDate": "2020-04-11",
+    "eventType": "multi-day",
+    "description": "Anbefales aflyst pga. corona - evt. virtuelt",
+    "endDate": "2020-05-15"
+  },
+  {
+    "title": "AdamogEva.dk - det kristne menneskesyn og Guds gode vejledning.. - aflyst",
+    "slug": "event-0392",
+    "startDate": "2020-05-19",
+    "eventType": "single-day",
+    "description": "v. Vibeke Sode Hjorth, leder af AdamogEva.dk.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Besøg fra Menighedsfakultetet (fællesspisning).. - aflyst",
+    "slug": "event-0393",
+    "startDate": "2020-05-29",
+    "eventType": "single-day",
+    "description": "v. stud. theol. fra Menighedsfakultetet.",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Konfirmandfest.. - aflyst",
+    "slug": "event-0394",
+    "startDate": "2020-06-03",
+    "eventType": "single-day",
+    "description": "v. Teenklubben.",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0395",
+    "startDate": "2020-05-01",
+    "eventType": "multi-day",
+    "description": "Anbefales aflyst pga. corona - evt. virtuelt",
+    "endDate": "2020-06-05"
+  },
+  {
+    "title": "&#197;rsmødefestival på Mørkholt.",
+    "slug": "event-0396",
+    "startDate": "2020-05-05",
+    "eventType": "multi-day",
+    "description": "Se mere under aktuelle nyheder her på forsiden",
+    "endDate": "2020-06-07"
+  },
+  {
+    "title": "En aften med lovsang, andagt og samtale. - afholdes på behørig corons-vis",
+    "slug": "event-0397",
+    "startDate": "2020-06-12",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangeliet ud i alle afkroge - en aften med Operation Mission.. - aflyst",
+    "slug": "event-0398",
+    "startDate": "2020-06-19",
+    "eventType": "single-day",
+    "description": "v. Pernille Kristensen, Operation Mission.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Sankt Hans.",
+    "slug": "event-0399",
+    "startDate": "2020-06-23",
+    "eventType": "single-day",
+    "description": "v. Agnes &amp; Jørgen Jeppesen, Hedevej 35, Galten.",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Opstartsaften: Fødder eller rødder - på vandring i verden med mål i himlen.",
+    "slug": "event-0400",
+    "startDate": "2020-08-07",
+    "eventType": "single-day",
+    "description": "v. Ole Erik Larsen, fritidsforkynder og tidligere præst",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forfulgte kristne i verden - en aften med Open Doors.",
+    "slug": "event-0401",
+    "startDate": "2020-08-14",
+    "eventType": "single-day",
+    "description": "v. Simon Grud, Open Doors Danmark. Fællesspisning, husk egen madpakke+service. Spisning ca. 17.30-18.15, møde ca. 18.15-19.00",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Hvad løber du efter - har tiden med Corona gjort noget ved dit trosliv?",
+    "slug": "event-0402",
+    "startDate": "2020-08-21",
+    "eventType": "single-day",
+    "description": "v. Hilbert Dam, Regionsleder Midt, Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0403",
+    "startDate": "2020-07-24",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-08-30"
+  },
+  {
+    "title": "Bryd muren ned - en aften om forsoning.",
+    "slug": "event-0404",
+    "startDate": "2020-09-04",
+    "eventType": "single-day",
+    "description": "v. teologisk netværker Julie Kajgaard, Israelsmissionen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften.",
+    "slug": "event-0405",
+    "startDate": "2020-09-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Strandsborglejr, Engblommevej 3, 8420 Knebel.",
+    "slug": "event-0406",
+    "startDate": "2020-08-12",
+    "eventType": "multi-day",
+    "description": "v. missionær Egild Kildeholm Jensen, Rønde",
+    "endDate": "2020-09-12"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0407",
+    "startDate": "2020-08-14",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-09-20"
+  },
+  {
+    "title": "Jonas.",
+    "slug": "event-0408",
+    "startDate": "2020-09-25",
+    "eventType": "single-day",
+    "description": "v. stud. theol. Ole Kjærgaard Madsen, Menighedsfakultetet.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kristus alene.",
+    "slug": "event-0409",
+    "startDate": "2020-10-02",
+    "eventType": "single-day",
+    "description": "v. Cecilie Nord Hansen, Bibellæser Ringen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Høstfest m. auktion. Medbring evt. høst af grøntsager, marmelade, blomster el.lign. til auktionen.",
+    "slug": "event-0410",
+    "startDate": "2020-10-09",
+    "eventType": "single-day",
+    "description": "Forkyndelse v. projektkoordinator Ellen Hessellund, Ordet og Israel",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling. ​Information og dagsorden følger.",
+    "slug": "event-0411",
+    "startDate": "2020-10-23",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0412",
+    "startDate": "2020-09-19",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-10-25"
+  },
+  {
+    "title": "Apg.2.37-47: Inspiration fra den første menighed.  Vi mødes fra 19.00-20.00 og vil prioritere tid til samtale.",
+    "slug": "event-0413",
+    "startDate": "2020-10-30",
+    "eventType": "single-day",
+    "description": "v. lærer Simon Hauge Lindbjerg, Jakobskolen i Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften.",
+    "slug": "event-0414",
+    "startDate": "2020-11-03",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Jesus - kilden til et liv i kærlighed.",
+    "slug": "event-0415",
+    "startDate": "2020-11-06",
+    "eventType": "single-day",
+    "description": "v. tidligere missionær Henri Alex Jensen, Silkeborg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vores egen aften",
+    "slug": "event-0416",
+    "startDate": "2020-11-13",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0417",
+    "startDate": "2020-10-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-11-22"
+  },
+  {
+    "title": "Adventsfest for hele familien.",
+    "slug": "event-0418",
+    "startDate": "2020-11-27",
+    "eventType": "single-day",
+    "description": "v. Mette Damgaard, DFS konsulent, Gjellerup",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Hun sagde ja til Jesus.",
+    "slug": "event-0419",
+    "startDate": "2020-12-04",
+    "eventType": "single-day",
+    "description": "v. tidligere missionær Villy Sørensen, Hammel",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vent tålmodigt til Herrens dag (Jakobsbrevet 5, 7-9).",
+    "slug": "event-0420",
+    "startDate": "2020-12-08",
+    "eventType": "single-day",
+    "description": "v. tidligere missionær Søren Skovenborg, Ans",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene.",
+    "slug": "event-0421",
+    "startDate": "2020-11-14",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2020-12-20"
+  },
+  {
+    "title": "Syng julen ind",
+    "slug": "event-0422",
+    "startDate": "2020-12-20",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "16:00"
+  },
+  {
+    "title": "AFLYST: Besøg af Promissio",
+    "slug": "event-0423",
+    "startDate": "2021-01-08",
+    "eventType": "single-day",
+    "description": "v. Lotte og Bjarne Carlsen, missionærer, Etiopien",
+    "startTime": "19:00"
+  },
+  {
+    "title": "AFLYST: Evangelisk Alliance Bedeuge. Tema: Bibelbrug",
+    "slug": "event-0424",
+    "startDate": "2021-01-13",
+    "eventType": "single-day",
+    "description": "Storring Kirke, Lilleringvej 4, Storring",
+    "startTime": "19:00"
+  },
+  {
+    "title": "AFLYST: Evangelisk Alliance Bedeuge. Tema: Bibelbrug",
+    "slug": "event-0425",
+    "startDate": "2021-01-15",
+    "eventType": "single-day",
+    "description": "Bethesda, Østerbro, Stjær",
+    "startTime": "19:00"
+  },
+  {
+    "title": "AFLYST: Evangelisk Alliance Bedeuge. Tema: Bibelbrug",
+    "slug": "event-0426",
+    "startDate": "2021-01-17",
+    "eventType": "single-day",
+    "description": "Forbønsgudstjeneste, Galten Valgmenighed. Hørslevvej 35, Skovby",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Aflyst: Sprængfarlig kristendom",
+    "slug": "event-0427",
+    "startDate": "2021-01-22",
+    "eventType": "single-day",
+    "description": "v. Andreas Kammersgaard Ipsen, Præst, Tarm Frimenighed",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Aflyst: Tro - med hånd og hjerte og, om nødvendigt, brug ord. En aften om diakoni",
+    "slug": "event-0428",
+    "startDate": "2021-01-29",
+    "eventType": "single-day",
+    "description": "v. Margit Ahlefeldt-Simonsen, Diakonikonsulent, Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper online",
+    "slug": "event-0429",
+    "startDate": "2021-01-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-02-05"
+  },
+  {
+    "title": "Aflyst: Vær modig og stærk. Joshva 1,9. Om at stride troens strid",
+    "slug": "event-0430",
+    "startDate": "2021-02-09",
+    "eventType": "single-day",
+    "description": "v. Finn Najbjerg, Missionær, Vinderslev",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vinterferie",
+    "slug": "event-0431",
+    "startDate": "2021-01-15",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-02-19"
+  },
+  {
+    "title": "Aflyst: Det kristne menneskesyn og Guds gode vejledning",
+    "slug": "event-0432",
+    "startDate": "2021-02-23",
+    "eventType": "single-day",
+    "description": "v. Vibeke Sode Hjorth, Leder på www.adamogeva.dk",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Hvor ser vi Guds storhed?",
+    "slug": "event-0433",
+    "startDate": "2021-03-05",
+    "eventType": "single-day",
+    "description": "v. Jørgen Knudsen, Sømandsmissionær",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0434",
+    "startDate": "2021-03-09",
+    "eventType": "single-day",
+    "description": "v. Forbønsgruppen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0435",
+    "startDate": "2021-02-08",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-03-12"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0436",
+    "startDate": "2021-03-19",
+    "eventType": "single-day",
+    "description": "v. Bestyrelsen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Skabt og elsket - hver og &#233;n",
+    "slug": "event-0437",
+    "startDate": "2021-03-26",
+    "eventType": "single-day",
+    "description": "v. Tove Søgaard, Landsleder, Kristelig Handicapforening",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Påskeferie",
+    "slug": "event-0438",
+    "startDate": "2021-03-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-04-02"
+  },
+  {
+    "title": "Filemonbrevet",
+    "slug": "event-0439",
+    "startDate": "2021-04-09",
+    "eventType": "single-day",
+    "description": "v. Klaus Vibe, Teolog og Ph.d., lærer på MF",
+    "startTime": "19:00"
+  },
+  {
+    "title": "(Lørdag - 10:00-14:00) Mediemod. Foredrag og workshop om at være en bevidst mediebruger",
+    "slug": "event-0440",
+    "startDate": "2021-04-10",
+    "eventType": "single-day",
+    "description": "v. Mikael Arendt Laursen, Generalsekretær, KLF, Kirke og Medier",
+    "startTime": "10:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0441",
+    "startDate": "2021-03-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-04-16"
+  },
+  {
+    "title": "Lovsangsaften",
+    "slug": "event-0442",
+    "startDate": "2021-04-23",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0443",
+    "startDate": "2021-04-29",
+    "eventType": "single-day",
+    "description": "v. Forbønsgruppen",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Templet i Jerusalem og dets betydning for os i dag",
+    "slug": "event-0444",
+    "startDate": "2021-05-07",
+    "eventType": "single-day",
+    "description": "v. J&#243;n Lange Bech, Stud. teol. og Informationsmedarbejder, MF",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0445",
+    "startDate": "2021-04-10",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-05-14"
+  },
+  {
+    "title": "Hvordan møder vi mennesker med evangeliet?",
+    "slug": "event-0446",
+    "startDate": "2021-05-21",
+    "eventType": "single-day",
+    "description": "v. Per Rasmussen, Sogne- og arresthuspræst, Silkeborg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Helligåndens opgave",
+    "slug": "event-0447",
+    "startDate": "2021-05-28",
+    "eventType": "single-day",
+    "description": "v. Anders Dalgaard, Sognepræst, Øster Snede",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konfirmandfest",
+    "slug": "event-0448",
+    "startDate": "2021-06-02",
+    "eventType": "single-day",
+    "description": "v. Teenklubben",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Evangeliet ud i alle afkroge - en aften med Operation Mission",
+    "slug": "event-0449",
+    "startDate": "2021-06-11",
+    "eventType": "single-day",
+    "description": "v. Pernille Kristensen, Operation Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Skt. Hans - Grillen er klar, medbring mad, havestol og en ven, til en hyggelig aften",
+    "slug": "event-0450",
+    "startDate": "2021-06-23",
+    "eventType": "single-day",
+    "description": "v. Agnes og Jørgen Jeppesen, Hedevej 35, 8464  Galten",
+    "startTime": "17:30"
+  },
+  {
+    "title": "Uge 26-31 Sommerferie",
+    "slug": "event-0451",
+    "startDate": "2021-07-28",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-08-06"
+  },
+  {
+    "title": "Opstartsaften i Inge og Peters have Mere information følger",
+    "slug": "event-0452",
+    "startDate": "2021-08-13",
+    "eventType": "single-day",
+    "description": "Adresse: Hårbyvej 35, Nygårde, 8680 Ry",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibeloversættelse i Afrika og Danmark",
+    "slug": "event-0453",
+    "startDate": "2021-08-20",
+    "eventType": "single-day",
+    "description": "Iver Larsen og Kristin Westh, Wycliffe",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0454",
+    "startDate": "2021-07-23",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-08-27"
+  },
+  {
+    "title": "Et spredt folk - en samlende Gud (1. Mos 1-11)",
+    "slug": "event-0455",
+    "startDate": "2021-08-31",
+    "eventType": "single-day",
+    "description": "Filip Torp Kildeholm, sognepræst, Korning og Løsning kirker",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0456",
+    "startDate": "2021-09-07",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0457",
+    "startDate": "2021-08-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-09-17"
+  },
+  {
+    "title": "Gensynsfest i Indre Mission på Mørkholt Strandcamping",
+    "slug": "event-0458",
+    "startDate": "2021-09-18",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "14:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0459",
+    "startDate": "2021-08-20",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-09-24"
+  },
+  {
+    "title": "Når troen får krop - også når jeg ikke selv synes at slå ti",
+    "slug": "event-0460",
+    "startDate": "2021-09-24",
+    "eventType": "single-day",
+    "description": "Kristian Lindholm, regionsleder, Indre Mission region Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Høstfest m. auktion",
+    "slug": "event-0461",
+    "startDate": "2021-10-01",
+    "eventType": "single-day",
+    "description": "teologistuderende fra Menighedsfakultetet, Aarhus Medbring evt. høst af grøntsager, marmelade, blomster el.lign. til auktionen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelen er også Guds ord",
+    "slug": "event-0462",
+    "startDate": "2021-10-08",
+    "eventType": "single-day",
+    "description": "Robert Bladt, forstander IMB Børkop",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0463",
+    "startDate": "2021-09-11",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-10-15"
+  },
+  {
+    "title": "Vi samles tre aftener til fællesspisning kl. 18:00 og tale kl. 18:45-20:15. Desuden åbner vi vores dejlige hus op for besøgende med kunstudstilling, mulighed for en snak, og lørdag et åbent hus arrangement med aktiviteter for store og små.",
+    "slug": "event-0464",
+    "startDate": "2021-09-27",
+    "eventType": "multi-day",
+    "description": "Palle Kure, missionær i Aakirkeby",
+    "endDate": "2021-10-30"
+  },
+  {
+    "title": "Du er Guds barn, Jesu discipel, Kristi brud (1. Joh 4, 7-21)",
+    "slug": "event-0465",
+    "startDate": "2021-11-05",
+    "eventType": "single-day",
+    "description": "Brian Madsen, forkynder og samfundskonsulent, Vejle",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vent på Gud (Sl 42)",
+    "slug": "event-0466",
+    "startDate": "2021-11-12",
+    "eventType": "single-day",
+    "description": "Bent Molbech, skoleleder på Lukas-Skolen, Vejle",
+    "startTime": "19:00"
+  },
+  {
+    "title": "At skabe rum for de gode samtaler i familien om livets små og store spørgsmål og troen på Gud",
+    "slug": "event-0467",
+    "startDate": "2021-11-19",
+    "eventType": "single-day",
+    "description": "Ann Charlotte Nørremark, Skjern",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest for hele familien - med fællesspisning",
+    "slug": "event-0468",
+    "startDate": "2021-11-26",
+    "eventType": "single-day",
+    "description": "Nils Andersen, Landssekretær Menighedsfakultetet",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0469",
+    "startDate": "2021-11-30",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0470",
+    "startDate": "2021-11-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2021-12-03"
+  },
+  {
+    "title": "Brudgommen kommer (Matt 25, 1-13)",
+    "slug": "event-0471",
+    "startDate": "2021-12-10",
+    "eventType": "single-day",
+    "description": "Christian Poulsen, hjælpepræst, Herning Bykirke)",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Syng Julen Ind",
+    "slug": "event-0472",
+    "startDate": "2021-12-19",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest",
+    "slug": "event-0473",
+    "startDate": "2021-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelen og arkæologien - nyt lys over Jesu liv fra gamle sten",
+    "slug": "event-0474",
+    "startDate": "2022-01-07",
+    "eventType": "single-day",
+    "description": "Morten Hørning, lektor, Menighedsfakultete",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge Tema: Sabbat",
+    "slug": "event-0475",
+    "startDate": "2022-01-10",
+    "eventType": "single-day",
+    "description": "I Bethesda med besøg af Lotte og Bjarne Carlsen, missionærer i Etiopien",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge Tema: Sabbat",
+    "slug": "event-0476",
+    "startDate": "2022-01-14",
+    "eventType": "single-day",
+    "description": "I Bethesda",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Søndag d. 16/1 kl. 19:00: Forbønsgudstjeneste",
+    "slug": "event-0477",
+    "startDate": "2022-01-16",
+    "eventType": "single-day",
+    "description": "Galten Valgmenighed, Hørslevvej 35, Skovby",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Nytårsfest Når Bibelen oversættes",
+    "slug": "event-0478",
+    "startDate": "2022-01-21",
+    "eventType": "single-day",
+    "description": "v. Peder Andreasen, Bibelselskabet",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Musik med mere",
+    "slug": "event-0479",
+    "startDate": "2022-01-28",
+    "eventType": "single-day",
+    "description": "v. Jørgen Møller, Galten",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Program følger",
+    "slug": "event-0480",
+    "startDate": "2022-02-04",
+    "eventType": "single-day",
+    "description": "???",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0481",
+    "startDate": "2022-02-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0482",
+    "startDate": "2022-01-07",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2022-02-11"
+  },
+  {
+    "title": "Vær modig og stærk (Josva 1,9) Om at stride troens strid - med fællesspisning",
+    "slug": "event-0483",
+    "startDate": "2022-02-25",
+    "eventType": "single-day",
+    "description": "v. Finn Najbjerg, missionær, Vinderslev",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Håbet om evigt liv",
+    "slug": "event-0484",
+    "startDate": "2022-03-04",
+    "eventType": "single-day",
+    "description": "v. Jørgen Knudsen, Sømandsmissionen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0485",
+    "startDate": "2022-02-07",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2022-03-11"
+  },
+  {
+    "title": "Herre, lær os at bede! - om bønnens væsen og kraft.",
+    "slug": "event-0486",
+    "startDate": "2022-03-18",
+    "eventType": "single-day",
+    "description": "Daniel Hougaard, sognepræst Sct. Pauls kirke, Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0487",
+    "startDate": "2022-03-25",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vidne- og lovsangsaften",
+    "slug": "event-0488",
+    "startDate": "2022-04-01",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0489",
+    "startDate": "2022-03-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2022-04-08"
+  },
+  {
+    "title": "Smerten i livet - livet i smerten - med fællesspisning",
+    "slug": "event-0490",
+    "startDate": "2022-04-22",
+    "eventType": "single-day",
+    "description": "v. Johannes Glenthøj, sognepræst, Samsø",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Skabt og elsket hver og &#233;n",
+    "slug": "event-0491",
+    "startDate": "2022-04-29",
+    "eventType": "single-day",
+    "description": "v. Tove Søgaard, Kristelig Handicapforening",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0492",
+    "startDate": "2022-04-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2022-05-06"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0493",
+    "startDate": "2022-05-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Sprængfarlig kristendom",
+    "slug": "event-0494",
+    "startDate": "2022-05-20",
+    "eventType": "single-day",
+    "description": "v. Andreas Kammersgaard Ipsen, præst, Tarm Frimenighed",
+    "startTime": "19:00"
+  },
+  {
+    "title": "AdamogEva.dk - det kristne menneskesyn og Guds gode vilje",
+    "slug": "event-0495",
+    "startDate": "2022-05-24",
+    "eventType": "single-day",
+    "description": "v. Vibeke Sode Hjorth, AdamogEva.dk",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Konfirmandfest",
+    "slug": "event-0496",
+    "startDate": "2022-06-01",
+    "eventType": "single-day",
+    "description": "v. Teenklubben",
+    "startTime": "19:30"
+  },
+  {
+    "title": "Bibelgrupper i hjemmene",
+    "slug": "event-0497",
+    "startDate": "2022-05-06",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2022-06-10"
+  },
+  {
+    "title": "Bekymringer",
+    "slug": "event-0498",
+    "startDate": "2022-06-17",
+    "eventType": "single-day",
+    "description": "v. Peter Rask, præst, Kirken",
+    "startTime": "19:00",
+    "speaker": "Søerne"
+  },
+  {
+    "title": "Sankt Hans: Grillen er klar, medbring mad, havestol og en ven, til en hyggelig aften",
+    "slug": "event-0499",
+    "startDate": "2022-06-23",
+    "eventType": "single-day",
+    "description": "v. Agnes og Jørgen Jeppesen, Hedevej 35, 8464 Galten",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Opstartsaften.",
+    "slug": "event-0500",
+    "startDate": "2022-08-12",
+    "eventType": "single-day",
+    "description": "Mere information følger.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Apostlenes Gerninger - inspiration til mission",
+    "slug": "event-0501",
+    "startDate": "2022-08-19",
+    "eventType": "single-day",
+    "description": "v. Peder Kølle, Børkop Bibelhøjskole",
+    "startTime": "19:00"
+  },
+  {
+    "title": "En aften om Lina Sandell",
+    "slug": "event-0502",
+    "startDate": "2022-08-26",
+    "eventType": "single-day",
+    "description": "v. Bjarne Hvidberg, missionær, Tistrup",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Livet i Kristus - at vandre med Jesus i hverdagen - med fællesspisning kl. 18.",
+    "slug": "event-0503",
+    "startDate": "2022-09-02",
+    "eventType": "single-day",
+    "description": "v. Lars Juul Mikkelsen, forstander på Hedemølle Efterskole",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 36. Bibelgrupper",
+    "slug": "event-0504",
+    "startDate": "2022-08-04",
+    "eventType": "multi-day",
+    "description": "Foregår i private hjem.",
+    "endDate": "2022-09-09"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0505",
+    "startDate": "2022-09-13",
+    "eventType": "single-day",
+    "description": "v/forbønsteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Samfundsweekend på Strandsborg",
+    "slug": "event-0506",
+    "startDate": "2022-08-16",
+    "eventType": "multi-day",
+    "description": "Engblommevej 3, 8420 Knebel. Mere information følger.",
+    "endDate": "2022-09-18"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0507",
+    "startDate": "2022-09-23",
+    "eventType": "single-day",
+    "description": "v. Thomas Kirk, missionær, Aarhus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Smerten i livet, livet i smerten",
+    "slug": "event-0508",
+    "startDate": "2022-09-30",
+    "eventType": "single-day",
+    "description": "v. Johannes Glenthøj, sognepræst, Samsø",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Høstfest m. auktion “Høstofferet - 5. Mos. 26, 1-11”",
+    "slug": "event-0509",
+    "startDate": "2022-10-07",
+    "eventType": "single-day",
+    "description": "v. Michael Lerche Nygaard, sognepræst, Kolding Medbring evt. høst af grøntsager, marmelade, blomster ell.lign. til auktionen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 41. Bibelgrupper",
+    "slug": "event-0510",
+    "startDate": "2022-09-10",
+    "eventType": "multi-day",
+    "description": "Foregår i private hjem.",
+    "endDate": "2022-10-14"
+  },
+  {
+    "title": "Uge 42. Efterårsferie",
+    "slug": "event-0511",
+    "startDate": "2022-09-17",
+    "eventType": "multi-day",
+    "description": "Intet møde pga. ferie.",
+    "endDate": "2022-10-21"
+  },
+  {
+    "title": "Historier og vidnesbyrd fra en tid på Cypern",
+    "slug": "event-0512",
+    "startDate": "2022-10-28",
+    "eventType": "single-day",
+    "description": "v. Mette Swartz og Claus Andersen, tidl. missionærer, Sat-7",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Har vi glemt, at Jesus er Kristus?",
+    "slug": "event-0513",
+    "startDate": "2022-11-04",
+    "eventType": "single-day",
+    "description": "v. Kasper Bergholt, stud.teol.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møderække: At bære og blive båret til Jesus - 1",
+    "slug": "event-0514",
+    "startDate": "2022-11-08",
+    "eventType": "single-day",
+    "description": "Ved Heri Elttør og Simon Nielsen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække: At bære og blive båret til Jesus - 2",
+    "slug": "event-0515",
+    "startDate": "2022-11-09",
+    "eventType": "single-day",
+    "description": "Ved Heri Elttør og Simon Nielsen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække: At bære og blive båret til Jesus - 3",
+    "slug": "event-0516",
+    "startDate": "2022-11-10",
+    "eventType": "single-day",
+    "description": "Ved Heri Elttør og Simon Nielsen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Møderække: At bære og blive båret til Jesus - 4",
+    "slug": "event-0517",
+    "startDate": "2022-11-11",
+    "eventType": "single-day",
+    "description": "Ved Heri Elttør og Simon Nielsen",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0518",
+    "startDate": "2022-11-15",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00",
+    "speaker": "forbønsteamet."
+  },
+  {
+    "title": "Uge 46. Bibelgrupper",
+    "slug": "event-0519",
+    "startDate": "2022-10-14",
+    "eventType": "multi-day",
+    "description": "Foregår i private hjem.",
+    "endDate": "2022-11-18"
+  },
+  {
+    "title": "Adventsfest for hele familien",
+    "slug": "event-0520",
+    "startDate": "2022-11-25",
+    "eventType": "single-day",
+    "description": "v. Liselotte Vestergaard, missionær, Glesborg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Helbredelse ved bøn i lyset af Jakobsbrevet. Fællesspisning kl 17:30",
+    "slug": "event-0521",
+    "startDate": "2022-12-02",
+    "eventType": "single-day",
+    "description": "v. Klaus Vibe, Meninghedsfakultetet",
+    "startTime": "17:30"
+  },
+  {
+    "title": "En aften med Open Doors",
+    "slug": "event-0522",
+    "startDate": "2022-12-09",
+    "eventType": "single-day",
+    "description": "v. Golrix Ghozati, Open Doors",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 50. Bibelgrupper",
+    "slug": "event-0523",
+    "startDate": "2022-11-12",
+    "eventType": "multi-day",
+    "description": "Foregår i private hjem.",
+    "endDate": "2022-12-16"
+  },
+  {
+    "title": "Syng Julen ind",
+    "slug": "event-0524",
+    "startDate": "2022-12-18",
+    "eventType": "single-day",
+    "description": "Koncert og fællessang i anledning af julen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien",
+    "slug": "event-0525",
+    "startDate": "2022-12-29",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 1. Bibelgrupper",
+    "slug": "event-0526",
+    "startDate": "2022-12-02",
+    "eventType": "multi-day",
+    "description": "Foregår i private hjem.",
+    "endDate": "2023-01-06"
+  },
+  {
+    "title": "Evangelisk Alliances Bedeuge i Stjær kirke, med efterfølgende kaffe i Bethesda",
+    "slug": "event-0527",
+    "startDate": "2023-01-11",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliances Bedeuge i Bethesda",
+    "slug": "event-0528",
+    "startDate": "2023-01-13",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliances Bedeuge i Galten Valgmenighed",
+    "slug": "event-0529",
+    "startDate": "2023-01-15",
+    "eventType": "single-day",
+    "description": "Hørslevvej 35, Skovby",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kristen i tiden",
+    "slug": "event-0530",
+    "startDate": "2023-01-20",
+    "eventType": "single-day",
+    "description": "v/Hanne Legarth, institutleder Kristent Pædagogisk Institut (KPI)",
+    "startTime": "19:00"
+  },
+  {
+    "title": "En aften om diakoni",
+    "slug": "event-0531",
+    "startDate": "2023-01-27",
+    "eventType": "single-day",
+    "description": "v/Margit Ahlefeldt Simonsen, diakonikonsulent Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 5. Bibelgrupper i hjemmene",
+    "slug": "event-0532",
+    "startDate": "2023-01-30",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-02-03"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0533",
+    "startDate": "2023-02-07",
+    "eventType": "single-day",
+    "description": "v/Forbønsteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Vi får besøg fra Menighedsfakultetet i Aarhus",
+    "slug": "event-0534",
+    "startDate": "2023-02-10",
+    "eventType": "single-day",
+    "description": "Emne følger",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 7 - Vinterferie",
+    "slug": "event-0535",
+    "startDate": "2023-01-13",
+    "eventType": "multi-day",
+    "description": "Mødefri",
+    "endDate": "2023-02-17"
+  },
+  {
+    "title": "Når frygten melder sig. Matt. 14, 22-23.",
+    "slug": "event-0536",
+    "startDate": "2023-02-24",
+    "eventType": "single-day",
+    "description": "v/Jørgen Bloch, tidl. missionær, Randers",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Lørdagsarrangement med SGIM og GAVA. Emne: Mediemod. 10:00-14:00",
+    "slug": "event-0537",
+    "startDate": "2023-03-04",
+    "eventType": "single-day",
+    "description": "v/Mikael Arendt Laursen. Generalsekretær KLF kirke og medier",
+    "startTime": "10:00"
+  },
+  {
+    "title": "Tro for alle generationer. Vi begynder med fællesspisning.",
+    "slug": "event-0538",
+    "startDate": "2023-03-10",
+    "eventType": "single-day",
+    "description": "v/Lasse Iversen, sognepræst i Christianskirken",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0539",
+    "startDate": "2023-03-17",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Det jødiske måltid i messiansk lys",
+    "slug": "event-0540",
+    "startDate": "2023-03-24",
+    "eventType": "single-day",
+    "description": "v/Mona og Kenneth Kjær Nielsen, sognepræst i Snejbjerg (Mona)",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 13 - Bibelgrupper i hjemmene",
+    "slug": "event-0541",
+    "startDate": "2023-02-27",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-03-31"
+  },
+  {
+    "title": "Uge 14 - Påskeferie",
+    "slug": "event-0542",
+    "startDate": "2023-03-03",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-04-07"
+  },
+  {
+    "title": "Jagten på Israels første helligdom",
+    "slug": "event-0543",
+    "startDate": "2023-04-14",
+    "eventType": "single-day",
+    "description": "v/Johnny Tidemand, præst i Søhøjlandets kirke",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0544",
+    "startDate": "2023-04-18",
+    "eventType": "single-day",
+    "description": "v/Forbønsteamet",
+    "startTime": "20:00"
+  },
+  {
+    "title": "En aften om tvivl",
+    "slug": "event-0545",
+    "startDate": "2023-04-21",
+    "eventType": "single-day",
+    "description": "v/Thomas Bjerg Mikkelsen. Formand for Menighedsfakultetet",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Ungdomskultur i dagens Danmark",
+    "slug": "event-0546",
+    "startDate": "2023-04-28",
+    "eventType": "single-day",
+    "description": "v/Willam Ehmsen, forstander på Djurslands Efterskole",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 18 - Bibelgrupper i hjemmene",
+    "slug": "event-0547",
+    "startDate": "2023-04-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-05-05"
+  },
+  {
+    "title": "Salme 118",
+    "slug": "event-0548",
+    "startDate": "2023-05-12",
+    "eventType": "single-day",
+    "description": "v/Kurt E. Larsen, professor på Menighedsfakultetet",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Tilbage til rødderne - om at slå rod i ord og sakramente",
+    "slug": "event-0549",
+    "startDate": "2023-05-16",
+    "eventType": "single-day",
+    "description": "v/Helge Moore Pedersen, pastor emeritus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Jeg fik kræft og fik Guds kraft. - Vi begynder med fællesspisning",
+    "slug": "event-0550",
+    "startDate": "2023-05-26",
+    "eventType": "single-day",
+    "description": "v/Annika Lind Østergaard, Galten",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 22 - Bibelgrupper i hjemmene",
+    "slug": "event-0551",
+    "startDate": "2023-05-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-06-02"
+  },
+  {
+    "title": "Bønnens kraft",
+    "slug": "event-0552",
+    "startDate": "2023-06-09",
+    "eventType": "single-day",
+    "description": "v/Helga Døssing Benfeldt, sognepræst i Sindbjerg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vores egen aften",
+    "slug": "event-0553",
+    "startDate": "2023-06-16",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Sankt Hans Aften. Grillen er klar. Medbring mad, havestol og en ven til en hyggelig aften til snobrød og båltale",
+    "slug": "event-0554",
+    "startDate": "2023-06-23",
+    "eventType": "single-day",
+    "description": "v. Agnes og Jørgen Jeppesen, Hedevej 35, Herskind.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 32 - Bibelgrupper i hjemmene",
+    "slug": "event-0555",
+    "startDate": "2023-07-07",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-08-11"
+  },
+  {
+    "title": "Bethesdas 100 års jubilæum!",
+    "slug": "event-0556",
+    "startDate": "2023-08-19",
+    "eventType": "single-day",
+    "description": "Se program på hjemmesiden",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møltrup - et hjem for dem, som intet har",
+    "slug": "event-0557",
+    "startDate": "2023-08-25",
+    "eventType": "single-day",
+    "description": "v. Svend Arne Sønderby, Videbæk",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0558",
+    "startDate": "2023-09-01",
+    "eventType": "single-day",
+    "description": "v/Arne Hougaard Pedersen, landsleder i Børne- og UngdomsOase",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 36 - Bibelgrupper i hjemmene",
+    "slug": "event-0559",
+    "startDate": "2023-08-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-09-10"
+  },
+  {
+    "title": "Nadveren - et møde med Jesus",
+    "slug": "event-0560",
+    "startDate": "2023-09-15",
+    "eventType": "single-day",
+    "description": "v/Klaus Møberg, sognepræst i Assing",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0561",
+    "startDate": "2023-09-19",
+    "eventType": "single-day",
+    "description": "v/Filip Torp Kildeholm, sognepræst i Løsning og Korning kirker",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0562",
+    "startDate": "2023-09-26",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Fra håndværker til teolog",
+    "slug": "event-0563",
+    "startDate": "2023-09-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Jens Arne Skjøtt, pastor emeritus"
+  },
+  {
+    "title": "Uge 40 - Bibelgrupper i hjemmene",
+    "slug": "event-0564",
+    "startDate": "2023-09-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-10-08"
+  },
+  {
+    "title": "Høstfest m. auktion",
+    "slug": "event-0565",
+    "startDate": "2023-10-13",
+    "eventType": "single-day",
+    "description": "Medbring evt. høst af grøntsager, marmelade, blomster el lign. til auktionen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 42 - Efterårsferie",
+    "slug": "event-0566",
+    "startDate": "2023-09-16",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-10-22"
+  },
+  {
+    "title": "Tro og videnskab",
+    "slug": "event-0567",
+    "startDate": "2023-10-27",
+    "eventType": "single-day",
+    "description": "v/Karlo Brondbjerg, 2. viceborgmester Herning Kommune",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 44 - Møderække. Søren Skovenborg, pensioneret missionær fra Ans",
+    "slug": "event-0568",
+    "startDate": "2023-10-01",
+    "eventType": "multi-day",
+    "description": "Jesus som mit Forbillede. Jesus som min Herre. Jesus som min frelser. Vi starter hver aften med fællesspisning kl. 18:00",
+    "endDate": "2023-11-03"
+  },
+  {
+    "title": "Uge 45 - Bibelgrupper i hjemmene",
+    "slug": "event-0569",
+    "startDate": "2023-10-06",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-11-12"
+  },
+  {
+    "title": "De store spørgsmål, der stilles i sjælesorgen",
+    "slug": "event-0570",
+    "startDate": "2023-11-14",
+    "eventType": "single-day",
+    "description": "v/Carsten Clemmensen, sognepræst og hospitalspræst på AUH",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Musikalske Fortællinger",
+    "slug": "event-0571",
+    "startDate": "2023-11-24",
+    "eventType": "single-day",
+    "description": "v/Trine Ulnits Jensen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0572",
+    "startDate": "2023-11-28",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Advent - brug tiden indtil Jesus kommer igen",
+    "slug": "event-0573",
+    "startDate": "2023-12-01",
+    "eventType": "single-day",
+    "description": "Adventsfest v/Henrik Dideriksen, missionær i Skive",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 49 - Bibelgrupper i hjemmene.",
+    "slug": "event-0574",
+    "startDate": "2023-11-04",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2023-12-10"
+  },
+  {
+    "title": "Syng Julen ind",
+    "slug": "event-0575",
+    "startDate": "2023-12-10",
+    "eventType": "single-day",
+    "description": "Koncert og fællessang i anledning af julen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest for hele familien",
+    "slug": "event-0576",
+    "startDate": "2023-12-29",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 1 - Bibelgrupper i hjemmene",
+    "slug": "event-0577",
+    "startDate": "2023-12-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-01-07"
+  },
+  {
+    "title": "Evangelisk alliances bedeuge",
+    "slug": "event-0578",
+    "startDate": "2024-01-10",
+    "eventType": "single-day",
+    "description": "Stjær kirke",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliances Bedeuge",
+    "slug": "event-0579",
+    "startDate": "2024-01-12",
+    "eventType": "single-day",
+    "description": "Evangelisk alliances bedeuge - Bethesda",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk alliances bedeuge",
+    "slug": "event-0580",
+    "startDate": "2024-01-14",
+    "eventType": "single-day",
+    "description": "Galten Valgmenighed, Hørslevvej 35, Skovby",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fællesspisning #detblivergodtigen",
+    "slug": "event-0581",
+    "startDate": "2024-01-19",
+    "eventType": "single-day",
+    "description": "v. Frede Ruby Østergaard, generalsekretær Promissio",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Jesus er blevet Guds tolk, Joh 1,18",
+    "slug": "event-0582",
+    "startDate": "2024-01-26",
+    "eventType": "single-day",
+    "description": "v. Johannes Christoffersen, pastor emeritus",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 5 Bibelgrupper",
+    "slug": "event-0583",
+    "startDate": "2024-01-29",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-02-02"
+  },
+  {
+    "title": "Jesus - og hvordan han bruger stilheden med Gud",
+    "slug": "event-0584",
+    "startDate": "2024-02-08",
+    "eventType": "single-day",
+    "description": "v. Jim Pfrogner, ungdomskonsulent IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 7: VINTERFERIE",
+    "slug": "event-0585",
+    "startDate": "2024-01-12",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-02-16"
+  },
+  {
+    "title": "“Forbøn” en del af Jesu ypperstepræstelige bøn, Joh 17, 20-26",
+    "slug": "event-0586",
+    "startDate": "2024-02-23",
+    "eventType": "single-day",
+    "description": "v. Knud Dalsgaard Hansen, fritidsansat IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0587",
+    "startDate": "2024-03-01",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0588",
+    "startDate": "2024-03-05",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kendt og frikendt i Jesus!",
+    "slug": "event-0589",
+    "startDate": "2024-03-08",
+    "eventType": "single-day",
+    "description": "v. Arne Nørgaard, pens. missionær IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 11 Bibelgrupper i private hjem",
+    "slug": "event-0590",
+    "startDate": "2024-02-11",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-03-15"
+  },
+  {
+    "title": "Hverdagsevangelisation: Med Jesus i hjertet ud i hverdagen",
+    "slug": "event-0591",
+    "startDate": "2024-03-21",
+    "eventType": "single-day",
+    "description": "v. Nils Andersen, landssekretær menighedsfakultetet",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 13: P&#197;SKEFERIE",
+    "slug": "event-0592",
+    "startDate": "2024-02-25",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-03-29"
+  },
+  {
+    "title": "Moderne Mission, en aften med Mission Afrika",
+    "slug": "event-0593",
+    "startDate": "2024-04-05",
+    "eventType": "single-day",
+    "description": "v. Rikke Dirchsen Nielsen, Mission Afrika",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Når vores nærmeste fravælger troen",
+    "slug": "event-0594",
+    "startDate": "2024-04-12",
+    "eventType": "single-day",
+    "description": "v. Dan Månsson, teolog og sjælesørger, Agape",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 16 Bibelgrupper i private hjem",
+    "slug": "event-0595",
+    "startDate": "2024-03-15",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-04-19"
+  },
+  {
+    "title": "Bøn",
+    "slug": "event-0596",
+    "startDate": "2024-04-26",
+    "eventType": "single-day",
+    "description": "v. Kristian Feldtmose, missionær, Randers",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fællesspisning  - Evolutionær skabelse - et teologisk perspektiv",
+    "slug": "event-0597",
+    "startDate": "2024-05-03",
+    "eventType": "single-day",
+    "description": "v. Andreas Østergaard Jacobsen, stud.teol., center for kristen apologetik",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 19 Bibelgrupper i private hjem",
+    "slug": "event-0598",
+    "startDate": "2024-04-06",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-05-10"
+  },
+  {
+    "title": "Gud og det femte evangelium",
+    "slug": "event-0599",
+    "startDate": "2024-05-16",
+    "eventType": "single-day",
+    "description": "v. Peter Worm Madsen, sognepræst Fårup-Sabro-Borum-Lyngby kirker",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Vores egen aften med lovsang mv.",
+    "slug": "event-0600",
+    "startDate": "2024-05-24",
+    "eventType": "single-day",
+    "description": "v. lokale kræfter",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0601",
+    "startDate": "2024-05-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Et livsforvandlende møde, Joh 4, 1-42",
+    "slug": "event-0602",
+    "startDate": "2024-05-31",
+    "eventType": "single-day",
+    "description": "v. Egild Kildeholm, pens. missionær",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 23 Bibelgrupper i private hjem",
+    "slug": "event-0603",
+    "startDate": "2024-05-03",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-06-07"
+  },
+  {
+    "title": "Bibelen til verden",
+    "slug": "event-0604",
+    "startDate": "2024-06-14",
+    "eventType": "single-day",
+    "description": "v. Kristin Westh, Wycliffe",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Sankt Hans: Grillen er klar, medbring mad, havestol og en ven, til en hyggelig aften med snobrød og båltale. Mere information følger.",
+    "slug": "event-0605",
+    "startDate": "2024-06-23",
+    "eventType": "single-day",
+    "description": "v. Agnes og Jørgen Jeppesen, Hedevej 35, 8464 Galten",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Fri til at leve",
+    "slug": "event-0606",
+    "startDate": "2024-08-16",
+    "eventType": "single-day",
+    "description": "v. Christina Preisler, præst Vejle Oasekirke",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Diakoni og mission - to sider af den samme “kristne mønt”",
+    "slug": "event-0607",
+    "startDate": "2024-08-22",
+    "eventType": "single-day",
+    "description": "v. Niels Hankelberg, præst Herning Bykirke",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 35 Bibelgrupper i private hjem",
+    "slug": "event-0608",
+    "startDate": "2024-07-26",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-08-30"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0609",
+    "startDate": "2024-09-03",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Bethesda-dag: Troshistorier",
+    "slug": "event-0610",
+    "startDate": "2024-09-07",
+    "eventType": "single-day",
+    "description": "Nærmere program følger",
+    "startTime": "09:00"
+  },
+  {
+    "title": "Kvindeaften: Medvandring",
+    "slug": "event-0611",
+    "startDate": "2024-09-09",
+    "eventType": "single-day",
+    "description": "Afholdes i GAVA, Hørslevvej 35, 8464 Galten",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Mission Without Borders",
+    "slug": "event-0612",
+    "startDate": "2024-09-13",
+    "eventType": "single-day",
+    "description": "v. Golriz Ghozati, landsleder Mission Without Borders",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Befriet til at leve - en aften om det personlige skriftemål. Fællesspisning kl. 18:00 og aktivitet for familier.",
+    "slug": "event-0613",
+    "startDate": "2024-09-20",
+    "eventType": "single-day",
+    "description": "v. . Flemming Baatz Kristensen, pastor emeritus",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 39 Bibelgrupper i private hjem",
+    "slug": "event-0614",
+    "startDate": "2024-08-23",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-09-27"
+  },
+  {
+    "title": "Høstfest: Glæde - med udgangspunkt i Filipperbrevet",
+    "slug": "event-0615",
+    "startDate": "2024-10-04",
+    "eventType": "single-day",
+    "description": "v. Andreas Lind Pedersen, fritidsforkynder i IM Medbring evt. høst af grøntsager, marmelade, blomster el.lign. til auktionen.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Prædikerens bog",
+    "slug": "event-0616",
+    "startDate": "2024-10-10",
+    "eventType": "single-day",
+    "description": "v. Anders Bjerregaard, undervisnings- og materialekonsulent IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 42 Efterårsferie",
+    "slug": "event-0617",
+    "startDate": "2024-09-14",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-10-20"
+  },
+  {
+    "title": "Uge 43 - Møderække. v. Hans Jørn Østerby, Gjern. Sanger, sangskriver og skuespiller.",
+    "slug": "event-0618",
+    "startDate": "2024-09-23",
+    "eventType": "multi-day",
+    "description": "Vi starter hver aften med fællesspisning kl 18:00.",
+    "endDate": "2024-10-25"
+  },
+  {
+    "title": "Uge 44 Bibelgrupper i private hjem",
+    "slug": "event-0619",
+    "startDate": "2024-10-28",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-11-01"
+  },
+  {
+    "title": "Køn og seksualitet",
+    "slug": "event-0620",
+    "startDate": "2024-11-08",
+    "eventType": "single-day",
+    "description": "v. Solveig Kikkenborg, Adam og Eva",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0621",
+    "startDate": "2024-11-12",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "At være evangelisk luthersk i tiden",
+    "slug": "event-0622",
+    "startDate": "2024-11-15",
+    "eventType": "single-day",
+    "description": "v. Hans-Ole Bækgaard, formand Indre Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "På sporet af Helligånden (1. Mos. 24)",
+    "slug": "event-0623",
+    "startDate": "2024-11-22",
+    "eventType": "single-day",
+    "description": "v. Sonja Sanden",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kvindeaften: Kreativ aften ved lokale kræfter",
+    "slug": "event-0624",
+    "startDate": "2024-11-25",
+    "eventType": "single-day",
+    "description": "Foregår i Bethesda.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Adventsfest: Jesu genkomst i vores hverdag",
+    "slug": "event-0625",
+    "startDate": "2024-11-29",
+    "eventType": "single-day",
+    "description": "v. Finn Aa. Rønne, professor, DBI",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 49 Bibelgrupper i private hjem",
+    "slug": "event-0626",
+    "startDate": "2024-11-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2024-12-06"
+  },
+  {
+    "title": "Tillid, en ø i havet eller fast grund under fødderne",
+    "slug": "event-0627",
+    "startDate": "2024-12-13",
+    "eventType": "single-day",
+    "description": "v. Nicolaj Wibe, generalsekretær Sømandsmissionen",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Syng Julen Ind",
+    "slug": "event-0628",
+    "startDate": "2024-12-15",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Julefest",
+    "slug": "event-0629",
+    "startDate": "2024-12-29",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "15:00"
+  },
+  {
+    "title": "Uge 1 - Bibelgrupper i hjemmene",
+    "slug": "event-0630",
+    "startDate": "2024-12-30",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-01-03"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge - Stjær Kirke - med efterfølgende kaffe i Bethesda",
+    "slug": "event-0631",
+    "startDate": "2025-01-08",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge - Bethesda",
+    "slug": "event-0632",
+    "startDate": "2025-01-10",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Evangelisk Alliance Bedeuge - Galten Valgmenighed, Hørslevvej 35, Skovby",
+    "slug": "event-0633",
+    "startDate": "2025-01-12",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Rejs dig Afrika",
+    "slug": "event-0634",
+    "startDate": "2025-01-16",
+    "eventType": "single-day",
+    "description": "v/Simon Grud, ansvarlig for kirkelige relationer, Open Doors",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Ønskebøn og opbyggende bøn",
+    "slug": "event-0635",
+    "startDate": "2025-01-24",
+    "eventType": "single-day",
+    "description": "v/Frits Iversen, LM i Randers",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 5 - Bibelgrupper i hjemmene",
+    "slug": "event-0636",
+    "startDate": "2025-01-27",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-02-02"
+  },
+  {
+    "title": "En aften med MAF",
+    "slug": "event-0637",
+    "startDate": "2025-02-07",
+    "eventType": "single-day",
+    "description": "v/Per Østergaard, Galten",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 7 - Vinterferie",
+    "slug": "event-0638",
+    "startDate": "2025-01-10",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-02-16"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0639",
+    "startDate": "2025-02-18",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Om og i bøn",
+    "slug": "event-0640",
+    "startDate": "2025-02-21",
+    "eventType": "single-day",
+    "description": "v/Knud Dideriksen, fritidsforkynder IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 9 - Bibelgrupper i hjemmene",
+    "slug": "event-0641",
+    "startDate": "2025-02-24",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-03-02"
+  },
+  {
+    "title": "Fællesspisning kl. 18:00 - En aften om bøn",
+    "slug": "event-0642",
+    "startDate": "2025-03-07",
+    "eventType": "single-day",
+    "description": "v/Kenneth Ditlevsen, Herning",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Generalforsamling",
+    "slug": "event-0643",
+    "startDate": "2025-03-14",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kvindeaften",
+    "slug": "event-0644",
+    "startDate": "2025-03-17",
+    "eventType": "single-day",
+    "description": "v/Hanne Lise Mandrup - &quot;Min ø i havet - min rejse til Iona&quot;",
+    "startTime": "18:00"
+  },
+  {
+    "title": "O tænk hvor stort, at jeg har smagt Guds nåde",
+    "slug": "event-0645",
+    "startDate": "2025-03-21",
+    "eventType": "single-day",
+    "description": "v/Jørn Steengaard, fritidsforkynder IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Så lev da med Jesus",
+    "slug": "event-0646",
+    "startDate": "2025-03-28",
+    "eventType": "single-day",
+    "description": "v/Søren Grysbæk, pens. missionær IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 14 - Bibelgrupper i hjemmene",
+    "slug": "event-0647",
+    "startDate": "2025-03-31",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-04-05"
+  },
+  {
+    "title": "Jordnær teologi",
+    "slug": "event-0648",
+    "startDate": "2025-04-10",
+    "eventType": "single-day",
+    "description": "v/Kasper Bergholt, valgmenighedspræst Hedensted",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 16 - Påskeferie",
+    "slug": "event-0649",
+    "startDate": "2025-03-14",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-04-20"
+  },
+  {
+    "title": "Evangeliet til hele mennesket",
+    "slug": "event-0650",
+    "startDate": "2025-04-25",
+    "eventType": "single-day",
+    "description": "v/Arngeir Langås, Generalsekretær, Brødremenighedens Danske Mission",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 18 - Bibelgrupper i hjemmene",
+    "slug": "event-0651",
+    "startDate": "2025-04-28",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-05-04"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0652",
+    "startDate": "2025-05-06",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0653",
+    "startDate": "2025-05-09",
+    "eventType": "single-day",
+    "description": "v/Ruth Worm, fritidsforkynder IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Fællesspisning kl. 18. - &#39;Kan man bede i farver?&#39;",
+    "slug": "event-0654",
+    "startDate": "2025-05-16",
+    "eventType": "single-day",
+    "description": "v/Helle Noer, Kreativ Konsulent, IM.",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Indre Missions online årsmøde m/drøftelse",
+    "slug": "event-0655",
+    "startDate": "2025-05-21",
+    "eventType": "single-day",
+    "description": "OBS: Foregår i missionshuset Stjernen i Aarhus.",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 22 - Bibelgrupper i hjemmene",
+    "slug": "event-0656",
+    "startDate": "2025-05-26",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-06-01"
+  },
+  {
+    "title": "Livsregler - strukturer for livet med Gud",
+    "slug": "event-0657",
+    "startDate": "2025-06-05",
+    "eventType": "single-day",
+    "description": "v/Kim Klokmose, forstander Rudehøj Efterskole",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Møde",
+    "slug": "event-0658",
+    "startDate": "2025-06-13",
+    "eventType": "single-day",
+    "description": "v/?",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Min bøn til en almægtig Gud",
+    "slug": "event-0659",
+    "startDate": "2025-06-20",
+    "eventType": "single-day",
+    "description": "v/Ulrik Baun, fritidsforkynder IM",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Sankt Hans aften - Grillen er klar, medbring mad, havestol og en ven, til en hyggelig aften med snobrød og båltale",
+    "slug": "event-0660",
+    "startDate": "2025-06-23",
+    "eventType": "single-day",
+    "description": "Hos Agnes og Jørgen Jeppesen, Hedevej 35, 8464 Galten",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Forbilledlig uperfekt",
+    "slug": "event-0661",
+    "startDate": "2025-08-15",
+    "eventType": "single-day",
+    "description": "v/Peter Kofoed Herbst, præst, Randers",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Streaming-møde; Se det skønne",
+    "slug": "event-0662",
+    "startDate": "2025-08-22",
+    "eventType": "single-day",
+    "description": "v/Uffe Kronborg, præst, Aalborg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "En kirke for alle",
+    "slug": "event-0663",
+    "startDate": "2025-08-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Bent Skovhus, præst, Silkeborg"
+  },
+  {
+    "title": "Uge 36 - Bibelgrupper i hjemmene",
+    "slug": "event-0664",
+    "startDate": "2025-08-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-09-07"
+  },
+  {
+    "title": "Forbønsmøde",
+    "slug": "event-0665",
+    "startDate": "2025-09-09",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Glæd jer altid i Herren",
+    "slug": "event-0666",
+    "startDate": "2025-09-12",
+    "eventType": "single-day",
+    "description": "v/Benjamin Bach, Hedensted",
+    "startTime": "19:00"
+  },
+  {
+    "title": "En mærkelig middag",
+    "slug": "event-0667",
+    "startDate": "2025-09-19",
+    "eventType": "single-day",
+    "description": "v/Kristian Feldtmose, missionær, Randers",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 39 Bibelgrupper i hjemmene",
+    "slug": "event-0668",
+    "startDate": "2025-08-21",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-09-27"
+  },
+  {
+    "title": "Bethesda-dag",
+    "slug": "event-0669",
+    "startDate": "2025-09-27",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "10:00"
+  },
+  {
+    "title": "Høstfest; Guds gaver til os",
+    "slug": "event-0670",
+    "startDate": "2025-10-10",
+    "eventType": "single-day",
+    "description": "v/Joachim Berthelsen, Missionær, Rønde",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Uge 42 - Efterårsferie",
+    "slug": "event-0671",
+    "startDate": "2025-09-13",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-10-19"
+  },
+  {
+    "title": "Familiemøde; Historien om Bartimæus",
+    "slug": "event-0672",
+    "startDate": "2025-10-24",
+    "eventType": "single-day",
+    "description": "V/Lene R. Pedersen, Familiekonsulent, Vejle",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Uge 44 - Møderække v. Morten Vartdal, Ordet og Israel",
+    "slug": "event-0673",
+    "startDate": "2025-09-29",
+    "eventType": "multi-day",
+    "description": "Vi starter hver aften med fællesspisning kl 18:00",
+    "endDate": "2025-10-31"
+  },
+  {
+    "title": "Uge 45 Bibelgrupper i hjemmene",
+    "slug": "event-0674",
+    "startDate": "2025-10-02",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-11-08"
+  },
+  {
+    "title": "Det kristne fællesskab",
+    "slug": "event-0675",
+    "startDate": "2025-11-14",
+    "eventType": "single-day",
+    "description": "v/Niels Peder Nielsen, Silkeborg",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Kvindeaften",
+    "slug": "event-0676",
+    "startDate": "2025-11-17",
+    "eventType": "single-day",
+    "description": "v/Karen Stubkjær, Viborg: &#39;Det skrøbelige menneskeliv&#39;",
+    "startTime": "18:00"
+  },
+  {
+    "title": "Forbønsaften",
+    "slug": "event-0677",
+    "startDate": "2025-11-18",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "20:00"
+  },
+  {
+    "title": "Min tros historie",
+    "slug": "event-0678",
+    "startDate": "2025-11-20",
+    "eventType": "single-day",
+    "description": "v/Martin Bentsen, Præst, Herning",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Adventsfest; Advent – så det gør noget",
+    "slug": "event-0679",
+    "startDate": "2025-11-28",
+    "eventType": "single-day",
+    "description": "",
+    "startTime": "19:00",
+    "speaker": "Jørgen Møller, Galten"
+  },
+  {
+    "title": "Uge 49 Bibelgrupper i hjemmene",
+    "slug": "event-0680",
+    "startDate": "2025-11-01",
+    "eventType": "multi-day",
+    "description": "",
+    "endDate": "2025-12-07"
+  },
+  {
+    "title": "”Dagligstue-møde” med sang, hygge og andagt",
+    "slug": "event-0681",
+    "startDate": "2025-12-12",
+    "eventType": "single-day",
+    "description": "v/Lisbet Kristensen, Galten",
+    "startTime": "19:00"
+  },
+  {
+    "title": "Syng Julen Ind",
+    "slug": "event-0682",
+    "startDate": "2025-12-14",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "15:00"
+  },
+  {
+    "title": "Julefest",
+    "slug": "event-0683",
+    "startDate": "2025-12-29",
+    "eventType": "single-day",
+    "description": "v/lokale kræfter",
+    "startTime": "16:30"
+  }
+]

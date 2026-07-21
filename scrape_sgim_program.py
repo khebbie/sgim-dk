@@ -249,7 +249,7 @@ def parse_event(event_html, default_month=None):
     event = {
         "title": title,
         "startDate": start_date,
-        "eventType": "multi-day" if end_date else "single",
+        "eventType": "multi-day" if end_date else "single-day",
         "description": description,
         "speaker": speaker if speaker else None,
     }
