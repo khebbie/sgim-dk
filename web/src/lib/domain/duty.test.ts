@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { groupRoster, summarizeYearlyDuties, type DutyAssignmentRow } from './duty';
+import {
+	buildRosterFromMeetings,
+	groupRoster,
+	summarizeYearlyDuties,
+	type DutyAssignmentRow
+} from './duty';
 
 const row = (over: Partial<DutyAssignmentRow>): DutyAssignmentRow => ({
 	id: '1',
@@ -73,5 +78,18 @@ describe('groupRoster', () => {
 			{ memberName: 'Anna', completedDuties: 2 },
 			{ memberName: 'Bo', completedDuties: 1 }
 		]);
+	});
+
+	it('includes upcoming events even when they have no duty rows yet', () => {
+		const roster = buildRosterFromMeetings(
+			[
+				{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10') },
+				{ eventSlug: 'e2', eventTitle: 'E2', start: new Date('2026-02-10') }
+			],
+			[{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), slots: [] }]
+		);
+
+		expect(roster.map((meeting) => meeting.eventSlug)).toEqual(['e1', 'e2']);
+		expect(roster[1].slots).toEqual([]);
 	});
 });

@@ -29,6 +29,12 @@ export interface DutyMeeting {
 	slots: DutySlot[];
 }
 
+export interface DutyEvent {
+	eventSlug: string;
+	eventTitle: string;
+	start: Date;
+}
+
 export interface MemberDutySummary {
 	memberName: string;
 	completedDuties: number;
@@ -60,6 +66,26 @@ export function groupRoster(rows: DutyAssignmentRow[]): DutyMeeting[] {
 				.sort((a, b) => a.categoryOrder - b.categoryOrder)
 				.map((r) => ({ id: r.id, categoryName: r.categoryName, memberName: r.memberName }))
 		}));
+}
+
+export function buildRosterFromMeetings(
+	events: DutyEvent[],
+	meetings: DutyMeeting[]
+): DutyMeeting[] {
+	const bySlug = new Map(meetings.map((meeting) => [meeting.eventSlug, meeting]));
+
+	return events
+		.slice()
+		.sort((a, b) => a.start.getTime() - b.start.getTime())
+		.map((event) => {
+			const existing = bySlug.get(event.eventSlug);
+			return {
+				eventSlug: event.eventSlug,
+				eventTitle: event.eventTitle,
+				start: event.start,
+				slots: existing?.slots ?? []
+			};
+		});
 }
 
 export function summarizeYearlyDuties(meetings: DutyMeeting[], year: number): MemberDutySummary[] {

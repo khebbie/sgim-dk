@@ -2,13 +2,25 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { isOk } from '$lib/domain/result';
 import { contentSource } from '$lib/server/content';
-import { summarizeYearlyDuties } from '$lib/domain/duty';
+import { buildRosterFromMeetings, summarizeYearlyDuties } from '$lib/domain/duty';
 
 export const load: PageServerLoad = async ({ fetch, cookies }) => {
 	const token = cookies.get('session');
 	if (!token) return { roster: [], yearlyDuties: [] };
-	const result = await contentSource(fetch).getDutyRoster(token);
-	const roster = isOk(result) ? result.value : [];
+	const [rosterResult, eventsResult] = await Promise.all([
+		contentSource(fetch).getDutyRoster(token),
+		contentSource(fetch).listUpcomingEvents()
+	]);
+	const rosterRows = isOk(rosterResult) ? rosterResult.value : [];
+	const upcomingEvents = isOk(eventsResult) ? eventsResult.value : [];
+	const roster = buildRosterFromMeetings(
+		upcomingEvents.map((event) => ({
+			eventSlug: event.slug,
+			eventTitle: event.title,
+			start: event.kind === 'single' ? event.start : event.startDate
+		})),
+		rosterRows
+	);
 	const currentYear = new Date().getFullYear();
 	return {
 		roster,
