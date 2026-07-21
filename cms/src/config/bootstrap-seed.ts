@@ -10,8 +10,11 @@ import { readFileSync } from 'node:fs';
 export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   // Ensure the `aktuelt` single-type exists with a safe default so the
   // homepage can render predictably even when full sample seeding is
-  // disabled. `seedSingle` is idempotent so this is safe to run unguarded.
-  await seedSingle(strapi, 'api::aktuelt.aktuelt', aktuelt);
+  // disabled. Only overwrite existing Aktuelt content when full sample
+  // bootstrap seeding is explicitly enabled.
+  await seedSingle(strapi, 'api::aktuelt.aktuelt', aktuelt, {
+    overwrite: process.env.BOOTSTRAP_SEED === 'true',
+  });
 
   if (process.env.BOOTSTRAP_SEED !== 'true') return;
   await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
@@ -199,11 +202,23 @@ async function seedMember(strapi: Core.Strapi): Promise<void> {
   strapi.log.info(JSON.stringify({ operation: 'seed-member', email }));
 }
 
-async function seedSingle(strapi: Core.Strapi, uid: string, data: object): Promise<void> {
+export async function seedSingle(
+  strapi: Core.Strapi,
+  uid: string,
+  data: object,
+  options?: { overwrite?: boolean }
+): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const docs = strapi.documents(uid as any);
   const existing = await docs.findFirst();
-  if (!existing) await docs.create({ data: data as never });
+  if (!existing) {
+    await docs.create({ data: data as never });
+    return;
+  }
+
+  if (options?.overwrite) {
+    await docs.update({ documentId: existing.documentId, data: data as never });
+  }
 }
 
 async function seedCollection(strapi: Core.Strapi, uid: string, rows: object[]): Promise<void> {
@@ -217,11 +232,10 @@ const siteSettings = {
   siteName: 'Stjær/Galten Indre Mission',
   siteDescription:
     '<p>Velkommen til Stjær/Galten Indre Mission. Vi ønsker at udbrede budskabet om Jesus Kristus til alle aldersgrupper i vores lokalområde.</p>',
-  email: 'kontakt@sgim.dk',
-  phone: '12 34 56 78',
-  address: 'Missionshuset, Bakkevej 1, 8464 Galten',
-  facebookUrl: 'https://facebook.com/sgim',
-  instagramUrl: 'https://instagram.com/sgim',
+  email: 'bestyrelsen@sgim.dk',
+  address: 'Missionshuset Bethesda, Østerbro 6, Stjær, 8464 Galten',
+  facebookUrl: 'https://www.facebook.com/BethesdaSGIM/',
+  instagramUrl: 'https://www.instagram.com/stjaergaltenim/',
   footerText: '<p>Stjær/Galten Indre Mission — et fællesskab for hele familien.</p>',
   copyrightText: '© Stjær/Galten Indre Mission',
 };

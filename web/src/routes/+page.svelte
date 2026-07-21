@@ -19,7 +19,7 @@
 	{@const aktuelt = data.view.aktuelt}
 	<section class="hero" aria-label="Aktuelt">
 		<div class="hero-media">
-			<img src={aktuelt.imageUrl ?? bethesda} alt="Missionshuset Bethesda i Galten" />
+			<img src={aktuelt.imageUrl ?? bethesda} alt="Missionshuset Bethesda i Stjær" />
 		</div>
 		<div class="hero-body">
 			<p class="eyebrow">Aktuelt</p>
@@ -34,7 +34,7 @@
 {:else}
 	<section class="hero" aria-label="Velkommen">
 		<div class="hero-media">
-			<img src={bethesda} alt="Missionshuset Bethesda i Galten" />
+			<img src={bethesda} alt="Missionshuset Bethesda i Stjær" />
 		</div>
 		<div class="hero-body">
 			<p class="eyebrow">Velkommen til</p>
