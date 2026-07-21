@@ -65,7 +65,7 @@ def fetch_page(year=None):
 def parse_date(date_str):
     """
     Parse various date formats from the site:
-    - "29. - 04. januar 2026" (date range)
+    - "29. - 04. januar 2026" (date range, e.g., Dec 29 - Jan 4)
     - "14. januar 2026 kl 19:00" (single date with time)
     - "16. januar 2026" (single date)
     - "22. januar 2026 kl 19:00" (single date with time)
@@ -75,22 +75,34 @@ def parse_date(date_str):
     date_str = date_str.replace("&#198;", "Æ").replace("&#214;", "Ø").replace("&#229;", "å")
     
     # Handle date ranges like "29. - 04. januar 2026"
-    # The pattern is: "DD. - DD. MonthName YYYY"
-    range_match = re.match(r"^(\d{1,2}\.)\s*-\s*(\d{1,2}\. [A-ZÅÆØa-zåæø]+ \d{4})$", date_str)
+    # This means: DD of previous month - DD MonthName YYYY
+    # e.g., "29. - 04. januar 2026" = "2025-12-29" to "2026-01-04"
+    range_match = re.match(r"^(\d{1,2})\.\s*-\s*(\d{1,2})\. ([A-ZÅÆØa-zåæø]+) (\d{4})$", date_str)
     if range_match:
-        # Start is just the day (e.g., "29."), end is full date (e.g., "04. januar 2026")
-        start_day = range_match.group(1).strip().rstrip('.')
-        end_date_str = range_match.group(2).strip()
+        start_day = int(range_match.group(1))
+        end_day = int(range_match.group(2))
+        month_name = range_match.group(3).capitalize()
+        year = int(range_match.group(4))
         
-        # Parse end date to get month and year
-        end_date = parse_single_date(end_date_str)
-        if end_date:
-            # Extract month and year from end date
-            end_parts = end_date.split('-')
-            if len(end_parts) == 3:
-                start_date = f"{end_parts[0]}-{end_parts[1]}-{int(start_day):02d}"
-                return {"startDate": start_date, "endDate": end_date}
-        return {"startDate": None, "endDate": end_date}
+        month_num = DANISH_MONTHS.get(month_name)
+        if month_num is None:
+            return {"startDate": None, "endDate": None}
+        
+        # End date
+        end_date = f"{year:04d}-{month_num:02d}-{end_day:02d}"
+        
+        # Start date: previous month
+        if month_num == 1:
+            start_date = f"{year-1:04d}-12-{start_day:02d}"
+        else:
+            start_date = f"{year:04d}-{month_num-1:02d}-{start_day:02d}"
+        
+        # Verify start is before end
+        if start_date > end_date:
+            # If start is after end, maybe it's same month
+            start_date = f"{year:04d}-{month_num:02d}-{start_day:02d}"
+        
+        return {"startDate": start_date, "endDate": end_date}
     
     # Check if it's just a day number (from partial range)
     if re.match(r"^\d{1,2}\.\s*$", date_str.strip()):
@@ -210,15 +222,25 @@ def parse_event(event_html, default_month=None):
     description = description.replace("&#216;", "Ø").replace("&#230;", "æ").replace("&#248;", "ø")
     description = description.replace("&#198;", "Æ").replace("&#214;", "Ø").replace("&#229;", "å")
     
-    # Extract speaker if present (e.g., "v/ Name")
+    # Extract speaker if present (e.g., "v/ Name" or "ved Name")
     speaker = ""
-    if " v/ " in description or " ved " in description:
-        # Try to extract speaker name
-        speaker_match = re.search(r'(v/|ved)\s*([A-ZÅÆØa-zåæø\s,]+)', description)
+    if " v/ " in description or " ved " in description or description.startswith("v/ ") or description.startswith("ved "):
+        # Pattern 1: "v/ Name" or "ved Name" at the start
+        speaker_match = re.match(r'(?:v/|ved)\s*([A-ZÅÆØa-zåæø\s,.-]+)', description)
         if speaker_match:
-            speaker = speaker_match.group(2).strip()
-            # Remove speaker from description
-            description = re.sub(r'(v/|ved)\s*[A-ZÅÆØa-zåæø\s,]+', '', description).strip()
+            speaker = speaker_match.group(1).strip()
+            description = description.replace(speaker_match.group(0), '').strip()
+        else:
+            # Pattern 2: "v/ Name" or "ved Name" in the middle
+            speaker_match = re.search(r'(?:v/|ved)\s*([A-ZÅÆØa-zåæø\s,.-]+)', description)
+            if speaker_match:
+                speaker = speaker_match.group(1).strip()
+                # Replace the matched pattern
+                description = description.replace(speaker_match.group(0), '').strip()
+        
+        # Clean up any trailing punctuation
+        description = description.rstrip('-, ')  
+        speaker = speaker.rstrip('-, ')
     
     # Handle multi-day events
     start_date = dates["startDate"]
