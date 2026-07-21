@@ -73,22 +73,36 @@ export function buildRosterFromMeetings(
 	events: DutyEvent[],
 	meetings: DutyMeeting[]
 ): DutyMeeting[] {
-	const bySlug = new Map(meetings.map((meeting) => [meeting.eventSlug, meeting]));
+	const byMeetingSlug = new Map(meetings.map((meeting) => [meeting.eventSlug, meeting]));
+	const byEventSlug = new Map(events.map((event) => [event.eventSlug, event]));
+	const slugs = new Set<string>();
 
-	return events
-		.filter((event) => event.kind !== 'multiday')
-		.filter((event) => (bySlug.get(event.eventSlug)?.slots.length ?? 0) > 0)
-		.slice()
-		.sort((a, b) => a.start.getTime() - b.start.getTime())
-		.map((event) => {
-			const existing = bySlug.get(event.eventSlug);
+	for (const meeting of meetings) {
+		if (meeting.slots.length === 0) continue;
+		const event = byEventSlug.get(meeting.eventSlug);
+		if (event?.kind === 'multiday') continue;
+		slugs.add(meeting.eventSlug);
+	}
+
+	for (const event of events) {
+		if (event.kind === 'multiday') continue;
+		const meeting = byMeetingSlug.get(event.eventSlug);
+		if (!meeting || meeting.slots.length === 0) continue;
+		slugs.add(event.eventSlug);
+	}
+
+	return [...slugs]
+		.map((eventSlug) => {
+			const meeting = byMeetingSlug.get(eventSlug);
+			const event = byEventSlug.get(eventSlug);
 			return {
-				eventSlug: event.eventSlug,
-				eventTitle: event.eventTitle,
-				start: event.start,
-				slots: existing?.slots ?? []
+				eventSlug,
+				eventTitle: meeting?.eventTitle ?? event?.eventTitle ?? eventSlug,
+				start: event?.start ?? meeting?.start ?? new Date(0),
+				slots: meeting?.slots ?? []
 			};
-		});
+		})
+		.sort((a, b) => a.start.getTime() - b.start.getTime());
 }
 
 export function summarizeYearlyDuties(meetings: DutyMeeting[], year: number): MemberDutySummary[] {

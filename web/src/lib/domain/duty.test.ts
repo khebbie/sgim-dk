@@ -92,4 +92,20 @@ describe('groupRoster', () => {
 
 		expect(roster.map((meeting) => meeting.eventSlug)).toEqual([]);
 	});
+
+	it('includes roster meetings even when the event feed omits them', () => {
+		const roster = buildRosterFromMeetings(
+			[{ eventSlug: 'e1', eventTitle: 'E1', start: new Date('2026-01-10'), kind: 'single' }],
+			[
+				{
+					eventSlug: 'e2',
+					eventTitle: 'E2',
+					start: new Date('2026-02-10'),
+					slots: [{ id: 's1', categoryName: 'Kaffe', memberName: 'Anna' }]
+				}
+			]
+		);
+
+		expect(roster.map((meeting) => meeting.eventSlug)).toEqual(['e2']);
+	});
 });
