@@ -5,6 +5,7 @@
  * clicking through the admin. draftAndPublish is off, so entries are live.
  */
 import type { Core } from '@strapi/strapi';
+import { readFileSync } from 'node:fs';
 
 export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   if (process.env.BOOTSTRAP_SEED !== 'true') return;
@@ -16,9 +17,65 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   await seedCollection(strapi, 'api::static-page.static-page', staticPages);
   await seedMember(strapi);
   await seedDuties(strapi);
+  await importEventsFromFile(strapi);
   strapi.log.info(
     JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
   );
+}
+
+interface ScrapedEvent {
+  title: string;
+  slug: string;
+  startDate: string;
+  eventType?: string;
+  description?: string;
+  endDate?: string;
+  startTime?: string;
+  speaker?: string;
+  location?: string;
+}
+
+/** One-off bulk import of scraped events (set IMPORT_EVENTS_FILE=/path/to.json). */
+async function importEventsFromFile(strapi: Core.Strapi): Promise<void> {
+  const file = process.env.IMPORT_EVENTS_FILE;
+  if (!file) return;
+  const rows = JSON.parse(readFileSync(file, 'utf8')) as ScrapedEvent[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const events = strapi.documents('api::event.event' as any);
+  const existing = await events.findMany({ fields: ['slug'], pagination: { pageSize: 5000 } });
+  const seen = new Set(existing.map((e) => (e as { slug?: string }).slug));
+
+  let created = 0;
+  for (const row of rows) {
+    if (!row.slug || seen.has(row.slug)) continue;
+    await events.create({ data: toEvent(row) as never });
+    created += 1;
+  }
+  strapi.log.info(JSON.stringify({ operation: 'import-events', created, total: rows.length }));
+}
+
+function toEvent(row: ScrapedEvent): Record<string, unknown> {
+  const data: Record<string, unknown> = {
+    title: row.title,
+    slug: row.slug,
+    description: row.description ?? '',
+    eventType: row.eventType === 'multi-day' ? 'multi-day' : 'single-day',
+    startDate: row.startDate,
+  };
+  if (row.endDate) data.endDate = row.endDate;
+  const time = normalizeTime(row.startTime);
+  if (time) data.startTime = time;
+  if (row.speaker) data.organizer = row.speaker;
+  if (row.location) data.location = row.location;
+  return data;
+}
+
+/** Strapi time fields require HH:mm:ss.SSS; the scrape yields HH:MM. */
+function normalizeTime(value?: string): string | undefined {
+  if (!value) return undefined;
+  const match = /^(\d{1,2}):(\d{2})(?::(\d{2}))?/.exec(value);
+  if (!match) return undefined;
+  return `${match[1].padStart(2, '0')}:${match[2]}:${match[3] ?? '00'}.000`;
 }
 
 const DUTY_CATEGORIES = [
