@@ -105,8 +105,8 @@ description = "Start website (SvelteKit) in development mode"
 run = "npm --prefix web run dev"
 
 [tasks.start]
-description = "Start both CMS and website in development mode"
-run = "sh -c 'npm --prefix cms run dev & npm --prefix web run dev & wait'"
+description = "Start both CMS and website in development mode (parallel)"
+depends = ["start:cms", "start:web"]
 
 [tasks.install]
 description = "Install dependencies for both packages"

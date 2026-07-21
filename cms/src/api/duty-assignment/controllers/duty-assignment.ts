@@ -23,10 +23,11 @@ const ROSTER_POPULATE = {
 
 export default factories.createCoreController(UID, ({ strapi }) => ({
   async find(ctx: Ctx) {
+    // Sorting (meetings by date, slots by category order) is done client-side in
+    // the web layer's groupRoster, so we don't sort by relation fields here.
     const items = await strapi.documents(UID).findMany({
       populate: ROSTER_POPULATE as never,
       pagination: { pageSize: 500 },
-      sort: ['event.startDate:asc', 'category.order:asc'],
     });
     ctx.body = { data: items };
   },

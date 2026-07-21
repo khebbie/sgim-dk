@@ -13,6 +13,7 @@ export default tseslint.config(
       'src/admin/**',
       'src/plugins/**',
       'public/**',
+      'types/**', // Strapi-generated content-type types (regenerated on build/dev)
     ],
   },
   ...tseslint.configs.recommended,

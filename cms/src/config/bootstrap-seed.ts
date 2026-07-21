@@ -47,7 +47,6 @@ async function seedDuties(strapi: Core.Strapi): Promise<void> {
   const assignments = strapi.documents(asgUid as any);
   if ((await assignments.count({})) > 0) return;
 
-   
   const events = await strapi
     .documents('api::event.event' as any)
     .findMany({ fields: ['documentId'] });
