@@ -33,26 +33,27 @@
 			<h1>Stjær/Galten Indre Mission</h1>
 		{/if}
 	</section>
-
-	<section aria-labelledby="upcoming-heading">
-		<h2 id="upcoming-heading">Kommende arrangementer</h2>
-		{#if data.upcomingEvents.length === 0}
-			<p>Der er ingen kommende arrangementer lige nu.</p>
-		{:else}
-			<ul class="events">
-				{#each data.upcomingEvents as event (event.id)}
-					<li>
-						<time>{formatEventWhen(event)}</time>
-						<span class="event-title">{event.title}</span>
-						{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
-						{#if event.location}<span class="event-location">· {event.location}</span>{/if}
-					</li>
-				{/each}
-			</ul>
-			<p class="see-all"><a href="/kalender">Se hele kalenderen →</a></p>
-		{/if}
-	</section>
 {/if}
+
+<!-- Always show the upcoming events list regardless of takeover/default view -->
+<section aria-labelledby="upcoming-heading">
+	<h2 id="upcoming-heading">Kommende arrangementer</h2>
+	{#if data.upcomingEvents.length === 0}
+		<p>Der er ingen kommende arrangementer lige nu.</p>
+	{:else}
+		<ul class="events">
+			{#each data.upcomingEvents as event (event.id)}
+				<li>
+					<time>{formatEventWhen(event)}</time>
+					<span class="event-title">{event.title}</span>
+					{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
+					{#if event.location}<span class="event-location">· {event.location}</span>{/if}
+				</li>
+			{/each}
+		</ul>
+		<p class="see-all"><a href="/kalender">Se hele kalenderen →</a></p>
+	{/if}
+</section>
 
 <style>
 	.takeover-image {
