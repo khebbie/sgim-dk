@@ -15,14 +15,23 @@ const HOMEPAGE_EVENT_COUNT = 3;
 
 export const load: PageServerLoad = async ({ fetch }) => {
 	const cms = contentSource(fetch);
-	const [aktueltResult, eventsResult, settingsResult] = await Promise.all([
+	const [activeResult, anyResult, eventsResult, settingsResult] = await Promise.all([
 		cms.getActiveAktuelt(),
+		cms.getAnyAktuelt(),
 		cms.listUpcomingEvents(),
 		cms.getSiteSettings()
 	]);
 
+	// Prefer an active Aktuelt; if none, fall back to the seeded/default singleton
+	const aktuelList =
+		isOk(activeResult) && activeResult.value.length > 0
+			? activeResult.value
+			: isOk(anyResult) && anyResult.value.length > 0
+				? anyResult.value
+				: [];
+
 	return {
-		view: sanitizeView(selectHomeView(isOk(aktueltResult) ? aktueltResult.value : [])),
+		view: sanitizeView(selectHomeView(aktuelList)),
 		upcomingEvents: isOk(eventsResult) ? eventsResult.value.slice(0, HOMEPAGE_EVENT_COUNT) : [],
 		intro: isOk(settingsResult) ? sanitizeRichText(settingsResult.value.intro) : null
 	};

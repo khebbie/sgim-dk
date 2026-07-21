@@ -44,6 +44,7 @@
 	"dependencies": {
 		"cockatiel": "^4.0.0",
 		"he": "^1.2.0",
+		"ics": "^3.12.0",
 		"marked": "^14.1.2",
 		"sanitize-html": "^2.17.6"
 	}

@@ -8,9 +8,13 @@ import type { Core } from '@strapi/strapi';
 import { readFileSync } from 'node:fs';
 
 export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
+  // Ensure the `aktuelt` single-type exists with a safe default so the
+  // homepage can render predictably even when full sample seeding is
+  // disabled. `seedSingle` is idempotent so this is safe to run unguarded.
+  await seedSingle(strapi, 'api::aktuelt.aktuelt', aktuelt);
+
   if (process.env.BOOTSTRAP_SEED !== 'true') return;
   await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
-  await seedSingle(strapi, 'api::aktuelt.aktuelt', aktuelt);
   await seedCollection(strapi, 'api::navigation.navigation', navigation);
   await seedCollection(strapi, 'api::club.club', clubs);
   await seedCollection(strapi, 'api::event.event', events);

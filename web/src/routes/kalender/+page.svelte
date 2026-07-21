@@ -12,6 +12,10 @@
 
 <h1>Kalender {data.year ?? ''}</h1>
 
+<p class="ics-link">
+	<a href="/api/v1/events/ics" download="sgim-kalender.ics"> Abonner paa kalender (ICS) </a>
+</p>
+
 {#if data.years.length > 1}
 	<nav class="years" aria-label="Vælg år">
 		{#each data.years as y (y)}
@@ -96,5 +100,19 @@
 	.event-speaker,
 	.event-location {
 		color: var(--color-muted);
+	}
+	.ics-link {
+		margin-bottom: var(--space-4);
+	}
+	.ics-link a {
+		padding: var(--space-2) var(--space-3);
+		background: var(--color-primary);
+		color: var(--color-primary-contrast);
+		border-radius: var(--radius-base);
+		text-decoration: none;
+		font-weight: 500;
+	}
+	.ics-link a:hover {
+		text-decoration: underline;
 	}
 </style>

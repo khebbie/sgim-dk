@@ -22,5 +22,8 @@ export const endpoints = {
 		`/api/events?populate=*&sort=startDate:asc&pagination[pageSize]=500` +
 		`&filters[startDate][$gte]=${year}-01-01&filters[startDate][$lte]=${year}-12-31`,
 	eventBoundary: (dir: 'asc' | 'desc') =>
-		`/api/events?fields[0]=startDate&sort=startDate:${dir}&pagination[pageSize]=1`
+		`/api/events?fields[0]=startDate&sort=startDate:${dir}&pagination[pageSize]=1`,
+	// ICS calendar feed (sgim-pgx.16): all single-day events
+	singleDayEvents:
+		'/api/events?populate=*&pagination[pageSize]=500&filters[eventType][$eq]=single-day'
 };

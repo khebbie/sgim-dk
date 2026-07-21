@@ -15,6 +15,7 @@ import type { CmsHttp } from './http';
 import { endpoints } from './endpoints';
 import { dataNode, dataList } from './envelope';
 import { MappingError } from './errors';
+import type { SingleEvent } from '$lib/domain/content';
 import {
 	mapSiteSettings,
 	mapNavItem,
@@ -65,6 +66,21 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 		getActiveAktuelt() {
 			return getActiveAktuelt(deps);
 		},
+		async getAnyAktuelt() {
+			const raw = await deps.http.getJson(endpoints.aktuelt);
+			if (!isOk(raw)) return raw.error.kind === 'not_found' ? ok([]) : raw;
+			try {
+				const node = dataNode(raw.value);
+				return ok([mapAktuelt(node)]);
+			} catch (error) {
+				const detail = error instanceof MappingError ? error.message : 'aktuelt mapping failure';
+				return err({ kind: 'mapping', detail });
+			}
+		},
+		async listSingleDayEvents() {
+			const events = mapMany(await get(endpoints.singleDayEvents), mapEvent);
+			return isOk(events) ? ok(filterSingleDayEvents(events.value)) : events;
+		},
 		async getDutyRoster(token) {
 			const raw = await deps.http.getJson('/api/duty-assignments', token);
 			if (!isOk(raw)) return raw;
@@ -88,6 +104,11 @@ export function createStrapiContentSource(deps: StrapiDeps): ContentSource {
 /** Discards a successful POST body; passes any transport error through. */
 function toVoid(result: Result<unknown, ContentError>): Result<void, ContentError> {
 	return isOk(result) ? ok(undefined) : result;
+}
+
+/** Filters EventItem union to only SingleEvent type for ICS feed (sgim-pgx.16). */
+function filterSingleDayEvents(events: import('$lib/domain/content').EventItem[]): SingleEvent[] {
+	return events.filter((e): e is SingleEvent => e.kind === 'single');
 }
 
 /** Year range for calendar navigation: [earliest event .. latest event], always incl. now. */

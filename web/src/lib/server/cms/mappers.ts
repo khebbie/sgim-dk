@@ -16,7 +16,7 @@ export function mediaUrl(value: unknown): string | undefined {
 export function mapSiteSettings(node: Node): SiteSettings {
 	return {
 		siteName: decodeHtmlEntities(str(node, 'siteName')),
-		intro: markdownToHtml(decodeHtmlEntities(optStr(node, 'siteDescription')) ?? ''),
+		intro: decodeHtmlEntities(optStr(node, 'siteDescription')) ?? '',
 		email: decodeHtmlEntities(optStr(node, 'email')),
 		phone: decodeHtmlEntities(optStr(node, 'phone')),
 		address: decodeHtmlEntities(optStr(node, 'address')),

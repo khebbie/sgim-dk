@@ -5,7 +5,7 @@
  */
 import he from 'he';
 
-export function decodeHtmlEntities(text: string | undefined): string | undefined {
-	if (!text) return text;
+export function decodeHtmlEntities(text: string | undefined): string {
+	if (!text) return '';
 	return he.decode(text);
 }

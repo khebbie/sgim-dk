@@ -5,7 +5,15 @@
  * imports live only in the adapter (web/src/lib/server/cms/**).
  */
 import type { Result } from './result';
-import type { SiteSettings, NavItem, StaticPage, Club, EventItem, Aktuelt } from './content';
+import type {
+	SiteSettings,
+	NavItem,
+	StaticPage,
+	Club,
+	EventItem,
+	Aktuelt,
+	SingleEvent
+} from './content';
 import type { DutyMeeting } from './duty';
 
 /**
@@ -37,6 +45,10 @@ export interface ContentSource {
 	listClubs(): ContentResult<Club[]>;
 	getClub(slug: string): ContentResult<Club>;
 	getActiveAktuelt(): ContentResult<Aktuelt[]>;
+	/** Return the Aktuelt single-type regardless of enabled/window — used as a fallback. */
+	getAnyAktuelt(): ContentResult<Aktuelt[]>;
+	/** All single-day events for ICS calendar feed (sgim-pgx.16). */
+	listSingleDayEvents(): ContentResult<SingleEvent[]>;
 
 	// Members-only duty roster (require the member's JWT).
 	getDutyRoster(token: string): ContentResult<DutyMeeting[]>;

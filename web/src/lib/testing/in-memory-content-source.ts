@@ -46,6 +46,12 @@ export function createInMemoryContentSource(data: FakeData = {}): ContentSource 
 		listClubs: () => Promise.resolve(ok(data.clubs ?? [])),
 		getClub: (slug) => found(data.clubs?.find((c) => c.slug === slug)),
 		getActiveAktuelt: () => Promise.resolve(ok(data.aktuelt ?? [])),
+		getAnyAktuelt: () => Promise.resolve(ok(data.aktuelt ?? [])),
+		listSingleDayEvents: () => {
+			const isSingle = (e: EventItem): e is import('$lib/domain/content').SingleEvent =>
+				(e as { kind?: string }).kind === 'single';
+			return Promise.resolve(ok((data.events ?? []).filter(isSingle)));
+		},
 		getDutyRoster: () => Promise.resolve(ok(data.duties ?? [])),
 		claimDuty: () => Promise.resolve(ok(undefined)),
 		releaseDuty: () => Promise.resolve(ok(undefined))
