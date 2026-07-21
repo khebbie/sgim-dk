@@ -121,19 +121,28 @@
 	}
 
 	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 20;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--space-3);
 		padding: var(--space-3) var(--space-4);
+		background: var(--color-bg);
 		border-bottom: 1px solid var(--color-border);
+		box-shadow: var(--shadow-sm);
 	}
 	.brand {
+		font-family: var(--font-serif);
 		font-size: var(--font-size-lg);
-		font-weight: 700;
+		font-weight: 600;
 		text-decoration: none;
 		color: var(--color-primary);
 		margin-right: auto;
+	}
+	.brand:hover {
+		color: var(--color-primary-hover);
 	}
 
 	.menu-toggle {

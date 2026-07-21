@@ -3,15 +3,29 @@
  * preprocessing, no CSS framework. Components should read these variables
  * rather than hard-coding colors/spacing/type, so the look can be adjusted
  * from one place. See README.md for the CSS approach rationale.
+ *
+ * Visual direction ("Missionshus"): sober Danish Lutheran warmth. A deep
+ * Nordic slate-blue leads; a warm limewash-paper background and an aged-brass
+ * accent give it identity without shouting. A warm system-serif carries the
+ * headings (no webfont dependency — the stack degrades to Georgia). Dark mode
+ * is a single overrides block; every colour is a token so nothing else changes.
  */
 :root {
-	/* Color */
-	--color-bg: #ffffff;
-	--color-text: #1a1a1a;
-	--color-primary: #2b5a8c;
+	color-scheme: light dark;
+
+	/* Color — light (limewash paper) */
+	--color-bg: #f5f2ec;
+	--color-surface: #ffffff;
+	--color-surface-alt: #ede7dc;
+	--color-text: #211e1b;
+	--color-muted: #6d675e;
+	--color-primary: #1f3b5c;
+	--color-primary-hover: #142c45;
 	--color-primary-contrast: #ffffff;
-	--color-border: #d8d8d8;
-	--color-muted: #5f6368;
+	--color-accent: #9a7a3c;
+	--color-accent-strong: #7c6026;
+	--color-border: #e1dace;
+	--color-shadow: rgba(33, 30, 27, 0.1);
 
 	/* Spacing scale */
 	--space-1: 0.25rem;
@@ -19,15 +33,43 @@
 	--space-3: 1rem;
 	--space-4: 1.5rem;
 	--space-5: 2.5rem;
+	--space-6: 4rem;
 
 	/* Typography */
-	--font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-	--font-size-base: 1rem;
-	--font-size-lg: 1.25rem;
-	--font-size-xl: 1.75rem;
-	--line-height-base: 1.5;
+	--font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	--font-serif:
+		'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman',
+		serif;
+	--font-size-sm: 0.875rem;
+	--font-size-base: 1.0625rem;
+	--font-size-lg: 1.2rem;
+	--font-size-xl: clamp(1.6rem, 1.25rem + 1.5vw, 2.1rem);
+	--font-size-2xl: clamp(2.05rem, 1.5rem + 2.6vw, 3rem);
+	--line-height-base: 1.65;
+	--line-height-tight: 1.15;
+	--tracking-label: 0.09em;
 
 	/* Layout */
-	--content-max-width: 60rem;
-	--radius-base: 0.25rem;
+	--content-max-width: 62rem;
+	--radius-base: 0.4rem;
+	--radius-lg: 0.85rem;
+	--shadow-sm: 0 1px 2px var(--color-shadow);
+	--shadow-md: 0 8px 24px -10px var(--color-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: #17181a;
+		--color-surface: #202226;
+		--color-surface-alt: #1b1c1f;
+		--color-text: #e9e4da;
+		--color-muted: #a49e94;
+		--color-primary: #86abd8;
+		--color-primary-hover: #a6c3e6;
+		--color-primary-contrast: #101f31;
+		--color-accent: #cba76a;
+		--color-accent-strong: #ddbd85;
+		--color-border: #33353b;
+		--color-shadow: rgba(0, 0, 0, 0.45);
+	}
 }

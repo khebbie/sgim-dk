@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { formatEventWhen } from '$lib/format';
+	import EventItem from '$lib/components/EventItem.svelte';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -13,7 +13,7 @@
 <h1>Kalender {data.year ?? ''}</h1>
 
 <p class="ics-link">
-	<a href="/api/v1/events/ics" download="sgim-kalender.ics"> Abonner paa kalender (ICS) </a>
+	<a href="/api/v1/events/ics" download="sgim-kalender.ics">Abonner på kalender (ICS)</a>
 </p>
 
 {#if data.years.length > 1}
@@ -36,14 +36,9 @@
 	{#each data.months as month (month.month)}
 		<section class="month">
 			<h2>{month.name}</h2>
-			<ul class="events">
+			<ul class="event-list">
 				{#each month.events as event (event.id)}
-					<li>
-						<time>{formatEventWhen(event)}</time>
-						<a class="event-title" href={`/kalender/${event.slug}`}>{event.title}</a>
-						{#if event.speaker}<span class="event-speaker">v/ {event.speaker}</span>{/if}
-						{#if event.location}<span class="event-location">· {event.location}</span>{/if}
-					</li>
+					<EventItem {event} href={`/kalender/${event.slug}`} />
 				{/each}
 			</ul>
 		</section>
@@ -69,50 +64,32 @@
 		border-color: var(--color-primary);
 	}
 	.month {
-		margin-top: var(--space-4);
+		margin-top: var(--space-5);
 	}
 	.month h2 {
-		border-bottom: 2px solid var(--color-border);
-		padding-bottom: var(--space-1);
+		border-bottom: 2px solid var(--color-accent);
+		padding-bottom: var(--space-2);
+		margin-bottom: var(--space-2);
 	}
-	.events {
+	.event-list {
 		list-style: none;
 		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2);
-	}
-	.events li {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		align-items: baseline;
-		padding-bottom: var(--space-2);
-		border-bottom: 1px solid var(--color-border);
-	}
-	.events time {
-		color: var(--color-muted);
-		min-width: 14rem;
-	}
-	.event-title {
-		font-weight: 600;
-	}
-	.event-speaker,
-	.event-location {
-		color: var(--color-muted);
+		margin: 0;
 	}
 	.ics-link {
 		margin-bottom: var(--space-4);
 	}
 	.ics-link a {
-		padding: var(--space-2) var(--space-3);
-		background: var(--color-primary);
-		color: var(--color-primary-contrast);
+		display: inline-block;
+		padding: var(--space-2) var(--space-4);
+		border: 1px solid var(--color-primary);
+		color: var(--color-primary);
 		border-radius: var(--radius-base);
 		text-decoration: none;
-		font-weight: 500;
+		font-weight: 600;
 	}
 	.ics-link a:hover {
-		text-decoration: underline;
+		background: var(--color-primary);
+		color: var(--color-primary-contrast);
 	}
 </style>

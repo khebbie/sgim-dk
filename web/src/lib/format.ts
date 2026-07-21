@@ -18,6 +18,24 @@ function formatTime(date: Date): string {
 	return `${hours}:${minutes}`;
 }
 
+const weekdayShort = new Intl.DateTimeFormat('da-DK', { weekday: 'short' });
+const monthShort = new Intl.DateTimeFormat('da-DK', { month: 'short' });
+
+const stripDot = (s: string): string => s.replace(/\.$/, '');
+
+/**
+ * The parts of an event's start date for the compact calendar "chip"
+ * (decorative — the full, accessible date still comes from formatEventWhen).
+ */
+export function eventChip(event: EventItem): { weekday: string; day: string; month: string } {
+	const date = event.kind === 'single' ? event.start : event.startDate;
+	return {
+		weekday: stripDot(weekdayShort.format(date)),
+		day: String(date.getDate()),
+		month: stripDot(monthShort.format(date))
+	};
+}
+
 /** When an event happens: a single date (with "kl HH:MM" if timed), or a range. */
 export function formatEventWhen(event: EventItem): string {
 	if (event.kind === 'single') {

@@ -13,6 +13,8 @@ body {
 	font-family: var(--font-sans);
 	font-size: var(--font-size-base);
 	line-height: var(--line-height-base);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 main {
@@ -21,8 +23,56 @@ main {
 	padding: var(--space-4);
 }
 
+::selection {
+	background: var(--color-primary);
+	color: var(--color-primary-contrast);
+}
+
+/* Headings carry the serif display voice. */
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-serif);
+	line-height: var(--line-height-tight);
+	font-weight: 600;
+}
+
+h1 {
+	font-size: var(--font-size-2xl);
+	letter-spacing: -0.01em;
+	margin: 0 0 var(--space-4);
+}
+
+h2 {
+	font-size: var(--font-size-xl);
+}
+
 a {
 	color: var(--color-primary);
+	text-underline-offset: 0.15em;
+}
+
+a:hover {
+	color: var(--color-primary-hover);
+}
+
+/* One consistent, visible keyboard-focus ring everywhere. */
+:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-base);
+}
+
+/* Small eyebrow label used above hero/section titles. */
+.eyebrow {
+	font-family: var(--font-sans);
+	font-size: var(--font-size-sm);
+	font-weight: 600;
+	letter-spacing: var(--tracking-label);
+	text-transform: uppercase;
+	color: var(--color-accent-strong);
+	margin: 0 0 var(--space-2);
 }
 
 /* Rich text content styling - renders HTML from CMS */
@@ -69,7 +119,7 @@ a {
 .rich blockquote {
 	margin: 0 0 var(--space-3);
 	padding-left: var(--space-3);
-	border-left: 3px solid var(--color-border);
+	border-left: 3px solid var(--color-accent);
 	font-style: italic;
 	color: var(--color-muted);
 }
@@ -78,7 +128,7 @@ a {
 .rich h3,
 .rich h4 {
 	margin: var(--space-4) 0 var(--space-2);
-	line-height: 1.25;
+	line-height: var(--line-height-tight);
 }
 
 .rich h2 {
@@ -99,4 +149,15 @@ a {
 	content: '';
 	display: block;
 	height: var(--line-height-base);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
