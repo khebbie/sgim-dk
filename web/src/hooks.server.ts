@@ -34,10 +34,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 			event.locals.member = member;
 			// Bind the userId for the rest of the request; don't log routine reads.
 			event.locals.log = event.locals.log.child({ userId: member.username });
-		} else {
-			// A session cookie that no longer resolves is a notable auth transition.
-			event.locals.log.warn('session cookie did not resolve to a member', { operation: 'auth' });
 		}
+		// An unresolved/expired session cookie is a routine anonymous case (the
+		// visitor is simply treated as logged-out) — not logged, to avoid noise.
 	}
 	return resolve(event);
 };
