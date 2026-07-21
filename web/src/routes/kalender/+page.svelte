@@ -1,8 +1,28 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import EventItem from '$lib/components/EventItem.svelte';
+	import { findMonthToFocus } from '$lib/domain/calendar';
 
 	let { data }: { data: PageData } = $props();
+	let monthSections: Record<string, HTMLElement | null> = {};
+
+	function scrollToCurrentMonth() {
+		if (!data.year || data.months.length === 0) return;
+
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const monthToFocus = findMonthToFocus(data.year, data.months);
+		if (monthToFocus === null) return;
+
+		const section = monthSections[`${monthToFocus}`];
+		if (!section) return;
+
+		section.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+	}
+
+	onMount(() => {
+		requestAnimationFrame(scrollToCurrentMonth);
+	});
 </script>
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
@@ -34,7 +54,7 @@
 	<p>Der er ingen arrangementer{data.year ? ` i ${data.year}` : ''}.</p>
 {:else}
 	{#each data.months as month (month.month)}
-		<section class="month">
+		<section class="month" bind:this={monthSections[`${month.month}`]} data-month={month.month}>
 			<h2>{month.name}</h2>
 			<ul class="event-list">
 				{#each month.events as event (event.id)}

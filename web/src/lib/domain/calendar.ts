@@ -58,3 +58,27 @@ export function yearsDescending(minYear: number, maxYear: number): number[] {
 	for (let year = maxYear; year >= minYear; year--) years.push(year);
 	return years;
 }
+
+export function findMonthToFocus(
+	selectedYear: number | null,
+	months: MonthGroup[],
+	now: Date = new Date()
+): number | null {
+	if (selectedYear === null || selectedYear !== now.getFullYear()) return null;
+
+	const currentMonth = now.getMonth();
+	const currentMonthGroup = months.find(
+		(month) => month.month === currentMonth && month.events.length > 0
+	);
+	if (currentMonthGroup) return currentMonthGroup.month;
+
+	const upcomingMonthGroup = months.find(
+		(month) => month.month > currentMonth && month.events.length > 0
+	);
+	if (upcomingMonthGroup) return upcomingMonthGroup.month;
+
+	const previousMonthGroup = [...months]
+		.reverse()
+		.find((month) => month.month < currentMonth && month.events.length > 0);
+	return previousMonthGroup?.month ?? null;
+}

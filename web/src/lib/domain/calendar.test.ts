@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { groupByMonth, yearsDescending, eventStartYear } from './calendar';
+import { groupByMonth, yearsDescending, eventStartYear, findMonthToFocus } from './calendar';
 import type { EventItem } from './content';
 
 const single = (id: string, start: string): EventItem => ({
@@ -32,5 +32,36 @@ describe('yearsDescending', () => {
 describe('eventStartYear', () => {
 	it('returns the start year', () => {
 		expect(eventStartYear(single('x', '2019-08-14T10:00:00'))).toBe(2019);
+	});
+});
+
+describe('findMonthToFocus', () => {
+	it('returns the current month when the selected year matches today', () => {
+		const months = [
+			{ month: 0, name: 'Januar', events: [single('jan', '2026-01-20T19:00:00')] },
+			{ month: 1, name: 'Februar', events: [single('feb', '2026-02-20T19:00:00')] },
+			{ month: 2, name: 'Marts', events: [single('mar', '2026-03-20T19:00:00')] }
+		];
+		const now = new Date('2026-02-15T10:00:00');
+
+		expect(findMonthToFocus(2026, months, now)).toBe(1);
+	});
+
+	it('returns the next available month when the current month has no events', () => {
+		const months = [
+			{ month: 0, name: 'Januar', events: [] },
+			{ month: 2, name: 'Marts', events: [single('mar', '2026-03-20T19:00:00')] },
+			{ month: 3, name: 'April', events: [single('apr', '2026-04-20T19:00:00')] }
+		];
+		const now = new Date('2026-01-15T10:00:00');
+
+		expect(findMonthToFocus(2026, months, now)).toBe(2);
+	});
+
+	it('returns null for other years', () => {
+		const months = [{ month: 0, name: 'Januar', events: [single('jan', '2026-01-20T19:00:00')] }];
+		const now = new Date('2026-02-15T10:00:00');
+
+		expect(findMonthToFocus(2025, months, now)).toBeNull();
 	});
 });
