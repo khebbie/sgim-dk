@@ -56,6 +56,7 @@
 					</li>
 				{/each}
 			</ul>
+			<p class="see-all"><a href="/kalender">Se hele kalenderen →</a></p>
 		{/if}
 	</section>
 {/if}

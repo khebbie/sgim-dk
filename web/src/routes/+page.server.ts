@@ -10,6 +10,9 @@ import { contentSource } from '$lib/server/content';
 import { selectHomeView, type HomeView } from '$lib/domain/home';
 import { sanitizeRichText } from '$lib/server/sanitize';
 
+/** The homepage teaser shows only the next few events; the full list is /kalender. */
+const HOMEPAGE_EVENT_COUNT = 3;
+
 export const load: PageServerLoad = async ({ fetch }) => {
 	const cms = contentSource(fetch);
 	const [aktueltResult, eventsResult, settingsResult] = await Promise.all([
@@ -20,7 +23,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
 	return {
 		view: sanitizeView(selectHomeView(isOk(aktueltResult) ? aktueltResult.value : [])),
-		upcomingEvents: isOk(eventsResult) ? eventsResult.value : [],
+		upcomingEvents: isOk(eventsResult) ? eventsResult.value.slice(0, HOMEPAGE_EVENT_COUNT) : [],
 		intro: isOk(settingsResult) ? sanitizeRichText(settingsResult.value.intro) : null
 	};
 };
