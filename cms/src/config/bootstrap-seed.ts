@@ -1,8 +1,14 @@
 /**
- * Sample-content seed (dev only). Gated behind BOOTSTRAP_SEED=true and
- * idempotent (skips a type that already has entries), so it is safe to leave
- * wired in. Lets you see the site with realistic Danish content without
- * clicking through the admin. draftAndPublish is off, so entries are live.
+ * Bootstrap seeding, two independent parts:
+ *
+ * 1. Dev sample content — gated behind BOOTSTRAP_SEED=true, idempotent (skips a
+ *    type that already has entries). Lets you see the site with realistic Danish
+ *    content without clicking through the admin.
+ * 2. Bulk import of scraped content — gated behind IMPORT_EVENTS_FILE /
+ *    IMPORT_CLUBS_FILE, idempotent by slug, and independent of the sample seed.
+ *    This is the intended production import path (real calendar, no samples).
+ *
+ * draftAndPublish is off, so entries are live on create.
  */
 import type { Core } from '@strapi/strapi';
 import { readFileSync } from 'node:fs';
@@ -16,19 +22,25 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
     overwrite: process.env.BOOTSTRAP_SEED === 'true',
   });
 
-  if (process.env.BOOTSTRAP_SEED !== 'true') return;
-  await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
-  await seedCollection(strapi, 'api::navigation.navigation', navigation);
-  await seedCollection(strapi, 'api::club.club', clubs);
-  await seedCollection(strapi, 'api::event.event', events);
-  await seedCollection(strapi, 'api::static-page.static-page', staticPages);
-  await seedMember(strapi);
-  await seedDuties(strapi);
+  // Dev sample content — only when explicitly enabled.
+  if (process.env.BOOTSTRAP_SEED === 'true') {
+    await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
+    await seedCollection(strapi, 'api::navigation.navigation', navigation);
+    await seedCollection(strapi, 'api::club.club', clubs);
+    await seedCollection(strapi, 'api::event.event', events);
+    await seedCollection(strapi, 'api::static-page.static-page', staticPages);
+    await seedMember(strapi);
+    await seedDuties(strapi);
+    strapi.log.info(
+      JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
+    );
+  }
+
+  // Bulk import of scraped content. Production-safe: runs whenever the matching
+  // file env var is set, independently of the dev sample seed, and is idempotent
+  // (existing slugs are skipped). This is the intended production import path.
   await importEventsFromFile(strapi);
   await importClubsFromFile(strapi);
-  strapi.log.info(
-    JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
-  );
 }
 
 interface ScrapedEvent {

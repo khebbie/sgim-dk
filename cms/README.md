@@ -93,6 +93,40 @@ PostgreSQL is the only supported `DATABASE_CLIENT` — this matches the producti
 (constitution.md: Replaceability / production parity) and keeps `config/database.ts`
 simple. There is no SQLite fallback.
 
+## Seeding & content import
+
+`src/config/bootstrap-seed.ts` runs on Strapi bootstrap and has two **independent** parts:
+
+1. **Dev sample content** — gated behind `BOOTSTRAP_SEED=true`. Seeds realistic Danish
+   sample content (site settings, navigation, clubs, a few events, a `medlem@sgim.dk`
+   member, duties) so you can see the site without clicking through the admin. Idempotent:
+   skips any content type that already has entries. **Never enable this in production.**
+
+2. **Bulk import of scraped content** — gated behind `IMPORT_EVENTS_FILE` /
+   `IMPORT_CLUBS_FILE` (absolute paths to the scraped JSON). Runs independently of the
+   sample seed and is idempotent by `slug` (existing slugs are skipped). **This is the
+   intended production import path.**
+
+The JSON is produced by the repo-root Python scrapers (`scrape_sgim_program.py`,
+`scrape_sgim_klubber.py`) → `sgim-events.json`, `sgim-clubs.json`.
+
+```bash
+# Production import (real calendar/clubs only, no sample content):
+IMPORT_EVENTS_FILE=/abs/path/sgim-events.json \
+IMPORT_CLUBS_FILE=/abs/path/sgim-clubs.json \
+npm run start
+
+# Local dev with sample content AND the scraped import:
+BOOTSTRAP_SEED=true \
+IMPORT_EVENTS_FILE=/abs/path/sgim-events.json \
+IMPORT_CLUBS_FILE=/abs/path/sgim-clubs.json \
+npm run start
+```
+
+> Note: the import is **create-only** — it adds events/clubs whose slug isn't present yet,
+> but does not update changed entries or remove deleted ones. Re-running a fresh scrape
+> won't reconcile edits/deletions (see the Beads follow-up on upsert semantics).
+
 ## Testing
 
 Tests run with [Jest](https://jestjs.io) + `ts-jest` (`jest.config.js`). `src/config/env.ts`
