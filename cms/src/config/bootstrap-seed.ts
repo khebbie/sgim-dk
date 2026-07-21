@@ -18,6 +18,7 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   await seedMember(strapi);
   await seedDuties(strapi);
   await importEventsFromFile(strapi);
+  await importClubsFromFile(strapi);
   strapi.log.info(
     JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
   );
@@ -33,6 +34,22 @@ interface ScrapedEvent {
   startTime?: string;
   speaker?: string;
   location?: string;
+}
+
+interface ScrapedClub {
+  name: string;
+  slug: string;
+  description?: string;
+  shortDescription?: string;
+  targetAudience?: string;
+  isActive?: boolean;
+  meetingDay?: string;
+  meetingTime?: string;
+  location?: string;
+  contactPerson?: string;
+  contactEmail?: string;
+  contactPhone?: string;
+  websiteUrl?: string;
 }
 
 /** One-off bulk import of scraped events (set IMPORT_EVENTS_FILE=/path/to.json). */
@@ -52,6 +69,44 @@ async function importEventsFromFile(strapi: Core.Strapi): Promise<void> {
     created += 1;
   }
   strapi.log.info(JSON.stringify({ operation: 'import-events', created, total: rows.length }));
+}
+
+/** One-off bulk import of scraped clubs (set IMPORT_CLUBS_FILE=/path/to.json). */
+async function importClubsFromFile(strapi: Core.Strapi): Promise<void> {
+  const file = process.env.IMPORT_CLUBS_FILE;
+  if (!file) return;
+  const rows = JSON.parse(readFileSync(file, 'utf8')) as ScrapedClub[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const clubs = strapi.documents('api::club.club' as any);
+  const existing = await clubs.findMany({ fields: ['slug'], pagination: { pageSize: 5000 } });
+  const seen = new Set(existing.map((c) => (c as { slug?: string }).slug));
+
+  let created = 0;
+  for (const row of rows) {
+    if (!row.slug || seen.has(row.slug)) continue;
+    await clubs.create({ data: toClub(row) as never });
+    created += 1;
+  }
+  strapi.log.info(JSON.stringify({ operation: 'import-clubs', created, total: rows.length }));
+}
+
+function toClub(row: ScrapedClub): Record<string, unknown> {
+  const data: Record<string, unknown> = {
+    name: row.name,
+    slug: row.slug,
+    description: row.description ?? '',
+    isActive: row.isActive !== false,
+  };
+  if (row.shortDescription) data.shortDescription = row.shortDescription;
+  if (row.targetAudience) data.targetAudience = row.targetAudience;
+  if (row.meetingDay) data.meetingDay = row.meetingDay;
+  if (row.meetingTime) data.meetingTime = row.meetingTime;
+  if (row.location) data.location = row.location;
+  if (row.contactPerson) data.contactPerson = row.contactPerson;
+  if (row.contactEmail) data.contactEmail = row.contactEmail;
+  if (row.contactPhone) data.contactPhone = row.contactPhone;
+  if (row.websiteUrl) data.websiteUrl = row.websiteUrl;
+  return data;
 }
 
 function toEvent(row: ScrapedEvent): Record<string, unknown> {
