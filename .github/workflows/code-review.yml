@@ -71,7 +71,7 @@ jobs:
 
       - name: Set up Node.js
         if: steps.config.outputs.enabled == 'true' && steps.diff.outputs.empty == 'false'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           # Node 24 runs the TypeScript review script directly (type stripping).
           node-version: '24'
