@@ -18,6 +18,8 @@ The harness follows the same principles described in the two articles referenced
 The main sources of truth are:
 
 - [constitution.md](../constitution.md) — engineering rules and architectural constraints.
+- [production-architecture.md](production-architecture.md) — how the deployed system fits together, and why (read before changing nginx, compose or timezone settings).
+- [../deploy/README.md](../deploy/README.md) — deploying, rolling back and operating the production site.
 - [spec.md](../spec.md) — product context for the website and CMS.
 - [mise.toml](../mise.toml) — the default developer and quality-gate entrypoints.
 - [cms/README.md](../cms/README.md) and [web/README.md](../web/README.md) — app-specific setup and commands.
