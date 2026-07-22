@@ -34,7 +34,7 @@ jobs:
             web/package-lock.json
 
       - name: Set up mise (task runner + pinned tools)
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@v4
 
       # `npm ci` (not the mise install task's `npm install`): CI must install
       # exactly what the lockfiles pin and never rewrite them. The root package
@@ -78,7 +78,7 @@ jobs:
           fetch-depth: 0 # gitleaks scans history, not just the tip
 
       - name: Set up mise (provides gitleaks)
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@v4
 
       - name: Scan for committed secrets
         run: mise run secrets
