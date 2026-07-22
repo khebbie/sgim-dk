@@ -29,6 +29,25 @@ updates:
     directory: "/cms"
     schedule:
       interval: "weekly"
+    # Strapi owns its admin-panel stack: it scaffolds and pins these, and its
+    # admin is built against these majors. Upgrading them independently breaks
+    # the admin panel, so they move only when Strapi itself moves.
+    ignore:
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-router-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "styled-components"
+        update-types: ["version-update:semver-major"]
+      # Strapi 5's build toolchain targets TypeScript 5.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       minor-and-patch:
         update-types:
