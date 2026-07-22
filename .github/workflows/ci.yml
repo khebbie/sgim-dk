@@ -1,0 +1,104 @@
+name: CI
+
+# Post-integration sensors (sgim-n25.7). CI deliberately calls the SAME mise
+# tasks developers run locally — `mise run check` is the one source of truth for
+# the gates, so "green locally" and "green in CI" cannot drift apart.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    name: Quality gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            cms/package-lock.json
+            web/package-lock.json
+
+      - name: Set up mise (task runner + pinned tools)
+        uses: jdx/mise-action@v2
+
+      # `npm ci` (not the mise install task's `npm install`): CI must install
+      # exactly what the lockfiles pin and never rewrite them.
+      - name: Install dependencies
+        run: |
+          npm --prefix cms ci
+          npm --prefix web ci
+
+      - name: Format check
+        run: mise run format-check
+
+      # lint + typecheck + test + architecture boundaries, both packages.
+      - name: Check (lint, typecheck, test, boundaries)
+        run: mise run check
+
+      - name: Coverage thresholds
+        run: mise run coverage
+
+      - name: Build both packages
+        run: |
+          npm --prefix cms run build
+          npm --prefix web run build
+
+      - name: Summary
+        if: always()
+        run: echo "### Quality gates completed" >> "$GITHUB_STEP_SUMMARY"
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # gitleaks scans history, not just the tip
+
+      - name: Set up mise (provides gitleaks)
+        uses: jdx/mise-action@v2
+
+      - name: Scan for committed secrets
+        run: mise run secrets
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    # Advisory: the CMS's outstanding high/critical advisories are transitive
+    # inside Strapi itself and npm's only "fix" is a semver-major downgrade to
+    # Strapi 4 — a regression, not a fix. The job still runs and reports so the
+    # signal is visible; revisit blocking once Strapi ships patched deps.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Audit dependencies
+        run: |
+          {
+            echo "### Dependency audit"
+            echo
+            for pkg in cms web; do
+              echo "#### $pkg"
+              echo '```'
+              (cd "$pkg" && npm audit --audit-level=high || true) 2>&1 | tail -25
+              echo '```'
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Fail the (advisory) job when web — which we fully control — regresses.
+          cd web && npm audit --audit-level=high
