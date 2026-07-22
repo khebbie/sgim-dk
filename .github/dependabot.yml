@@ -13,6 +13,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # TypeScript 7 (the native port) is not yet supported by our toolchain:
+    # typescript-eslint refuses it ("does not support TS 7.0") and svelte-check
+    # crashes. Revisit when those support it.
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       minor-and-patch:
         update-types:
@@ -64,6 +70,12 @@ updates:
     directory: "/web"
     schedule:
       interval: "weekly"
+    # TypeScript 7 (the native port) is not yet supported by our toolchain:
+    # typescript-eslint refuses it ("does not support TS 7.0") and svelte-check
+    # crashes. Revisit when those support it.
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       minor-and-patch:
         update-types:
