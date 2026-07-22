@@ -151,6 +151,29 @@ npm run start
 
 ## Testing
 
+### API contract tests (sgim-pgx.13)
+
+`src/api/api-contract.test.ts` exercises the real HTTP surface against a **running CMS +
+real Postgres** — public read shapes for every content type, boundary hardening (pageSize
+clamped to `maxLimit`, `strictParams` rejection, safe 404s), the members auth contract
+(registration blocked, no user enumeration, JWT issued) and duty self-management
+(auth required, validation, assign → reassign → clear).
+
+They need a reachable CMS and **skip** (rather than fail) when there isn't one, so
+`npm test` works without infrastructure:
+
+```bash
+docker compose up -d && npm run start   # in one shell
+npm test                                # contract tests run
+CMS_TEST_URL=http://localhost:1337 npm test   # or point at another instance
+```
+
+These tests caught a live security bug: public self-registration was still enabled
+because the old config code called non-existent Strapi v5 services and swallowed the
+error. Registration is now disabled through the plugin core store.
+
+### Unit tests
+
 Tests run with [Jest](https://jestjs.io) + `ts-jest` (`jest.config.js`). `src/config/env.ts`
 has a full unit-test suite (`src/config/env.test.ts`) covering the fail-fast behavior for
 every required variable — this is the pattern to follow for future domain logic: colocate

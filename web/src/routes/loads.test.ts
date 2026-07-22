@@ -19,7 +19,7 @@ import { load as kalenderLoad } from './kalender/+page.server';
 const ev = (event: any) => event as any;
 
 // SvelteKit types a load's return as `void | data`; unwrap for assertions.
- 
+
 const out = <T>(result: unknown) => result as T;
 
 const single = (id: string, start: string): EventItem => ({

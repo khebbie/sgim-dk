@@ -116,28 +116,39 @@ async function ensureOwnUserPermissions(strapi: Core.Strapi, roleId: string): Pr
  *
  * This disables public registration so only admins can create accounts.
  */
+export async function disablePublicRegistration(strapi: Core.Strapi): Promise<boolean> {
+  // The users-permissions "advanced" settings live in the plugin core store —
+  // there is no getSettings/updateSettings service in Strapi v5 (an earlier
+  // version of this code called those, threw, and silently left registration
+  // OPEN; sgim-pgx.9). Read-modify-write the store instead.
+  const store = strapi.store({ type: 'plugin', name: 'users-permissions', key: 'advanced' });
+  const advanced = ((await store.get({})) ?? {}) as Record<string, unknown>;
+
+  if (advanced.allow_register === false) return true; // already disabled
+
+  await store.set({ value: { ...advanced, allow_register: false } });
+  strapi.log.info(
+    JSON.stringify({
+      operation: 'member-auth',
+      message: 'public self-registration disabled',
+    })
+  );
+  return true;
+}
+
 async function configureUsersPermissionsPlugin(strapi: Core.Strapi): Promise<boolean> {
   try {
-    // Get the plugin service
-    const pluginStore = strapi.service('plugin::users-permissions.users-permissions');
-
-    // Check current settings
-    const settings = await pluginStore.getSettings();
-
-    // Update settings to disable registration
-    if (settings.allow_register !== false) {
-      await strapi.service('plugin::users-permissions.users-permissions').updateSettings({
-        allow_register: false,
-        defaultRole: 'Authenticated Member',
-      });
-
-      strapi.log.info('Disabled public registration in Users & Permissions');
-      return true;
-    }
-
-    return false;
+    return await disablePublicRegistration(strapi);
   } catch (error) {
-    strapi.log.error('Failed to configure Users & Permissions plugin: %s', String(error));
+    // Registration staying open is a security problem — make it loud.
+    strapi.log.error(
+      JSON.stringify({
+        operation: 'member-auth',
+        level: 'error',
+        message: 'FAILED to disable public self-registration',
+        error: String(error),
+      })
+    );
     return false;
   }
 }

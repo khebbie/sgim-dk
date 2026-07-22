@@ -7,7 +7,6 @@ import { randomUUID } from 'node:crypto';
 import { createLogger } from '../utils/logger';
 import { recordHttpRequest } from '../utils/metrics';
 
- 
 export default (_config: unknown, _deps: unknown) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return async (ctx: any, next: () => Promise<void>) => {
