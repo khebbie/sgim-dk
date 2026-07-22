@@ -56,8 +56,12 @@ jobs:
       - name: Coverage thresholds
         run: mise run coverage
 
+      # `strapi build` loads config/*.ts, which fail-fast on missing env vars.
+      # The placeholder values in .env.example are enough to compile; no real
+      # credentials are needed (or wanted) to prove the build works.
       - name: Build both packages
         run: |
+          cp cms/.env.example cms/.env
           npm --prefix cms run build
           npm --prefix web run build
 
