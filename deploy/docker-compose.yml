@@ -44,6 +44,10 @@ services:
         condition: service_healthy
     environment:
       NODE_ENV: production
+      # Event times are Danish wall-clock ("19:00"). The mapper parses them in
+      # the container's local zone, so a UTC container would store 19:00 UTC —
+      # two hours off — and emit wrong times in the ICS feed.
+      TZ: Europe/Copenhagen
       HOST: 0.0.0.0
       PORT: 1337
       # Public origin of the admin panel, so Strapi builds correct absolute
@@ -65,13 +69,21 @@ services:
       # First-boot admin. Remove (or rotate the password) after first login.
       BOOTSTRAP_ADMIN_EMAIL: ${BOOTSTRAP_ADMIN_EMAIL:-}
       BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:-}
-      # BOOTSTRAP_SEED is deliberately NOT set: sample/demo content must never
-      # be seeded in production. Real content is imported per sgim-0lt.9.
+      # BOOTSTRAP_SEED is deliberately NOT set: sample/demo content (made-up
+      # events, a test member) must never reach production. The real menu,
+      # site settings and pages are seeded unconditionally; the real programme
+      # arrives through the scraped import below.
       STRAPI_TELEMETRY_DISABLED: 'true'
+      # Scraped programme/clubs. Idempotent by slug, so leaving these set is
+      # safe: a restart re-checks and skips everything already imported.
+      IMPORT_EVENTS_FILE: ${IMPORT_EVENTS_FILE:-}
+      IMPORT_CLUBS_FILE: ${IMPORT_CLUBS_FILE:-}
     volumes:
       # Media is NOT in the database and NOT in the image — it lives here and
       # must be backed up (sgim-0lt.8).
       - cms_uploads:/app/public/uploads
+      # Scraped JSON, read-only.
+      - ./import:/app/import:ro
     networks:
       - internal
       - edge
@@ -97,6 +109,8 @@ services:
         condition: service_healthy
     environment:
       NODE_ENV: production
+      # Must match the CMS: the site formats those same wall-clock times.
+      TZ: Europe/Copenhagen
       HOST: 0.0.0.0
       PORT: 3000
       # Server-to-server over the internal network — never through the proxy.
