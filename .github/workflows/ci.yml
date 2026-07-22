@@ -153,3 +153,35 @@ jobs:
             ghcr.io/${{ github.repository_owner }}/sgim-${{ matrix.app }}:latest
           cache-from: type=gha,scope=${{ matrix.app }}
           cache-to: type=gha,mode=max,scope=${{ matrix.app }}
+
+  # Auto-deploy on green main (sgim-0lt.10). The SSH key is restricted by a
+  # forced command in authorized_keys: it can ONLY run sgim-deploy.sh, with a
+  # tag that must be "latest" or a commit SHA. A leaked key can therefore
+  # trigger a redeploy of an already-published image and nothing else — no
+  # shell, no forwarding, no arbitrary commands.
+  deploy:
+    name: Deploy to production
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: images
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-production   # never two deploys at once
+      cancel-in-progress: false
+    steps:
+      - name: Deploy the built images
+        env:
+          DEPLOY_KEY: ${{ secrets.SGIM_DEPLOY_KEY }}
+          DEPLOY_HOST: ${{ secrets.SGIM_DEPLOY_HOST }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ] || [ -z "$DEPLOY_HOST" ]; then
+            echo "::notice::Deploy secrets not configured; skipping."
+            exit 0
+          fi
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+          # Deploy this exact commit, so the running image is identifiable and
+          # a rollback is `sgim-deploy.sh <previous-sha>` on the server.
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes root@"$DEPLOY_HOST" "${{ github.sha }}"
