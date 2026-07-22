@@ -79,15 +79,28 @@ describe('bootstrap-seed', () => {
       expect(mockDocuments.update).not.toHaveBeenCalled();
     });
 
-    it('updates (overwrites) an existing page with the same slug', async () => {
+    it('overwrites an existing page only when asked (dev re-seed)', async () => {
       mockDocuments.findMany.mockResolvedValue([{ documentId: 'abc' }]);
 
-      await seedStaticPages(mockStrapi, [{ slug: 'om-os', content: 'ny' } as { slug: string }]);
+      await seedStaticPages(mockStrapi, [{ slug: 'om-os', content: 'ny' } as { slug: string }], {
+        overwrite: true,
+      });
 
       expect(mockDocuments.update).toHaveBeenCalledWith({
         documentId: 'abc',
         data: { slug: 'om-os', content: 'ny' },
       });
+      expect(mockDocuments.create).not.toHaveBeenCalled();
+    });
+
+    // Production: the page is created once, then the admin owns it. Re-seeding
+    // on every restart would silently discard editors' changes.
+    it('leaves an existing page alone by default', async () => {
+      mockDocuments.findMany.mockResolvedValue([{ documentId: 'abc' }]);
+
+      await seedStaticPages(mockStrapi, [{ slug: 'om-os', content: 'ny' } as { slug: string }]);
+
+      expect(mockDocuments.update).not.toHaveBeenCalled();
       expect(mockDocuments.create).not.toHaveBeenCalled();
     });
   });

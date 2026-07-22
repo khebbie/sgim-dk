@@ -26,13 +26,27 @@ export async function bootstrapSeed(strapi: Core.Strapi): Promise<void> {
   // per event — ensure them always (production too), idempotently.
   await ensureDutyCategories(strapi);
 
-  // Dev sample content — only when explicitly enabled.
+  // Real site structure: the menu, the footer/site settings and the standing
+  // pages (e.g. "Om os"). This is genuine content, not sample data, so a fresh
+  // production instance needs it — otherwise the site boots with a fallback
+  // menu, an empty footer and a 404 on /om-os.
+  //
+  // Create-if-missing only: once it exists, the ADMIN owns it. Overwriting on
+  // every boot would silently discard editors' changes. In dev, BOOTSTRAP_SEED
+  // additionally forces these back to the seeded values.
+  const overwriteSeeded = process.env.BOOTSTRAP_SEED === 'true';
+  await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings, {
+    overwrite: overwriteSeeded,
+  });
+  await seedCollection(strapi, 'api::navigation.navigation', navigation);
+  await seedStaticPages(strapi, staticPages, { overwrite: overwriteSeeded });
+
+  // Dev sample content — only when explicitly enabled. These are placeholders
+  // (a handful of made-up events/clubs and a test member) and must never reach
+  // production; the real programme arrives via the scraped import below.
   if (process.env.BOOTSTRAP_SEED === 'true') {
-    await seedSingle(strapi, 'api::site-setting.site-setting', siteSettings);
-    await seedCollection(strapi, 'api::navigation.navigation', navigation);
     await seedCollection(strapi, 'api::club.club', clubs);
     await seedCollection(strapi, 'api::event.event', events);
-    await seedStaticPages(strapi, staticPages);
     await seedMember(strapi);
     strapi.log.info(
       JSON.stringify({ operation: 'bootstrap-seed', message: 'sample content ensured' })
@@ -235,7 +249,8 @@ async function seedCollection(strapi: Core.Strapi, uid: string, rows: object[]):
  */
 export async function seedStaticPages(
   strapi: Core.Strapi,
-  rows: { slug: string }[]
+  rows: { slug: string }[],
+  options?: { overwrite?: boolean }
 ): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const docs = strapi.documents('api::static-page.static-page' as any);
@@ -245,10 +260,15 @@ export async function seedStaticPages(
       fields: ['documentId'],
       limit: 1,
     });
-    if (existing.length > 0) {
-      await docs.update({ documentId: existing[0].documentId, data: data as never });
-    } else {
+    if (existing.length === 0) {
       await docs.create({ data: data as never });
+      continue;
+    }
+    // Only replace an existing page when explicitly asked (dev). In production
+    // the page is created once and then belongs to whoever edits it in the
+    // admin — re-seeding on every restart would throw their work away.
+    if (options?.overwrite) {
+      await docs.update({ documentId: existing[0].documentId, data: data as never });
     }
   }
 }
