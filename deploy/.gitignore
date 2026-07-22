@@ -1,0 +1,4 @@
+# Real production secrets live only on the server, never in git.
+.env
+.env.*
+!.env.example

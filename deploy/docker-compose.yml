@@ -1,0 +1,129 @@
+# Production stack for sgim.dk (sgim-0lt.3).
+#
+# SECURITY MODEL — read before changing any `ports:` entry.
+# The VPS runs ufw with only 22/tcp allowed, but Docker inserts its own iptables
+# rules ahead of ufw, so ANY published port is reachable from the internet
+# regardless of the firewall. That is why `cms` and `db` publish NOTHING: the
+# Strapi API is reachable only over the internal docker network, from `web`
+# (and from the edge nginx for the admin panel and /uploads).
+#
+# The only process that may bind public ports is the edge nginx, which lives in
+# the existing /srv/khebbie-blog project and joins the `edge` network here.
+#
+# Images are built and published by CI (never on this 2 GB box). Deploy a
+# specific commit by setting IMAGE_TAG to that SHA; `latest` is a convenience.
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - internal
+    # No ports. The database is reachable only by `cms` on the internal network.
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+
+  cms:
+    image: ghcr.io/${GHCR_OWNER}/sgim-cms:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 1337
+      # Public origin of the admin panel, so Strapi builds correct absolute
+      # URLs while sitting behind the TLS-terminating proxy.
+      URL: ${CMS_PUBLIC_URL}
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_SSL: 'false'
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      # First-boot admin. Remove (or rotate the password) after first login.
+      BOOTSTRAP_ADMIN_EMAIL: ${BOOTSTRAP_ADMIN_EMAIL:-}
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:-}
+      # BOOTSTRAP_SEED is deliberately NOT set: sample/demo content must never
+      # be seeded in production. Real content is imported per sgim-0lt.9.
+      STRAPI_TELEMETRY_DISABLED: 'true'
+    volumes:
+      # Media is NOT in the database and NOT in the image — it lives here and
+      # must be backed up (sgim-0lt.8).
+      - cms_uploads:/app/public/uploads
+    networks:
+      - internal
+      - edge
+    # No ports: /api stays private. The edge proxies only the admin panel and
+    # /uploads over the `edge` network.
+    healthcheck:
+      test:
+        ['CMD-SHELL', 'node -e "fetch(''http://127.0.0.1:1337/_health'').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"']
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  web:
+    image: ghcr.io/${GHCR_OWNER}/sgim-web:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      cms:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+      # Server-to-server over the internal network — never through the proxy.
+      CMS_BASE_URL: http://cms:1337
+      SESSION_SECRET: ${SESSION_SECRET}
+      # adapter-node needs ORIGIN to accept form POSTs (login, duty actions).
+      # A wrong value breaks those with a CSRF error.
+      ORIGIN: ${WEB_ORIGIN}
+      PROTOCOL_HEADER: x-forwarded-proto
+      HOST_HEADER: x-forwarded-host
+    networks:
+      - internal
+      - edge
+    # No ports: the edge nginx reaches it as http://web:3000 on `edge`.
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+
+networks:
+  # Private: db + cms + web. Not reachable from the host or the internet.
+  internal:
+    driver: bridge
+  # Shared with the edge nginx so it can proxy to `web` and the CMS admin.
+  edge:
+    name: sgim_edge
+
+volumes:
+  db_data:
+  cms_uploads:
