@@ -13,12 +13,15 @@ timestamp: a restore pair is always obvious.
 
 | Unit | Schedule | Does |
 | --- | --- | --- |
-| `sgim-backup.timer` | daily 02:30 UTC (randomised) | `/usr/local/bin/sgim-backup.sh` |
+| `sgim-backup.timer` | **weekly**, Sundays 02:30 UTC (randomised) | `/usr/local/bin/sgim-backup.sh` |
 
-Output lands in `/srv/backups/sgim/`:
+Output lands flat in `/srv/backups/sgim/`, keeping the last **5** of each
+artefact — roughly a month of history.
 
-- `daily/` — last **7** database dumps + uploads archives
-- `weekly/` — Sunday runs, last **4**
+Weekly is a deliberate choice: the content changes rarely (the programme
+arrives as a bulk import), so the accepted trade-off is that up to a week of
+edits could be lost in a total-loss scenario. Raise `KEEP` or the timer
+frequency if editing becomes more active.
 
 The script fails loudly if the dump is missing or fails `gzip -t`. A zero-byte
 dump is worse than no dump, because it looks like a backup.
@@ -42,9 +45,9 @@ so it drops and recreates objects):
 cd /srv/sgim
 set -a; . ./.env; set +a
 docker compose stop web cms                 # stop writers first
-gunzip -c /srv/backups/sgim/daily/sgim-db-<stamp>.sql.gz \
+gunzip -c /srv/backups/sgim/sgim-db-<stamp>.sql.gz \
   | docker compose exec -T db psql -U "$DATABASE_USERNAME" -d "$DATABASE_NAME"
-docker run --rm -v sgim_cms_uploads:/data -v /srv/backups/sgim/daily:/backup \
+docker run --rm -v sgim_cms_uploads:/data -v /srv/backups/sgim:/backup \
   alpine tar xzf /backup/sgim-uploads-<stamp>.tar.gz -C /data
 docker compose up -d
 ```

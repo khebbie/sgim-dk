@@ -7,19 +7,19 @@
 # Losing either one loses real content, so both are dumped together and share a
 # timestamp, which keeps a restore pair obvious.
 #
-# Retention: 7 daily + 4 weekly (a Sunday run is also copied into weekly/).
+# Runs WEEKLY with roughly a month of retention (5 copies). Content changes
+# rarely — the programme arrives as a bulk import — so the trade-off is that up
+# to a week of edits could be lost in a total-loss scenario.
+#
 # Run by sgim-backup.timer; see deploy/backup/README.md for restores.
 set -euo pipefail
 
 STACK_DIR=${STACK_DIR:-/srv/sgim}
 BACKUP_DIR=${BACKUP_DIR:-/srv/backups/sgim}
-KEEP_DAILY=${KEEP_DAILY:-7}
-KEEP_WEEKLY=${KEEP_WEEKLY:-4}
+KEEP=${KEEP:-5}
 
 STAMP=$(date -u +%Y%m%d-%H%M%S)
-DAILY="$BACKUP_DIR/daily"
-WEEKLY="$BACKUP_DIR/weekly"
-mkdir -p "$DAILY" "$WEEKLY"
+mkdir -p "$BACKUP_DIR"
 
 cd "$STACK_DIR"
 
@@ -28,8 +28,8 @@ cd "$STACK_DIR"
 # shellcheck disable=SC1091
 set -a; . "$STACK_DIR/.env"; set +a
 
-DB_FILE="$DAILY/sgim-db-$STAMP.sql.gz"
-UPLOADS_FILE="$DAILY/sgim-uploads-$STAMP.tar.gz"
+DB_FILE="$BACKUP_DIR/sgim-db-$STAMP.sql.gz"
+UPLOADS_FILE="$BACKUP_DIR/sgim-uploads-$STAMP.tar.gz"
 
 # --- database ---
 # pg_dump runs inside the db container; -T because there is no TTY in a timer.
@@ -41,7 +41,7 @@ mv "$DB_FILE.tmp" "$DB_FILE"
 # Read straight from the named volume, so this works even if the CMS is down.
 docker run --rm \
   -v sgim_cms_uploads:/data:ro \
-  -v "$DAILY":/backup \
+  -v "$BACKUP_DIR":/backup \
   alpine tar czf "/backup/$(basename "$UPLOADS_FILE").tmp" -C /data . 2>/dev/null
 mv "$UPLOADS_FILE.tmp" "$UPLOADS_FILE"
 
@@ -52,20 +52,12 @@ if [ ! -s "$DB_FILE" ] || ! gzip -t "$DB_FILE"; then
   exit 1
 fi
 
-# --- weekly copy (Sundays) ---
-if [ "$(date -u +%u)" = "7" ]; then
-  cp "$DB_FILE" "$WEEKLY/"
-  cp "$UPLOADS_FILE" "$WEEKLY/"
-fi
-
-# --- retention ---
+# --- retention: keep the last $KEEP of each artefact (~1 month of weeklies) ---
 prune() { # dir, glob, keep
   find "$1" -maxdepth 1 -name "$2" -type f -printf '%T@ %p\n' \
     | sort -rn | tail -n +"$(( $3 + 1 ))" | cut -d' ' -f2- | xargs -r rm -f
 }
-prune "$DAILY"  'sgim-db-*.sql.gz'      "$KEEP_DAILY"
-prune "$DAILY"  'sgim-uploads-*.tar.gz' "$KEEP_DAILY"
-prune "$WEEKLY" 'sgim-db-*.sql.gz'      "$KEEP_WEEKLY"
-prune "$WEEKLY" 'sgim-uploads-*.tar.gz' "$KEEP_WEEKLY"
+prune "$BACKUP_DIR" 'sgim-db-*.sql.gz'      "$KEEP"
+prune "$BACKUP_DIR" 'sgim-uploads-*.tar.gz' "$KEEP"
 
 echo "{\"operation\":\"backup\",\"stamp\":\"$STAMP\",\"db_bytes\":$(stat -c %s "$DB_FILE"),\"uploads_bytes\":$(stat -c %s "$UPLOADS_FILE")}"

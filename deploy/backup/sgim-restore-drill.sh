@@ -14,7 +14,7 @@ cd "$STACK_DIR"
 # shellcheck disable=SC1091
 set -a; . "$STACK_DIR/.env"; set +a
 
-LATEST=${1:-$(ls -t "$BACKUP_DIR"/daily/sgim-db-*.sql.gz | head -1)}
+LATEST=${1:-$(ls -t "$BACKUP_DIR"/sgim-db-*.sql.gz | head -1)}
 echo "restoring: $(basename "$LATEST")"
 
 psql_admin() { docker compose exec -T db psql -U "$DATABASE_USERNAME" -d postgres "$@"; }
