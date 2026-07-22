@@ -6,8 +6,8 @@
  * This module configures:
  * - Disables public self-registration (admin-created accounts only)
  * - Creates 'Authenticated Member' role with limited permissions
- * - Hardens login with rate limiting and generic error messages
- * - Adds structured logging for auth events
+ * Login rate limiting and generic (non-enumerating) error messages are provided
+ * natively by Strapi's auth endpoints; auth events go through its winston logger.
  */
 
 import type { Core } from '@strapi/strapi';
@@ -154,41 +154,6 @@ async function configureUsersPermissionsPlugin(strapi: Core.Strapi): Promise<boo
 }
 
 /**
- * Configure rate limiting for login attempts.
- *
- * Strapi v5 uses middleware for rate limiting. We'll configure it via the
- * server middleware or through a custom middleware.
- */
-async function configureRateLimiting(strapi: Core.Strapi): Promise<boolean> {
-  // Rate limiting in Strapi can be configured via middleware
-  // For now, we log that rate limiting should be configured
-  // This will be enhanced in a follow-up
-
-  strapi.log.info('Auth rate limiting should be configured via middleware');
-  return true;
-}
-
-/**
- * Configure structured logging for auth events.
- *
- * This ensures auth events (login success/failure) are logged with:
- * - timestamp
- * - level
- * - message
- * - context (operation, email, etc.)
- *
- * Note: The actual logging is done by Strapi's built-in logging.
- * We just need to ensure it's properly configured.
- */
-async function configureStructuredLogging(strapi: Core.Strapi): Promise<boolean> {
-  // Strapi already uses structured logging (winston) by default
-  // We just need to ensure auth events are being logged properly
-
-  strapi.log.info('Auth structured logging is configured via Strapi winston logger');
-  return true;
-}
-
-/**
  * Main function to configure member authentication.
  *
  * This should be called from src/index.ts bootstrap().
@@ -197,9 +162,9 @@ async function configureStructuredLogging(strapi: Core.Strapi): Promise<boolean>
  * ✓ Public registration disabled
  * ✓ Authenticated Member role created with limited permissions
  * ✓ Login returns JWT (handled by Strapi)
- * ✓ Rate limiting configured (basic)
+ * ✓ Login rate limiting: provided natively by Strapi's auth endpoints
  * ✓ Generic error messages (handled by Strapi with proper config)
- * ✓ Structured logging for auth events
+ * ✓ Auth events logged via Strapi's winston logger
  */
 export async function configureMemberAuth(strapi: Core.Strapi): Promise<MemberAuthResult> {
   const errors: string[] = [];
@@ -217,18 +182,6 @@ export async function configureMemberAuth(strapi: Core.Strapi): Promise<MemberAu
   } else if (roleId) {
     // 3. Ensure own user permissions
     await ensureOwnUserPermissions(strapi, roleId);
-  }
-
-  // 4. Configure rate limiting
-  const rateLimitingConfigured = await configureRateLimiting(strapi);
-  if (!rateLimitingConfigured) {
-    errors.push('Failed to configure rate limiting');
-  }
-
-  // 5. Configure structured logging
-  const loggingConfigured = await configureStructuredLogging(strapi);
-  if (!loggingConfigured) {
-    errors.push('Failed to configure structured logging');
   }
 
   if (errors.length === 0) {

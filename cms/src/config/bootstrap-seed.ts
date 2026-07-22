@@ -112,7 +112,7 @@ async function importClubsFromFile(strapi: Core.Strapi): Promise<void> {
   strapi.log.info(JSON.stringify({ operation: 'import-clubs', created, total: rows.length }));
 }
 
-function toClub(row: ScrapedClub): Record<string, unknown> {
+export function toClub(row: ScrapedClub): Record<string, unknown> {
   const data: Record<string, unknown> = {
     name: row.name,
     slug: row.slug,
@@ -131,7 +131,7 @@ function toClub(row: ScrapedClub): Record<string, unknown> {
   return data;
 }
 
-function toEvent(row: ScrapedEvent): Record<string, unknown> {
+export function toEvent(row: ScrapedEvent): Record<string, unknown> {
   const data: Record<string, unknown> = {
     title: row.title,
     slug: row.slug,
@@ -148,7 +148,7 @@ function toEvent(row: ScrapedEvent): Record<string, unknown> {
 }
 
 /** Strapi time fields require HH:mm:ss.SSS; the scrape yields HH:MM. */
-function normalizeTime(value?: string): string | undefined {
+export function normalizeTime(value?: string): string | undefined {
   if (!value) return undefined;
   const match = /^(\d{1,2}):(\d{2})(?::(\d{2}))?/.exec(value);
   if (!match) return undefined;

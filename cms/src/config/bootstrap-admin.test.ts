@@ -5,8 +5,9 @@
  * Tests the testable predicate (shouldBootstrapAdmin) and edge cases.
  */
 
-import { describe, it, expect, beforeEach, afterAll } from 'vitest';
-import { shouldBootstrapAdmin } from './bootstrap-admin';
+import { describe, it, expect, beforeEach, afterAll, vi } from 'vitest';
+import type { Core } from '@strapi/strapi';
+import { shouldBootstrapAdmin, bootstrapAdmin } from './bootstrap-admin';
 import { getEnvConfig, resetEnvConfigCache } from './env';
 
 const REQUIRED_VARS = {
@@ -121,6 +122,83 @@ describe('bootstrap-admin', () => {
 
       // Should return cached config
       expect(config2.bootstrapAdmin.email).toBe('admin@test.com');
+    });
+  });
+
+  /**
+   * bootstrapAdmin drives Strapi's admin tables. The double records what it
+   * would create so we can assert idempotency and that no password is logged.
+   */
+  function strapiForAdmin(options: { adminExists?: boolean; superAdminRole?: boolean } = {}) {
+    const created: Record<string, unknown>[] = [];
+    const logs: string[] = [];
+    const log = (msg: string, ...rest: unknown[]) => logs.push([msg, ...rest].join(' '));
+
+    const strapi = {
+      db: {
+        query: vi.fn((uid: string) => ({
+          findOne: vi.fn(async () => {
+            if (uid === 'admin::user') return options.adminExists ? { id: 1 } : null;
+            return options.superAdminRole === false ? null : { id: 'super-admin-role' };
+          }),
+        })),
+      },
+      service: vi.fn(() => ({
+        create: vi.fn(async (data: Record<string, unknown>) => {
+          created.push(data);
+          return data;
+        }),
+      })),
+      log: { info: vi.fn(log), warn: vi.fn(log), error: vi.fn(log) },
+    } as unknown as Core.Strapi;
+
+    return { strapi, created, logs };
+  }
+
+  describe('bootstrapAdmin', () => {
+    it('skips when credentials are not configured', async () => {
+      const { strapi, created } = strapiForAdmin();
+
+      await expect(bootstrapAdmin(strapi)).resolves.toEqual({ created: false, email: null });
+      expect(created).toEqual([]);
+    });
+
+    it('creates a super-admin when configured and none exists', async () => {
+      process.env.BOOTSTRAP_ADMIN_EMAIL = 'admin@test.com';
+      process.env.BOOTSTRAP_ADMIN_PASSWORD = 'sekret-passw0rd';
+      resetEnvConfigCache();
+      const { strapi, created, logs } = strapiForAdmin();
+
+      const result = await bootstrapAdmin(strapi);
+
+      expect(result).toEqual({ created: true, email: 'admin@test.com' });
+      expect(created[0]).toMatchObject({ email: 'admin@test.com', roles: ['super-admin-role'] });
+      // The password must never reach the logs.
+      expect(logs.join(' ')).not.toContain('sekret-passw0rd');
+    });
+
+    it('is idempotent when the admin already exists', async () => {
+      process.env.BOOTSTRAP_ADMIN_EMAIL = 'admin@test.com';
+      process.env.BOOTSTRAP_ADMIN_PASSWORD = 'sekret-passw0rd';
+      resetEnvConfigCache();
+      const { strapi, created } = strapiForAdmin({ adminExists: true });
+
+      const result = await bootstrapAdmin(strapi);
+
+      expect(result).toEqual({ created: false, email: 'admin@test.com' });
+      expect(created).toEqual([]);
+    });
+
+    it('does not create an admin when the super-admin role is missing', async () => {
+      process.env.BOOTSTRAP_ADMIN_EMAIL = 'admin@test.com';
+      process.env.BOOTSTRAP_ADMIN_PASSWORD = 'sekret-passw0rd';
+      resetEnvConfigCache();
+      const { strapi, created } = strapiForAdmin({ superAdminRole: false });
+
+      const result = await bootstrapAdmin(strapi);
+
+      expect(result).toEqual({ created: false, email: 'admin@test.com' });
+      expect(created).toEqual([]);
     });
   });
 });
