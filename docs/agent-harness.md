@@ -53,6 +53,20 @@ npm's only "fix" is a semver-major downgrade to Strapi 4 — a regression, not a
 still fails on a regression in `/web`, which we fully control. Revisit blocking once Strapi
 ships patched dependencies.
 
+#### Lockfiles: regenerate with `mise run deps:lock`
+
+CI installs with `npm ci`, which refuses a lockfile that is out of sync with
+`package.json`. npm versions disagree about which platform-optional packages belong in
+the lockfile: npm 11.6 omits `@emnapi/*` (pulled in by sharp's wasm variant) while the
+**npm 11.16 on CI runners requires them**. A plain `npm install` on an older local npm
+silently strips those entries and breaks CI on the next push.
+
+So after changing dependencies, regenerate the lockfiles with the npm CI uses:
+
+```bash
+mise run deps:lock   # npx npm@11.16.0 install --package-lock-only, all three trees
+```
+
 ### 4. Inferential sensor: LLM code review
 
 [`.github/workflows/code-review.yml`](../.github/workflows/code-review.yml) reviews each PR

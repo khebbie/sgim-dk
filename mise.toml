@@ -108,6 +108,14 @@ run = "npm --prefix web run dev"
 description = "Start both CMS and website in development mode (parallel)"
 depends = ["start:cms", "start:web"]
 
+[tasks."deps:lock"]
+description = "Regenerate the lockfiles with the npm version CI uses (keeps `npm ci` working)"
+run = [
+  "npx -y npm@11.16.0 install --package-lock-only",
+  "npx -y npm@11.16.0 install --prefix cms --package-lock-only",
+  "npx -y npm@11.16.0 install --prefix web --package-lock-only",
+]
+
 [tasks.install]
 description = "Install dependencies for both packages"
 run = [
