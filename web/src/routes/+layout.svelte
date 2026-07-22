@@ -19,6 +19,12 @@
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<!--
+		The site answers on both sgim.dk and sgim.khebbie.dk, so without this
+		search engines would see two copies of every page and split the ranking.
+		sgim.dk is the canonical host (sgim-0lt.12).
+	-->
+	<link rel="canonical" href={`https://sgim.dk${page.url.pathname}`} />
 </svelte:head>
 
 <a class="skip-link" href="#main-content">Spring til indhold</a>

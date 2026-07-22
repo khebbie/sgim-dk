@@ -1,3 +1,8 @@
 # allow crawling everything by default
 User-agent: *
 Disallow:
+
+# Members-only area: no value in the index, and it needs a login anyway.
+Disallow: /members
+
+Sitemap: https://sgim.dk/sitemap.xml

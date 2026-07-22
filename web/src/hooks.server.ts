@@ -3,6 +3,7 @@ import { getConfig } from './lib/server/config';
 import { fetchMember } from './lib/server/auth';
 import { createLogger } from './lib/server/logger';
 import { systemRandom } from './lib/domain/random';
+import { legacyRedirect } from './lib/domain/legacy-redirects';
 
 // Fail fast at server startup (runtime) if a required env var is missing/invalid,
 // rather than on the first request that needs it. Runs once when the server
@@ -19,11 +20,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.requestId = requestId;
 	event.locals.log = createLogger({ base: { requestId } });
 
-	// Permanent redirect for legacy /home.aspx URL (sgim-x60.16)
-	if (event.url.pathname === '/home.aspx') {
+	// Permanent redirects for the old .aspx site (sgim-x60.16 / sgim-0lt.12).
+	// 301 so search engines transfer the ranking rather than treating these as
+	// temporary; the table lives in the domain layer and is unit-tested.
+	const legacyTarget = legacyRedirect(event.url.pathname);
+	if (legacyTarget) {
 		return new Response(null, {
 			status: 301,
-			headers: { location: '/' }
+			headers: { location: legacyTarget }
 		});
 	}
 
