@@ -1,0 +1,19 @@
+# Keep the build context small and secrets out of image layers.
+node_modules
+dist
+build
+.strapi
+.tmp
+.cache
+.env
+.env.*
+!.env.example
+# Uploaded media lives in a volume, never in the image.
+public/uploads
+coverage
+.git
+.gitignore
+Dockerfile
+.dockerignore
+docker-compose.yml
+*.log

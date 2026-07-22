@@ -1,0 +1,15 @@
+# Keep the build context small and secrets out of image layers.
+node_modules
+build
+.svelte-kit
+.env
+.env.*
+!.env.example
+shots
+shots-redesign
+coverage
+.git
+.gitignore
+Dockerfile
+.dockerignore
+*.log
