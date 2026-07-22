@@ -116,9 +116,13 @@ services:
       # Server-to-server over the internal network — never through the proxy.
       CMS_BASE_URL: http://cms:1337
       SESSION_SECRET: ${SESSION_SECRET}
-      # adapter-node needs ORIGIN to accept form POSTs (login, duty actions).
-      # A wrong value breaks those with a CSRF error.
-      ORIGIN: ${WEB_ORIGIN}
+      # ORIGIN is deliberately NOT set: it pins the app to ONE hostname, and
+      # form POSTs from any other are rejected with "Cross-site POST form
+      # submissions are forbidden". The site must answer on both sgim.dk and
+      # sgim.khebbie.dk, so adapter-node instead derives the origin per request
+      # from these headers. Safe here because the app has no published port —
+      # every request arrives through nginx, which SETS both headers from the
+      # real request rather than passing a client value through.
       PROTOCOL_HEADER: x-forwarded-proto
       HOST_HEADER: x-forwarded-host
     networks:
