@@ -144,7 +144,7 @@ jobs:
       # Tagged with the commit SHA so a deploy pins an exact build and can be
       # rolled back to the previous SHA; `latest` is a convenience only.
       - name: Build and push ${{ matrix.app }}
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: ./${{ matrix.app }}
           push: true
